@@ -7,15 +7,15 @@ const NavBar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <h1 className="text-lg font-bold">CARIVAN DIRE HOTEL</h1>
+              <h1 className="text-lg font-bold">Carivan Dire Hotel</h1>
             </div>
             <div className="hidden md:flex flex-1 justify-center">
               <div className="flex space-x-4">
-                <a href="#" className="text-white px-3 py-2 rounded-md text-m font-medium hover:underline">HOME</a>
-                <a href="#" className="text-white px-3 py-2 rounded-md text-m font-medium hover:underline">ROOMS</a>
-                <a href="#" className="text-white px-3 py-2 rounded-md text-m font-medium hover:underline">RESTURANT</a>
-                <a href="#" className="text-white px-3 py-2 rounded-md text-m font-medium hover:underline">SERVICES</a>
-                <a href="#" className="text-white px-3 py-2 rounded-md text-m font-medium hover:underline">CONTACT US</a>
+                <a href="#" className="text-white px-3 py-2 rounded-md text-m font-medium hover:underline">Home</a>
+                <a href="#" className="text-white px-3 py-2 rounded-md text-m font-medium hover:underline">Rooms</a>
+                <a href="#" className="text-white px-3 py-2 rounded-md text-m font-medium hover:underline">Restaurant</a>
+                <a href="#" className="text-white px-3 py-2 rounded-md text-m font-medium hover:underline">Services</a>
+                <a href="#" className="text-white px-3 py-2 rounded-md text-m font-medium hover:underline">Contact Us</a>
               </div>
             </div>
             
