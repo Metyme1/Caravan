@@ -3,6 +3,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/Navbar';
 import Home from './Home';
+import Rooms from './Rooms';
+import Restaurant from './res';
+import Services from './service';
+import Contact from './contactus';
 import Footer from './components/Footer';
 
 function App() {
@@ -13,6 +17,10 @@ function App() {
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/rooms" element={<Rooms />} />
+            <Route path="/restaurant" element={<Restaurant />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
         <Footer />
