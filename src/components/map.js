@@ -1,6 +1,6 @@
-// src/components/MapComponent.js
+// src/components/GoogleMapComponent.js
 import React from 'react';
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '100%',
@@ -8,23 +8,22 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 9.5934, // Replace with the latitude of the location you want to center on
-  lng: 41.8661 // Replace with the longitude of the location you want to center on
+  lat: 9.5939,  // Replace with your latitude
+  lng: 41.8661  // Replace with your longitude
 };
 
-const MapComponent = () => {
+const GoogleMapComponent = () => {
   return (
-    <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
+    <LoadScript googleMapsApiKey="AIzaSyDOmT3IuWcOq87wl4fUXlMDotiiJE2gzYw">
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={10}
+        zoom={15}
       >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
+        <Marker position={center} />
       </GoogleMap>
     </LoadScript>
-  )
+  );
 }
 
-export default MapComponent;
+export default GoogleMapComponent;
