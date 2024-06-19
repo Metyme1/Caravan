@@ -18,47 +18,49 @@ const Home = () => {
       </div>
       <header className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl font-bold">Welcome to Carivan Dire Hotel</h1>
-          <p className="text-xl text-gray-600">A LUXURY COLLECTION HOTEL, Dire Dawa</p>
+          <h1 className="text-3xl font-times">Welcome to Carivan Dire Hotel</h1>
+          <p className="text-xl text-gray-600 font-times">A LUXURY COLLECTION HOTEL, Dire Dawa</p>
         </div>
       </header>
 
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900">Find luxury and serenity in Dire Dawa, Ethiopia</h2>
-          <p className="mt-4 text-gray-600">
+          <h2 className="text-2xl text-gray-900 font-times">Find luxury and serenity in Dire Dawa, Ethiopia</h2>
+          <p className="mt-4 text-gray-600 font-times">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ornare sem, lacinia facilisis venenatis et, dictum vel ipsum. Proin sodales tortor eu lectus aliquet commodo.
           </p>
           <button className="mt-6 bg-custom-blue text-white px-4 py-2 rounded-md">More about Us</button>
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900">Rooms And Suits</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <img src={room1} alt="Standard Room" className="w-full h-48 object-cover"/>
-              <div className="p-4">
-                <h3 className="text-lg font-bold">Standard Room</h3>
-              </div>
-            </div>
-            <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <img src={room2} alt="Sweet Room" className="w-full h-48 object-cover"/>
-              <div className="p-4">
-                <h3 className="text-lg font-bold">Sweet Room</h3>
-              </div>
-            </div>
-            <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <img src={room3} alt="Standard Room" className="w-full h-48 object-cover"/>
-              <div className="p-4">
-                <h3 className="text-lg font-bold">Standard Room</h3>
-              </div>
+      <section className="py-16 bg-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl  text-gray-900 mb-8 text-center font-times">Rooms and Suites</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src={room1} alt="Standard Room" className="w-full h-64 object-cover"/>
+            <div className="p-6">
+              <h3 className="text-xl  font-times">Standard Room</h3>
             </div>
           </div>
-          <button className="mt-6 bg-custom-blue text-white px-4 py-2 rounded-md">View More</button>
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src={room2} alt="Sweet Room" className="w-full h-64 object-cover"/>
+            <div className="p-6">
+              <h3 className="text-xl  font-times">Sweet Room</h3>
+            </div>
+          </div>
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src={room3} alt="Standard Room" className="w-full h-64 object-cover"/>
+            <div className="p-6">
+              <h3 className="text-xl  font-times">Standard Room</h3>
+            </div>
+          </div>
         </div>
-      </section>
+        <div className="flex justify-center mt-8">
+          <button className="bg-custom-blue text-white px-6 py-3 rounded-md text-lg font-semibold shadow-md hover:bg-blue-700 transition duration-300">View More</button>
+        </div>
+      </div>
+    </section>
 
       <section className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

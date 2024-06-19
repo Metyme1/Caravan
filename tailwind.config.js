@@ -7,6 +7,9 @@ module.exports = {
       colors: {
         'custom-blue': '#152652',
       },
+      fontFamily: {
+        'times': ['Times New Roman', 'Times', 'serif'],
+      },
     },
   },
   plugins: [],
