@@ -25,7 +25,7 @@ const NavBar = () => {
       <div className="bg-custom-blue text-white py-2 border-t-2 border-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-end">
           <div className="flex space-x-4">
-            <div className="text-white px-3 py-2 rounded-md text-sm font-medium">Gallery</div>
+            <Link to="/gallery" className="text-white px-3 py-2 rounded-md text-sm font-medium hover:underline">Gallery</Link>
             <div className="text-white px-3 py-2 rounded-md text-sm font-medium">📞 09090909090</div>
           </div>
         </div>

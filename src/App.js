@@ -9,6 +9,7 @@ import Services from './service';
 import Contact from './contactus';
 import Footer from './components/Footer';
 import RoomDetail from './detailPage';
+import Gallery from './Gallery';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/restaurant" element={<Restaurant />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/gallery" element={<Gallery />} />
           </Routes>
         </div>
         <Footer />
