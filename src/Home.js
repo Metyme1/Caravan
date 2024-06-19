@@ -1,13 +1,55 @@
 import React from 'react';
-import room1 from './assets/room1.jpg'; // adjust the path as necessary
+import room1 from './assets/room1.jpg'; 
 import room2 from './assets/room2.jpg';
 import room3 from './assets/r3.jpg';
 import restaurant from './assets/res.jpg';
 import food1 from './assets/food1.jpg';
 import food2 from './assets/food2.jpg';
 import meeting from './assets/meeting.jpeg';
-import hotelImage from './assets/Hotel.jpg'; // Image above welcome
-import GoogleMapComponent from './components/map'; // Import the GoogleMapComponent
+import hotelImage from './assets/Hotel.jpg'; 
+import GoogleMapComponent from './components/map'; 
+import sauna from './assets/sauna.jpg';
+import gym from './assets/gym.jpg';
+import shopping from './assets/shop.jpg';
+import barbershop from './assets/barber.jpeg';
+
+const services = [
+  {
+    id: 1,
+    title: "Sauna",
+    description: "Relax and rejuvenate in our state-of-the-art sauna.",
+    image: sauna,
+  },
+  {
+    id: 2,
+    title: "Gym",
+    description: "Stay fit and healthy in our well-equipped gym.",
+    image: gym,
+  },
+  {
+    id: 3,
+    title: "Shopping",
+    description: "Explore a variety of shops and boutiques.",
+    image: shopping,
+  },
+  {
+    id: 4,
+    title: "Barbershop",
+    description: "Get a fresh cut and style at our barbershop.",
+    image: barbershop,
+  },
+];
+const NearbyServices = () => {
+  const [current, setCurrent] = React.useState(0);
+
+  const handlePrev = () => {
+    setCurrent(current === 0 ? services.length - 1 : current - 1);
+  };
+
+  const handleNext = () => {
+    setCurrent(current === services.length - 1 ? 0 : current + 1);
+  };
+}
 
 const Home = () => {
   return (
@@ -29,11 +71,11 @@ const Home = () => {
           <p className="mt-4 text-gray-600 font-times">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ornare sem, lacinia facilisis venenatis et, dictum vel ipsum. Proin sodales tortor eu lectus aliquet commodo.
           </p>
-          <button className="mt-6 bg-custom-blue text-white px-4 py-2 rounded-md">More about Us</button>
+          <button className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48">Learn More</button>
         </div>
       </section>
 
-      <section className="py-16 bg-gray-100">
+      <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl  text-gray-900 mb-8 text-center font-times">Rooms and Suites</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -57,45 +99,63 @@ const Home = () => {
           </div>
         </div>
         <div className="flex justify-center mt-8">
-          <button className="bg-custom-blue text-white px-6 py-3 rounded-md text-lg font-semibold shadow-md hover:bg-blue-700 transition duration-300">View More</button>
+        <button className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48">Learn More</button>
+
         </div>
       </div>
     </section>
 
-      <section className="py-16 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900">Restaurant</h2>
-          <div className="mt-8 bg-white shadow-md rounded-lg overflow-hidden">
-            <img src={restaurant} alt="Restaurant" className="w-full h-64 object-cover"/>
-            <div className="p-4">
-              <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ornare sem, lacinia facilisis venenatis et, dictum vel ipsum. Proin sodales tortor eu lectus aliquet commodo.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <section className="py-16 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-3xl font-times text-gray-900 text-center mb-8">Food and Beverage</h2>
+    <div className="mt-8 bg-white shadow-md rounded-lg overflow-hidden flex">
+      <div className="w-1/2">
+        <img src={restaurant} alt="Restaurant" className="w-full h-full object-cover"/>
+      </div>
+      <div className="w-1/2 p-6 flex flex-col justify-center">
+        <h3 className="text-2xl font-times mb-4">Worldly Cuisine</h3>
+        <p className="text-gray-600 text-lg font-times mb-4">Providing a bountiful array of flavors and aromas, the Sheraton Addis offers a choice of eleven restaurant and lounge options that will seduce the most discerning palate with culinary delights from all around the world—from Italy’s Stagioni and India’s Shaheen, to Asian and Middle Eastern nights at Summerfields.</p>
+      
+      </div>
+    </div>
+  </div>
+</section>
 
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900">Our Well-Known Foods</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <img src={food1} alt="Food" className="w-full h-64 object-cover"/>
-              <div className="p-4">
-                <h3 className="text-lg font-bold">Chicken Mandi</h3>
-                <p className="text-gray-600">Chicken Mandi - is a delicious middle-eastern chicken and rice dish with ...</p>
-              </div>
-            </div>
-            <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <img src={food2} alt="Food" className="w-full h-64 object-cover"/>
-              <div className="p-4">
-                <h3 className="text-lg font-bold">Chicken Mandi</h3>
-                <p className="text-gray-600">Chicken Mandi - is a delicious middle-eastern chicken and rice dish with ...</p>
-              </div>
-            </div>
-          </div>
-          <button className="mt-6 bg-custom-blue text-white px-4 py-2 rounded-md">View More</button>
+
+<section className="py-16 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-3xl font-times text-gray-900 text-center mb-8">Our Well-Known Foods</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
+        <img src={food1} alt="Chicken Mandi" className="w-full h-64 object-cover"/>
+        <div className="p-6">
+          <h3 className="text-xl font-times">Chicken Mandi</h3>
+          <p className="text-gray-600 mt-2 font-times">Chicken Mandi - is a delicious middle-eastern chicken and rice dish with ...</p>
         </div>
-      </section>
+      </div>
+      <div className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
+        <img src={food2} alt="Chicken Mandi" className="w-full h-64 object-cover"/>
+        <div className="p-6">
+          <h3 className="text-xl font-times">Chicken Mandi</h3>
+          <p className="text-gray-600 font-times mt-2">Chicken Mandi - is a delicious middle-eastern chicken and rice dish with ...</p>
+        </div>
+      </div>
+      <div className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
+        <img src={food1} alt="Chicken Mandi" className="w-full h-64 object-cover"/>
+        <div className="p-6">
+          <h3 className="text-xl font-times ">Chicken Mandi</h3>
+          <p className="text-gray-600  font-times mt-2">Chicken Mandi - is a delicious middle-eastern chicken and rice dish with ...</p>
+        </div>
+      </div>
+    </div>
+    <div className="flex justify-center mt-10">
+    <button className="bg-custom-blue text-white text-lg px-4 py-2  font-times rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48">Learn More</button>
+
+
+    </div>
+  </div>
+</section>
+
 
       <section className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,6 +168,22 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <section className="py-16 bg-custom-blue">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-white text-center mb-8">Nearby Services</h2>
+        <div className="relative flex justify-center">
+          <button onClick={handlePrev} className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white text-gray-900 px-4 py-2 rounded-full shadow-lg hover:bg-gray-100 transition duration-300">❮</button>
+          <div className="w-full md:w-3/4 lg:w-2/3 bg-white shadow-md rounded-lg overflow-hidden">
+            <img src={services[current].image} alt={services[current].title} className="w-full h-80 object-cover"/>
+            <div className="p-6">
+              <h3 className="text-lg font-bold text-gray-900">{services[current].title}</h3>
+              <p className="text-gray-600 mt-4">{services[current].description}</p>
+            </div>
+          </div>
+          <button onClick={handleNext} className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white text-gray-900 px-4 py-2 rounded-full shadow-lg hover:bg-gray-100 transition duration-300">❯</button>
+        </div>
+      </div>
+    </section>
 
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

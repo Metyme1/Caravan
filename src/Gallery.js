@@ -185,11 +185,7 @@ const Gallery = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      <header className="bg-custom-blue text-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl font-bold">Gallery</h1>
-        </div>
-      </header>
+
       <nav className="bg-white py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center space-x-6">
           <a href="#rooms" className="text-custom-blue font-medium hover:underline">Rooms</a>
