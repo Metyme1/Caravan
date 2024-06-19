@@ -10,6 +10,7 @@ import Contact from './contactus';
 import Footer from './components/Footer';
 import RoomDetail from './detailPage';
 import Gallery from './Gallery';
+import Menu from './menu';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/menu" element={<Menu/>} />
           </Routes>
         </div>
         <Footer />

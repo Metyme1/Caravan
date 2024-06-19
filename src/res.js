@@ -1,6 +1,7 @@
 // src/Restaurant.js
 import React from 'react';
-import restaurantImage from './assets/res.jpg'; // adjust the path as necessary
+import restaurantImage from './assets/res.jpg'; 
+import { Link } from 'react-router-dom';
 
 const Restaurant = () => {
   return (
@@ -19,7 +20,7 @@ const Restaurant = () => {
                 <h3 className="text-2xl font-bold mb-4">Dining In Room Available 24/7</h3>
                 <p className="text-gray-600 mb-4">Enjoy a variety of delicious meals served to your room at any time of the day or night.</p>
               </div>
-              <button className="bg-custom-blue text-white px-4 py-2 rounded-md">View Menu</button>
+              <Link to="/menu" className="bg-custom-blue text-white px-4 py-2 rounded-md inline-block text-center">View Menu</Link>
             </div>
           </div>
         </div>
