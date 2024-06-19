@@ -1,42 +1,43 @@
 // src/Rooms.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import room1 from './assets/room1.jpg'; // adjust the path as necessary
 import room2 from './assets/room2.jpg';
 import room3 from './assets/r3.jpg';
 import room4 from './assets/room1.jpg';
 
-const Rooms = () => {
-  const rooms = [
-    {
-      id: 1,
-      name: "Standard Room",
-      image: room1,
-      price: "1500",
-      description: "A comfortable room with all standard amenities."
-    },
-    {
-      id: 2,
-      name: "Standard Room",
-      image: room2,
-      price: "1500",
-      description: "A comfortable room with all standard amenities."
-    },
-    {
-      id: 3,
-      name: "Standard Room",
-      image: room3,
-      price: "1500",
-      description: "A comfortable room with all standard amenities."
-    },
-    {
-      id: 4,
-      name: "Sweet Room",
-      image: room4,
-      price: "2000",
-      description: "A luxurious room with additional features."
-    }
-  ];
+const rooms = [
+  {
+    id: 1,
+    name: "Standard Room",
+    image: room1,
+    price: "1500",
+    description: "A comfortable room with all standard amenities."
+  },
+  {
+    id: 2,
+    name: "Standard Room",
+    image: room2,
+    price: "1500",
+    description: "A comfortable room with all standard amenities."
+  },
+  {
+    id: 3,
+    name: "Standard Room",
+    image: room3,
+    price: "1500",
+    description: "A comfortable room with all standard amenities."
+  },
+  {
+    id: 4,
+    name: "Sweet Room",
+    image: room4,
+    price: "2000",
+    description: "A luxurious room with additional features."
+  }
+];
 
+const Rooms = () => {
   return (
     <div className="bg-gray-100">
       <header className="bg-white py-8">
@@ -57,7 +58,7 @@ const Rooms = () => {
                   </div>
                   <div>
                     <p className="text-xl font-bold mb-2">Price {room.price}</p>
-                    <button className="bg-custom-blue text-white px-4 py-2 rounded-md">View Detail</button>
+                    <Link to={`/rooms/${room.id}`} className="bg-custom-blue text-white px-4 py-2 rounded-md">View Detail</Link>
                   </div>
                 </div>
               </div>

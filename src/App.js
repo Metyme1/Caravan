@@ -8,6 +8,7 @@ import Restaurant from './res';
 import Services from './service';
 import Contact from './contactus';
 import Footer from './components/Footer';
+import RoomDetail from './detailPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/rooms" element={<Rooms />} />
+            <Route path="/rooms/:id" element={<RoomDetail />} />
             <Route path="/restaurant" element={<Restaurant />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
