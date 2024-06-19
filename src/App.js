@@ -11,8 +11,15 @@ import Footer from './components/Footer';
 import RoomDetail from './detailPage';
 import Gallery from './Gallery';
 import Menu from './menu';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
