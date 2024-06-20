@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from 'react';
 import room1 from './assets/room1.jpg'; 
 import room2 from './assets/room2.jpg';
@@ -195,7 +192,7 @@ const Home = () => {
 
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900">Getting Here</h2>
+          <h2 className="text-2xl font-times text-gray-900">Getting Here</h2>
           <div className="mt-8 bg-white shadow-md rounded-lg overflow-hidden">
             <GoogleMapComponent />
           </div>

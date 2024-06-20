@@ -44,7 +44,7 @@ const Services = () => {
     <div className="bg-gray-100">
       <header className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl font-bold">Our Services</h1>
+          <h1 className="text-3xl font-times">Our Services</h1>
         </div>
       </header>
       <section className="py-16">
@@ -59,8 +59,8 @@ const Services = () => {
               <img src={service.image} alt={service.name} className="w-1/2 h-full object-cover"/>
               <div className="p-4 flex flex-col justify-between w-1/2">
                 <div>
-                  <h3 className="text-2xl font-bold mb-2">{service.name}</h3>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <h3 className="text-2xl font-times mb-2">{service.name}</h3>
+                  <p className="text-gray-600 font-times  mb-4">{service.description}</p>
                 </div>
               </div>
             </div>
