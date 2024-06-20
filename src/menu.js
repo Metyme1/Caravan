@@ -197,6 +197,7 @@ import foodImage1 from './assets/r3.jpg';
 import foodImage2 from './assets/r3.jpg';
 import foodImage3 from './assets/r3.jpg';
 
+
 const Menu = () => {
   return (
     <div className="bg-gray-900 text-white p-8 font-sans">
@@ -207,7 +208,8 @@ const Menu = () => {
         {/* Main Course Section */}
         <div className="col-span-1 md:col-span-2 lg:col-span-1 bg-orange-500 rounded-lg p-4">
           <h2 className="text-2xl font-bold">MAIN COURSE</h2>
-          <img src={foodImage1} alt="Main Course" className="w-full h-32 object-cover rounded-full mt-4"/>
+          <img src={foodImage1} alt="Appetizers" className="w-32 h-32 object-cover rounded-full mx-auto mt-4"/>
+
           <ul className="mt-4 space-y-2">
             <li className="flex justify-between">
               <span>Cheeseburger</span>
@@ -235,7 +237,8 @@ const Menu = () => {
         {/* Appetizers Section */}
         <div className="col-span-1 bg-gray-800 rounded-lg p-4">
           <h2 className="text-2xl font-bold">APPETIZERS</h2>
-          <img src={foodImage2} alt="Appetizers" className="w-full h-32 object-cover rounded-full mt-4"/>
+          <img src={foodImage2} alt="Appetizers" className="w-32 h-32 object-cover rounded-full mx-auto mt-4"/>
+
           <ul className="mt-4 space-y-2">
             <li className="flex justify-between">
               <span>Fruit Salad</span>
@@ -263,7 +266,8 @@ const Menu = () => {
         {/* Beverages Section */}
         <div className="col-span-1 bg-orange-500 rounded-lg p-4">
           <h2 className="text-2xl font-bold">BEVERAGES</h2>
-          <img src={foodImage3} alt="Beverages" className="w-full h-32 object-cover rounded-full mt-4"/>
+          <img src={foodImage3} alt="Appetizers" className="w-32 h-32 object-cover rounded-full mx-auto mt-4"/>
+
           <ul className="mt-4 space-y-2">
             <li className="flex justify-between">
               <span>Milk Shake</span>
@@ -289,16 +293,6 @@ const Menu = () => {
         </div>
       </div>
 
-      <div className="mt-8 flex justify-between items-center bg-orange-500 rounded-lg p-4">
-        <div className="flex items-center">
-          <span role="img" aria-label="phone" className="mr-2">📞</span>
-          <p>123-456-7890</p>
-        </div>
-        <div className="flex items-center">
-          <span role="img" aria-label="location" className="mr-2">📍</span>
-          <p>123 Anywhere St., Any City</p>
-        </div>
-      </div>
     </div>
   );
 }
