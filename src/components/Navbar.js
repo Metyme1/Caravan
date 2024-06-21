@@ -1,3 +1,4 @@
+// src/NavBar.js
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -12,19 +13,45 @@ const NavBar = () => {
         </div>
         <div className="hidden md:flex flex-1 justify-end">
           <div className="flex space-x-6">
-            <NavLink exact to="/" className="text-white px-3 py-2 rounded-md text-1.5xl font-times" activeClassName="underline">
+            <NavLink 
+              exact 
+              to="/" 
+              className={({ isActive }) => 
+                `text-white px-3 py-2 rounded-md text-lg font-times ${isActive ? 'underline' : ''}`
+              }
+            >
               Home
             </NavLink>
-            <NavLink to="/rooms" className="text-white px-3 py-2 rounded-md text-1.5xl font-times" activeClassName="underline">
+            <NavLink 
+              to="/rooms" 
+              className={({ isActive }) => 
+                `text-white px-3 py-2 rounded-md text-lg font-times ${isActive ? 'underline' : ''}`
+              }
+            >
               Rooms
             </NavLink>
-            <NavLink to="/restaurant" className="text-white px-3 py-2 rounded-md text-1.5xl font-times" activeClassName="underline">
+            <NavLink 
+              to="/restaurant" 
+              className={({ isActive }) => 
+                `text-white px-3 py-2 rounded-md text-lg font-times ${isActive ? 'underline' : ''}`
+              }
+            >
               Restaurant
             </NavLink>
-            <NavLink to="/services" className="text-white px-3 py-2 rounded-md text-1.5xl font-times" activeClassName="underline">
+            <NavLink 
+              to="/services" 
+              className={({ isActive }) => 
+                `text-white px-3 py-2 rounded-md text-lg font-times ${isActive ? 'underline' : ''}`
+              }
+            >
               Services
             </NavLink>
-            <NavLink to="/contact" className="text-white px-3 py-2 rounded-md text-1.5xl font-times" activeClassName="underline">
+            <NavLink 
+              to="/contact" 
+              className={({ isActive }) => 
+                `text-white px-3 py-2 rounded-md text-lg font-times ${isActive ? 'underline' : ''}`
+              }
+            >
               Contact Us
             </NavLink>
           </div>
@@ -32,12 +59,17 @@ const NavBar = () => {
       </div>
       <div className="bg-custom-blue text-white py-4 border-t-2 border-white px-6">
         <div className="flex justify-end items-center space-x-6">
-          <NavLink to="/gallery" className="text-white px-3 py-2 rounded-md text-1.5xl font-times" activeClassName="underline">
+          <NavLink 
+            to="/gallery" 
+            className={({ isActive }) => 
+              `text-white px-3 py-2 rounded-md text-lg font-times ${isActive ? 'underline' : ''}`
+            }
+          >
             Gallery
           </NavLink>
           <div className="flex items-center space-x-2">
             <span role="img" aria-label="phone">📞</span>
-            <span className="text-1.5xl font-times">09090909090</span>
+            <span className="text-lg font-times">09090909090</span>
           </div>
         </div>
       </div>
