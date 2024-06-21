@@ -1,10 +1,10 @@
 // src/Rooms.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import room1 from './assets/room1.jpg'; // adjust the path as necessary
+import room1 from './assets/room1.jpg';
 import room2 from './assets/room2.jpg';
 import room3 from './assets/r3.jpg';
-import room4 from './assets/room1.jpg';
+import room4 from './assets/r3.jpg';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 
@@ -73,7 +73,6 @@ const Rooms = () => {
           ))}
         </div>
       </section>
-      
     </div>
   );
 }
