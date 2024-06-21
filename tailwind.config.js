@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         'times': ['Times New Roman', 'Times', 'serif'],
       },
+      fontSize: {
+        '1.5xl': '1.375rem', // This is between `text-lg` (1.125rem) and `text-xl` (1.25rem)
+      }
     },
   },
   plugins: [],
