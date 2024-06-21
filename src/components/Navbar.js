@@ -12,19 +12,19 @@ const NavBar = () => {
         </div>
         <div className="hidden md:flex flex-1 justify-end">
           <div className="flex space-x-6">
-            <NavLink exact to="/" className="text-white px-3 py-2 rounded-md text-2xl font-times" activeClassName="underline">
+            <NavLink exact to="/" className="text-white px-3 py-2 rounded-md text-lg font-times" activeClassName="underline">
               Home
             </NavLink>
-            <NavLink to="/rooms" className="text-white px-3 py-2 rounded-md text-2xl font-times" activeClassName="underline">
+            <NavLink to="/rooms" className="text-white px-3 py-2 rounded-md text-1xl font-times" activeClassName="underline">
               Rooms
             </NavLink>
-            <NavLink to="/restaurant" className="text-white px-3 py-2 rounded-md text-2xl font-times" activeClassName="underline">
+            <NavLink to="/restaurant" className="text-white px-3 py-2 rounded-md text-1xl font-times" activeClassName="underline">
               Restaurant
             </NavLink>
-            <NavLink to="/services" className="text-white px-3 py-2 rounded-md text-2xl font-times" activeClassName="underline">
+            <NavLink to="/services" className="text-white px-3 py-2 rounded-md text-1xl font-times" activeClassName="underline">
               Services
             </NavLink>
-            <NavLink to="/contact" className="text-white px-3 py-2 rounded-md text-2xl font-times" activeClassName="underline">
+            <NavLink to="/contact" className="text-white px-3 py-2 rounded-md text-lg font-times" activeClassName="underline">
               Contact Us
             </NavLink>
           </div>
