@@ -167,7 +167,7 @@ const Home = () => {
             </div>
           </div>
           <div className="flex justify-center mt-10">
-            <button className="bg-custom-blue text-white text-lg px-4 py-2 font-times rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48">Learn More</button>
+            <button className="bg-custom-blue text-white text-lg px-4 py-2 font-times rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48">View menu</button>
           </div>
         </div>
       </section>
