@@ -10,6 +10,8 @@ import guestImage1 from './assets/room1.jpg'; // Add guest images
 import guestImage2 from './assets/room2.jpg';
 import guestImage3 from './assets/r3.jpg';
 
+
+
 const Restaurant = () => {
   useEffect(() => {
     const container = document.getElementById('scroll-container');
@@ -77,8 +79,8 @@ const Restaurant = () => {
     </div>
   </div>
   <section>
-    <div className="max-w-xl mx-auto px-4">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+  
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
         
           <div>
             <h2 className="text-2xl font-times text-gray-800 ">Dining</h2>
@@ -87,10 +89,11 @@ const Restaurant = () => {
           </div>
         </div>
         <div>
-  <h2 className="text-2xl font-times pt-8 pb-4 text-gray-800 mb-2">Dining areas</h2>
+ 
 </div>
-
-<div className="bg-white overflow-hidden mb-8 flex flex-wrap -mx-4 pt-8">
+<div className="max-w-7xl mx-auto px-4">
+<h2 className="text-2xl font-times pt-8 pb-4 text-gray-800 mb-2">Dining areas</h2>
+<div className="bg-white overflow-hidden max-w-7xl  px-4 mb-8 flex flex-wrap -mx-4 pt-8">
   <div className="w-full md:w-1/3 px-4 mb-8 transform transition-transform duration-300 hover:scale-105">
     <div className="relative">
       <img src={diningImage1} alt="Open Air Dining" className="w-full h-64 object-cover border-b-4 border-custom-blue"/>
@@ -121,8 +124,9 @@ const Restaurant = () => {
     </div>
   </div>
 </div>
+</div>
 
-
+<div className="max-w-7xl mx-auto px-4">
           {/* Popular Menu Items */}
           <div className="bg-white overflow-hidden mb-8">
   <h2 className="text-2xl font-times mb-4">Popular Menu Items</h2>
@@ -155,8 +159,9 @@ const Restaurant = () => {
     </div>
   </div>
 </div>
+</div>
 
-<div className="w-screen bg-custom-blue py-16">
+<div className="w-screen mb-10 bg-custom-blue py-4">
   <div className="container mx-auto text-center text-white px-4">
     <h2 className="text-3xl font-bold mb-6">Testimonials</h2>
     <div className="flex flex-col items-center mb-4">
@@ -181,7 +186,7 @@ const Restaurant = () => {
 
 
 
-        </div>
+       
       </section>
     </div>
   );
