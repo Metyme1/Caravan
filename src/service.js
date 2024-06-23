@@ -1,11 +1,12 @@
-// src/Services.js
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 import service1 from './assets/room1.jpg'; // adjust the path as necessary
 import service2 from './assets/wifi.jpeg';
 import service3 from './assets/parking.jpg';
 import service4 from './assets/meeting.jpeg';
 import service5 from './assets/res.jpg';
+
 const services = [
   {
     id: 1,
@@ -44,7 +45,7 @@ const Services = () => {
     <div className="bg-gray-100">
       <header className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl font-times">Our Services</h1>
+          <h1 className="text-3xl font-times">Discover Our Services</h1>
         </div>
       </header>
       <section className="py-16">
@@ -52,7 +53,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={service.id} 
-              className={`bg-white shadow-md rounded-lg overflow-hidden mb-8 flex ${index % 2 === 0 ? '' : 'flex-row-reverse'}`} 
+              className={`bg-white shadow-md overflow-hidden mb-8 flex ${index % 2 === 0 ? '' : 'flex-row-reverse'}`} 
               data-aos={`${index % 2 === 0 ? 'fade-right' : 'fade-left'}`}
               style={{ height: '400px' }} // Adjust the height here
             >
@@ -60,14 +61,19 @@ const Services = () => {
               <div className="p-4 flex flex-col justify-between w-1/2">
                 <div>
                   <h3 className="text-2xl font-times mb-2">{service.name}</h3>
-                  <p className="text-gray-600 font-times  mb-4">{service.description}</p>
+                  <p className="text-gray-600 font-times mb-4">{service.description}</p>
                 </div>
+                <Link 
+                  to={`/services/${service.id}`} 
+                  className="bg-custom-blue text-white py-2 px-6 hover:bg-blue-700 transition duration-300"
+                >
+                  View More
+                </Link>
               </div>
             </div>
           ))}
         </div>
       </section>
-     
     </div>
   );
 }
