@@ -49,19 +49,19 @@ const Restaurant = () => {
     {
       quote: "I had an amazing stay at New Level Hotel. The staff was incredibly friendly and attentive, and the rooms were spacious and luxurious. The location was perfect, with easy access to nearby attractions. I would highly recommend this hotel to anyone visiting Diradawa.",
       name: "Emily Brown",
-      role: "Guest review",
+   
       image: guestImage1, // Add image to each testimonial
     },
     {
       quote: "The experience at the hotel was excellent. The rooms were clean, and the staff was very helpful. The amenities were top-notch. I will definitely stay here again.",
       name: "John Doe",
-      role: "Guest review",
+    
       image: guestImage2,
     },
     {
       quote: "Fantastic service and great location. The staff went above and beyond to make sure we had everything we needed. Highly recommended!",
       name: "Jane Smith",
-      role: "Guest review",
+ 
       image: guestImage3,
     },
   ];
@@ -73,10 +73,6 @@ const Restaurant = () => {
   <div className="relative bg-white shadow-md overflow-hidden mb-8 w-screen">
   <img src={restaurantImage} alt="Restaurant" className="w-full h-160 object-cover"/>
 
-    <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-between p-8">
-
-      <Link to="/menu" className="bg-custom-blue text-white px-4 py-2  inline-block text-center">View Menu</Link>
-    </div>
   </div>
   <section>
   
@@ -126,53 +122,69 @@ const Restaurant = () => {
 </div>
 </div>
 
+
 <div className="max-w-7xl mx-auto px-4">
-          {/* Popular Menu Items */}
-          <div className="bg-white overflow-hidden mb-8">
-  <h2 className="text-2xl font-times mb-4">Popular Menu Items</h2>
-  <div className="flex space-x-6 overflow-x-hidden cursor-grab" id="scroll-container">
-    <div className="bg-white p-4  flex-shrink-0 w-64">
-      <img src={restaurantImage} alt="Menu Item" className="w-full h-32 object-cover  mb-4"/>
-      <h3 className="text-xl font-times">Item 1</h3>
-      <p className="text-gray-600 font-times">Description of the menu item.</p>
+      <div className="bg-white overflow-hidden mb-8">
+        <h2 className="text-2xl font-times mb-4">Popular Menu Items</h2>
+        <div className="flex space-x-6 overflow-x-hidden cursor-grab" id="scroll-container">
+          <div className="bg-white p-4 flex-shrink-0 w-64">
+            <img src={restaurantImage} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
+            <h3 className="text-xl font-times">Item 1</h3>
+            <p className="text-gray-600 font-times">Description of the menu item.</p>
+          </div>
+          <div className="bg-white p-4 flex-shrink-0 w-64">
+            <img src={restaurantImage} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
+            <h3 className="text-xl font-times">Item 2</h3>
+            <p className="text-gray-600 font-times">Description of the menu item.</p>
+          </div>
+          <div className="bg-white p-4 flex-shrink-0 w-64">
+            <img src={restaurantImage} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
+            <h3 className="text-xl font-times">Item 3</h3>
+            <p className="text-gray-600 font-times">Description of the menu item.</p>
+          </div>
+          <div className="bg-white p-4 flex-shrink-0 w-64">
+            <img src={restaurantImage} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
+            <h3 className="text-xl font-times">Item 4</h3>
+            <p className="text-gray-600 font-times">Description of the menu item.</p>
+          </div>
+          <div className="bg-white p-4 flex-shrink-0 w-64">
+            <img src={restaurantImage} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
+            <h3 className="text-xl font-times">Item 5</h3>
+            <p className="text-gray-600 font-times">Description of the menu item.</p>
+          </div>
+        </div>
+        <div className="flex justify-center mt-6">
+          <Link to="/menu">
+          <button className="bg-custom-blue text-white text-lg px-4 py-2 font-times rounded-full shadow-lg hover:bg-blue-900 transition duration-300 w-48">View menu</button>
+
+          </Link>
+        </div>
+      </div>
     </div>
-    <div className="bg-white p-4  flex-shrink-0 w-64">
-      <img src={restaurantImage} alt="Menu Item" className="w-full h-32 object-cover  mb-4"/>
-      <h3 className="text-xl font-times">Item 2</h3>
-      <p className="text-gray-600 font-times">Description of the menu item.</p>
-    </div>
-    <div className="bg-white p-4  flex-shrink-0 w-64">
-      <img src={restaurantImage} alt="Menu Item" className="w-full h-32 object-cover  mb-4"/>
-      <h3 className="text-xl font-times">Item 3</h3>
-      <p className="text-gray-600 font-times">Description of the menu item.</p>
-    </div>
-   
-    <div className="bg-white p-4  flex-shrink-0 w-64">
-      <img src={restaurantImage} alt="Menu Item" className="w-full h-32 object-cover  mb-4"/>
-      <h3 className="text-xl font-times">Item 4</h3>
-      <p className="text-gray-600 font-times">Description of the menu item.</p>
-    </div>
-    <div className="bg-white p-4  flex-shrink-0 w-64">
-      <img src={restaurantImage} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
-      <h3 className="text-xl font-times">Item 5</h3>
-      <p className="text-gray-600 font-times">Description of the menu item.</p>
-    </div>
-  </div>
-</div>
-</div>
 
 <div className="w-screen mb-10 bg-custom-blue py-4">
   <div className="container mx-auto text-center text-white px-4">
-    <h2 className="text-3xl font-bold mb-6">Testimonials</h2>
-    <div className="flex flex-col items-center mb-4">
-      <img src={testimonials[currentTestimonial].image} alt={testimonials[currentTestimonial].name} className="w-16 h-16 rounded-full mb-4"/>
-      <div className="text-xl max-w-3xl">{testimonials[currentTestimonial].quote}</div>
+    <h2 className="text-2xl text font-times mb-6">Testimonials</h2>
+    <h1 className="text-2xl font-times mb-6">What our clinets Say?</h1>
+    <div className="flex flex-col items-center mb-4 bg-custom-blue bg-opacity-50 p-6 rounded-lg max-w-4xl mx-auto">
+      <div className="text-left mb-4">
+        <div className="text-xl font-times mb-4">{testimonials[currentTestimonial].quote}</div>
+      </div>
+      <div className="flex items-center">
+        <img src={testimonials[currentTestimonial].image} alt={testimonials[currentTestimonial].name} className="w-16 h-16 rounded-full mb-4 mr-4"/>
+        <div className="text-left">
+          <div className="flex items-center">
+            <div className="text-lg font-semibold font-times">{testimonials[currentTestimonial].name}</div>
+        
+          </div>
+          <div className="flex items-center mt-2">
+          
+            <span className="text-yellow-500">★★★★☆</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div className="flex justify-center items-center mb-6">
-      <div className="text-lg font-semibold">{testimonials[currentTestimonial].name}</div>
-      <div className="ml-2 text-gray-300">{testimonials[currentTestimonial].role}</div>
-    </div>
-    <div className="flex justify-center space-x-2">
+    <div className="flex justify-center space-x-2 mt-4">
       {testimonials.map((_, index) => (
         <button
           key={index}
@@ -183,6 +195,9 @@ const Restaurant = () => {
     </div>
   </div>
 </div>
+
+
+
 
 
 
