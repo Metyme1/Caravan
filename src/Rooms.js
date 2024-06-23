@@ -192,7 +192,6 @@
 // export default Rooms;
 
 
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import room1 from './assets/room1.jpg';
@@ -248,25 +247,26 @@ const Rooms = () => {
           {rooms.map((room, index) => (
             <div
               key={room.id}
-              className="relative mb-16 flex justify-center items-center"
+              className={`relative mb-16 flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center`}
               data-aos={`${index % 2 === 0 ? 'fade-right' : 'fade-left'}`}
             >
               <img
                 src={room.image}
                 alt={room.name}
-                className="w-1/2 h-96 object-cover rounded-lg"
+                className={`h-112 object-cover  ${index % 2 === 0 ? 'w-3/5' : 'w-3/5'}`}
               />
               <div
-                className="absolute bg-white p-8 rounded-lg shadow-md w-2/5"
+                className="absolute bg-white p-12  shadow-md"
                 style={{
-                  top: '50%',
-                  left: index % 2 === 0 ? '5%' : 'auto',
-                  right: index % 2 !== 0 ? '5%' : 'auto',
-                  transform: 'translateY(-50%)',
+                  width: '35%',
+                  top: '10%',
+                  left: index % 2 === 0 ? 'auto' : '5%',
+                  right: index % 2 === 0 ? '5%' : 'auto',
+                  transform: 'translateY(0%)',
                 }}
               >
                 <p className="text-lg font-bold text-gray-700 mb-2">{room.price}</p>
-                <h3 className="text-2xl font-bold mb-2">{room.name}</h3>
+                <h3 className="text-3xl font-bold mb-2">{room.name}</h3>
                 <p className="text-gray-600 mb-4">{room.description}</p>
                 <div className="flex items-center space-x-4 mb-4">
                   <div className="flex items-center space-x-2">
@@ -290,7 +290,7 @@ const Rooms = () => {
                   to={`/rooms/${room.id}`}
                   className="text-custom-blue hover:underline"
                 >
-                  Details → BOOK
+                 View → Detail
                 </Link>
               </div>
             </div>
