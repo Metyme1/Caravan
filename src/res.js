@@ -6,6 +6,9 @@ import diningImage1 from './assets/room1.jpg';
 import diningImage2 from './assets/room2.jpg'; 
 import diningImage3 from './assets/r3.jpg'; 
 
+import guestImage1 from './assets/room1.jpg'; // Add guest images
+import guestImage2 from './assets/room2.jpg';
+import guestImage3 from './assets/r3.jpg';
 
 const Restaurant = () => {
   useEffect(() => {
@@ -45,18 +48,22 @@ const Restaurant = () => {
       quote: "I had an amazing stay at New Level Hotel. The staff was incredibly friendly and attentive, and the rooms were spacious and luxurious. The location was perfect, with easy access to nearby attractions. I would highly recommend this hotel to anyone visiting Diradawa.",
       name: "Emily Brown",
       role: "Guest review",
+      image: guestImage1, // Add image to each testimonial
     },
     {
       quote: "The experience at the hotel was excellent. The rooms were clean, and the staff was very helpful. The amenities were top-notch. I will definitely stay here again.",
       name: "John Doe",
       role: "Guest review",
+      image: guestImage2,
     },
     {
       quote: "Fantastic service and great location. The staff went above and beyond to make sure we had everything we needed. Highly recommended!",
       name: "Jane Smith",
       role: "Guest review",
+      image: guestImage3,
     },
   ];
+
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   return (
     <div className="bg-white min-h-screen">
@@ -70,7 +77,7 @@ const Restaurant = () => {
     </div>
   </div>
   <section>
-    <div className="max-w-7xl mx-auto px-4">
+    <div className="max-w-xl mx-auto px-4">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
         
           <div>
@@ -149,25 +156,28 @@ const Restaurant = () => {
   </div>
 </div>
 
-<div className="bg-custom-blue py-16">
-      <div className="container mx-auto text-center text-white">
-        <h2 className="text-3xl font-bold mb-6">Testimonials</h2>
-        <div className="text-xl mb-4">{testimonials[currentTestimonial].quote}</div>
-        <div className="flex justify-center items-center mb-6">
-          <div className="text-lg font-semibold">{testimonials[currentTestimonial].name}</div>
-          <div className="ml-2 text-gray-300">{testimonials[currentTestimonial].role}</div>
-        </div>
-        <div className="flex justify-center space-x-2">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              className={`h-3 w-3 rounded-full ${index === currentTestimonial ? 'bg-white' : 'bg-gray-400'}`}
-              onClick={() => setCurrentTestimonial(index)}
-            ></button>
-          ))}
-        </div>
-      </div>
+<div className="w-screen bg-custom-blue py-16">
+  <div className="container mx-auto text-center text-white px-4">
+    <h2 className="text-3xl font-bold mb-6">Testimonials</h2>
+    <div className="flex flex-col items-center mb-4">
+      <img src={testimonials[currentTestimonial].image} alt={testimonials[currentTestimonial].name} className="w-16 h-16 rounded-full mb-4"/>
+      <div className="text-xl max-w-3xl">{testimonials[currentTestimonial].quote}</div>
     </div>
+    <div className="flex justify-center items-center mb-6">
+      <div className="text-lg font-semibold">{testimonials[currentTestimonial].name}</div>
+      <div className="ml-2 text-gray-300">{testimonials[currentTestimonial].role}</div>
+    </div>
+    <div className="flex justify-center space-x-2">
+      {testimonials.map((_, index) => (
+        <button
+          key={index}
+          className={`h-3 w-3 rounded-full ${index === currentTestimonial ? 'bg-white' : 'bg-gray-400'}`}
+          onClick={() => setCurrentTestimonial(index)}
+        ></button>
+      ))}
+    </div>
+  </div>
+</div>
 
 
 
