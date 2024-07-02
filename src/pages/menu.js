@@ -45,13 +45,42 @@ const menuData = {
     // Add items for Breakfast category
   ],
   "Lunch and Dinner": [
-    // Add items for Lunch and Dinner category
+    { name: 'Special Carnival Combo', description: '', price: 1500 },
+{ name: ' Special Goat', description: '', price: 450 },
+{ name: 'Goat - Tibs', description: '', price: 400 }, 
+{ name: 'Rice - Normal', description: '', price: 200 },
+{ name: 'Rice with Meat', description: '', price: 280 },
+{ name: 'Rice with Chicken', description: '', price: 300 },
+{ name: 'Rice with Bolanise Sauce', description: '', price: 350},
+{ name: 'Rice with Fish', description: '', price: 350 },
+{ name: 'Spaghetti with Bolognese Sauce', description: '', price: 350 },
+{ name: 'Spaghetti with Meat', description: '', price: 370 },
+{ name: 'Spaghetti with Cheese', description: '', price: 400 },
+{ name: 'Spaghetti with Vegetables', description: '', price: 250 },
+{ name: 'Chicken Xibsi', description: '', price: 300},
+{ name: 'Chicken Mondi', description: '', price: 600 },
+{ name: 'Carnival Hanid / Meat Mendi', description: '', price: 600}
+
   ],
   Burger: [
-    // Add items for Burger category
+    { name: 'Caravan Special Burger', description: '', price: 450 },
+    { name: 'Special Burger', description: '', price: 400 },
+    { name: 'Normal Burger', description: '', price: 280 },
+    { name: 'Cheese Burger', description: '', price: 300 },
+    { name: 'Chicken Burger', description: '', price: 400 },
+    { name: 'Tuna Burger', description: '', price: 300 },
+    { name: 'Triple Burger', description: '', price: 400 },
+    { name: 'Double Burger', description: '', price: 450 }
+    
   ],
   Sandwich: [
-    // Add items for Sandwich category
+    { name: 'Egg Sandwich', description: '', price: 250 },
+    { name: 'Club Sandwich', description: '', price: 300 },
+    { name: 'Chicken Club Sandwich', description: '', price: 350 },
+    { name: 'Beef Sandwich', description: '', price: 300 },
+    { name: 'Atiklt Sandwich', description: '', price: 200 },
+    { name: 'Tuna Sandwich', description: '', price: 230 },
+    { name: 'Shewarma Special', description: '', price: 400 },
   ],
   "Ethiopian Traditional Food": [
     // Add items for Ethiopian Traditional Food category
