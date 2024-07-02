@@ -104,7 +104,17 @@ const menuData = {
   
   ],
   Pizza: [
-    // Add items for Pizza category
+    { name: 'Carnival', description: 'Souse, mozzarella cheese, tested meat, chicken, tuna egg and with others', price: 450 },
+    { name: 'Special Pizza', description: 'Botanies, Souse, mozzarella cheese, tested meat, Egg, organic, Bill, peper  and with others', price: 450 },
+    { name:'Oriental Pizza', description : 'Botanies, Souse, Tested Meat, Mozzarella Cheese, Egg, Organic, Bill, Pepper and Other', price: 450 },
+    { name: 'Margarita Pizza', description: 'Botanies, sauce, mozzarella cheese, organic, tomato, bill, paper and etc.', price: 300 },
+    { name: 'Beef Pizza', description: 'Bolinas-sauce-tested, meat, mozzarella, cheese, bill, paper, tomato and other', price: 300 },
+    { name: 'Nioia Pizza', description: 'Bolinas-sauce-tested, vegetable, mozzarella cheese, tuna, tested meat and other', price: 400 },
+    { name: 'Four-Season Pizza', description: '', price: 400 },
+    { name: 'Tuna Pizza', description: 'Colonize, sauce, vegetable, tuna, tomato, oregano, black olive and others', price: 400 },
+    { name: 'At Kilt Pizza', description: 'Colonize, salce, vegetable, tomato bill, paper, black-olive and others', price: 300 },
+    { name: 'Italian Pizza', description: 'Botanies sauce, tested meat, mozzarella cheese, tuna black olive mushroom and others', price: 400 },
+    { name: 'Chicken Pizza', description: 'Botanies souce, mozzarella cheese chicken, black olive, mushroom, and others', price: 350 },
   ],
   Juice: [
     // Add items for Juice category
