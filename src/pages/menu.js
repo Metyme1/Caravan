@@ -117,11 +117,33 @@ const menuData = {
     { name: 'Chicken Pizza', description: 'Botanies souce, mozzarella cheese chicken, black olive, mushroom, and others', price: 350 },
   ],
   Juice: [
-    // Add items for Juice category
-  ],
-  Cake: [
-    // Add items for Cake category
-  ],
+
+    { name: 'Carnival - Special Juice', description: '', price: 200 },
+    { name: 'Avocado Juice', description: '', price: 200 },
+    { name: 'Avocado Milk Shake', description: '', price: 230 },
+    { name: 'Papaya Juice', description: '', price: 200 },
+    { name: 'Papaya Milk Shake', description: '', price: 200 },
+    { name: 'Ambashock', description: '', price: 200 },
+    { name: 'Orange Juice', description: '', price: 200 },
+    { name: 'Watermelon Juice', description: '', price: 200 },
+    { name: 'Orange, With Honey', description: '', price: 200 },
+    { name: 'Watermelon With Honey', description: '', price: 200 },
+    { name: 'Banana With Milk Shake', description: '', price: 200 },
+    { name: 'Αυτον', description: '', price: 200 },
+    { name: 'Fruet Panch', description: '', price: 200 },
+    { name: 'Strawberry Juice', description: '', price: 250 },
+    ],
+
+    Cake: [
+      { name: 'White Forest', description: '', price: 100 },
+      { name: 'Black Forest', description: '', price: 100 },
+      { name: 'Pound Cake', description: '', price: 100 },
+      { name: 'English Cake', description: '', price: 80 },
+      { name: 'Banana Cake', description: '', price: 70 },
+      { name: 'Pan-Cake', description: '', price: 40 },
+      { name: 'Cookies', description: '', price: 35 },
+      { name: 'Torte Cake', description: '', price: 600-1200 },
+      ],
   "Hot Drinks": [
     // Add items for Hot Drinks category
   ],
@@ -188,7 +210,7 @@ function Menu() {
                   <div className="border-t border-dotted border-custom-blue my-2"></div> {/* Dotted line */}
                   <p className="text-black font-times">{item.description}</p>
                 </div>
-                <p className="text-custom-blue font-times">${item.price}</p>
+                <p className="text-custom-blue font-times">{item.price}</p>
               </div>
             ))
           ) : (
