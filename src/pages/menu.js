@@ -83,7 +83,25 @@ const menuData = {
     { name: 'Shewarma Special', description: '', price: 400 },
   ],
   "Ethiopian Traditional Food": [
-    // Add items for Ethiopian Traditional Food category
+    { name: 'ሽሮ', description: '', price: 200 },
+    { name: 'ሽሮ በቱና', description: '', price: 320 },
+    { name: 'ቦዘና ሽሮ', description: '', price: 380 },
+    { name: 'ጥብስ ጭቅና', description: '', price: 350 },
+    { name: 'ጥብስ የፍየል ', description: '', price: 400 },
+    { name: 'አገልግል', description: '', price: 450 },
+    { name: 'ዶሮ ወጥ ', description: '', price: 400 },
+    { name: 'ጎመን - በስጋ', description: '', price: 300 },
+    { name: 'ቅቅል', description: '', price: 350 },
+    { name: 'ክትŒ', description: '', price: 500 },
+    { name: 'እስፓድል - ክትፎ', description: '', price: 600 },
+    { name: 'ደረቅ ጥብስ - እስፓድል', description: '', price: 500 },
+    { name: 'ሞሰራ በስጋ', description: '', price: 400 },
+    { name: 'አይብ', description: '', price: 350 },
+    { name: 'አይብ በጎመን', description: '', price: 380 },
+    { name: 'ሱፍ - ፍትፍት', description: '', price: 250 },
+    { name: 'በየአይነት', description: '', price: 250 },
+    { name: 'ጎመን ክትፎ', description: '', price: 250 },
+  
   ],
   Pizza: [
     // Add items for Pizza category
