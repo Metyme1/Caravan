@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import room1 from './assets/room1.jpg'; 
-import room2 from './assets/room2.jpg';
-import room3 from './assets/r3.jpg';
-import restaurant from './assets/res.jpg';
-import food1 from './assets/food1.jpg';
-import food2 from './assets/food2.jpg';
-import meeting from './assets/meeting.jpeg';
-import hotelImage from './assets/Hotel.jpg'; 
-import GoogleMapComponent from './components/map'; 
-import sauna from './assets/sauna.jpg';
-import gym from './assets/gym.jpg';
-import shopping from './assets/shop.jpg';
-import barbershop from './assets/barber.jpeg';
+import room1 from '../assets/room1.jpg'; 
+import room2 from '../assets/room2.jpg';
+import room3 from '../assets/r3.jpg';
+import restaurant from '../assets/res.jpg';
+import food1 from '../assets/food1.jpg';
+import food2 from '../assets/food2.jpg';
+import meeting from '../assets/meeting.jpeg';
+import hotelImage from '../assets/Hotel.jpg'; 
+import GoogleMapComponent from '../components/map'; 
+import sauna from '../assets/sauna.jpg';
+import gym from '../assets/gym.jpg';
+import shopping from '../assets/shop.jpg';
+import barbershop from '../assets/barber.jpeg';
 
 const services = [
   {

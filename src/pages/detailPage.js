@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
-import room1 from './assets/room1.jpg';
-import room2 from './assets/room2.jpg';
-import room3 from './assets/r3.jpg';
-import room4 from './assets/room1.jpg';
-import room5 from './assets/room2.jpg';
-import room6 from './assets/r3.jpg';
-import room7 from './assets/room1.jpg';
-import room8 from './assets/room2.jpg';
-import room9 from './assets/r3.jpg';
-import room10 from './assets/room1.jpg';
-import room11 from './assets/room2.jpg';
-import room12 from './assets/r3.jpg';
+import room1 from '../assets/room1.jpg';
+import room2 from '../assets/room2.jpg';
+import room3 from '../assets/r3.jpg';
+import room4 from '../assets/room1.jpg';
+import room5 from '../assets/room2.jpg';
+import room6 from '../assets/r3.jpg';
+import room7 from '../assets/room1.jpg';
+import room8 from '../assets/room2.jpg';
+import room9 from '../assets/r3.jpg';
+import room10 from '../assets/room1.jpg';
+import room11 from '../assets/room2.jpg';
+import room12 from '../assets/r3.jpg';
 
 const roomDetails = [
   {

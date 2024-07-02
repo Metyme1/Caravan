@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
-import service1 from './assets/room1.jpg'; // adjust the path as necessary
-import service2 from './assets/wifi.jpeg';
-import service3 from './assets/parking.jpg';
-import service4 from './assets/meeting.jpeg';
-import service5 from './assets/res.jpg';
+import service1 from '../assets/room1.jpg'; // adjust the path as necessary
+import service2 from '../assets/wifi.jpeg';
+import service3 from '../assets/parking.jpg';
+import service4 from '../assets/meeting.jpeg';
+import service5 from '../assets/res.jpg';
 
 const services = [
   {
