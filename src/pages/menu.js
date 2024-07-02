@@ -1,158 +1,71 @@
-// import React from 'react';
-// import foodImage1 from './assets/r3.jpg';
-// import foodImage2 from './assets/r3.jpg';
-// import foodImage3 from './assets/r3.jpg';
+import React, { useState } from 'react';
 
-// const Menu = () => {
-//   return (
-//     <div className="bg-gray-900 text-white p-8 font-sans min-h-screen">
-//       <h1 className="text-5xl font-bold text-center mb-4">FOOD MENU</h1>
-//       <p className="text-xl text-center mb-8">Pauceck and Lage Restaurant</p>
-
-//       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-//         {/* Main Course Section */}
-//         <div className="bg-orange-500 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300">
-//           <h2 className="text-3xl font-bold mb-4">MAIN COURSE</h2>
-//           <img src={foodImage1} alt="Main Course" className="w-32 h-32 object-cover rounded-full mx-auto mb-4"/>
-//           <ul className="space-y-3">
-//             <li className="flex justify-between items-center">
-//               <span>Cheeseburger</span>
-//               <span>$34</span>
-//             </li>
-//             <li className="flex justify-between items-center">
-//               <span>Cheese sandwich</span>
-//               <span>$22</span>
-//             </li>
-//             <li className="flex justify-between items-center">
-//               <span>Chicken burgers</span>
-//               <span>$23</span>
-//             </li>
-//             <li className="flex justify-between items-center">
-//               <span>Spicy chicken</span>
-//               <span>$33</span>
-//             </li>
-//             <li className="flex justify-between items-center">
-//               <span>Hot dog</span>
-//               <span>$24</span>
-//             </li>
-//           </ul>
-//         </div>
-
-//         {/* Appetizers Section */}
-//         <div className="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300">
-//           <h2 className="text-3xl font-bold mb-4">APPETIZERS</h2>
-//           <img src={foodImage2} alt="Appetizers" className="w-32 h-32 object-cover rounded-full mx-auto mb-4"/>
-//           <ul className="space-y-3">
-//             <li className="flex justify-between items-center">
-//               <span>Fruit Salad</span>
-//               <span>$13</span>
-//             </li>
-//             <li className="flex justify-between items-center">
-//               <span>Cocktails</span>
-//               <span>$12</span>
-//             </li>
-//             <li className="flex justify-between items-center">
-//               <span>Nuggets</span>
-//               <span>$14</span>
-//             </li>
-//             <li className="flex justify-between items-center">
-//               <span>Sandwich</span>
-//               <span>$13</span>
-//             </li>
-//             <li className="flex justify-between items-center">
-//               <span>French Fries</span>
-//               <span>$15</span>
-//             </li>
-//           </ul>
-//         </div>
-
-//         {/* Beverages Section */}
-//         <div className="bg-orange-500 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300">
-//           <h2 className="text-3xl font-bold mb-4">BEVERAGES</h2>
-//           <img src={foodImage3} alt="Beverages" className="w-32 h-32 object-cover rounded-full mx-auto mb-4"/>
-//           <ul className="space-y-3">
-//             <li className="flex justify-between items-center">
-//               <span>Milk Shake</span>
-//               <span>$3</span>
-//             </li>
-//             <li className="flex justify-between items-center">
-//               <span>Iced Tea</span>
-//               <span>$2</span>
-//             </li>
-//             <li className="flex justify-between items-center">
-//               <span>Orange Juice</span>
-//               <span>$4</span>
-//             </li>
-//             <li className="flex justify-between items-center">
-//               <span>Lemon Tea</span>
-//               <span>$3</span>
-//             </li>
-//             <li className="flex justify-between items-center">
-//               <span>Coffee</span>
-//               <span>$5</span>
-//             </li>
-//           </ul>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Menu;
-
-
-
-import React from 'react';
-import { NavLink, Route, Switch } from 'react-router-dom';
-import Starters from './pages/Starters';
-import Mains from './pages/Mains';
-import Salads from './pages/Salads';
-import Wine from './pages/Wine';
+const menuData = {
+  Starters: [
+    { name: 'Caesar Salad', description: 'Romaine lettuce, croutons, parmigiano, Caesar dressing',price: 34 },
+    { name: 'Waldorf Salad', description: 'Lettuce, celery, apple, grape, walnut, waldorf sauce',price: 34 },
+    { name: 'Quinoa & Avocado Salad', description: 'Quinoa, avocado, mixed greens, nuts, dried and fresh fruits',price: 34 },
+    { name: 'Grilled Salmon Salad', description: 'Grilled salmon, mixed greens, capers, orange slices' ,price: 34},
+    { name: 'Chicken Cobb Salad', description: 'Iceberg lettuce, cherry tomatoes, blue cheese, avocado, bacon' ,price: 34},
+    { name: 'Salad Chicken', description: 'Caesar dressing, optional grilled chicken breast',price: 34 },
+  ],
+  Mains: [
+    { name: 'Rusty’s Burger', description: 'Smoked pulled beef ribs, bbq sauce, cheddar, crispy onion', price: 34 },
+    { name: 'Cajun Fish Steak', description: 'Cajun spiced seabass, deep fried baby potatoes, side salad', price: 22 },
+    { name: 'Southern Fried Chicken', description: 'Cajun coated chicken breast, fries and honey mustard', price: 23 },
+    { name: 'Crab Cake', description: 'Breaded crab cakes, tartar sauce, apple and fennel salad', price: 33 },
+    { name: 'Baby Back Ribs', description: 'Bbq glazed baby pork ribs, coleslaw, fries', price: 24 },
+    { name: 'Smokehouse Combo', description: 'Smoked beef brisket, rib and sausage, coleslaw, cornbread', price: 25 },
+  ],
+  Salads: [
+    // Same menu items from Starters
+  ],
+  Wine: [
+    { name: 'Red Wine', description: 'A selection of fine red wines', price: 30 },
+    { name: 'White Wine', description: 'A selection of fine white wines', price: 28 },
+    { name: 'Sparkling Wine', description: 'A selection of fine sparkling wines', price: 35 },
+  ],
+};
 
 function Menu() {
+  const [selectedMenu, setSelectedMenu] = useState('Starters');
+
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
+    <div className="bg-white text-black min-h-screen font-family: 'Roboto', sans-serif">
       <div className="container mx-auto py-10">
         <h1 className="text-4xl text-center mb-10">Restaurant Menu</h1>
         <div className="flex justify-center overflow-x-auto mb-10">
-          <NavLink
-            to="/menu/starters"
-            className="px-6 py-2 mx-2 rounded-lg bg-gray-800 hover:bg-gray-700"
-            activeClassName="bg-gray-700"
-          >
-            Starters
-          </NavLink>
-          <NavLink
-            to="/menu/mains"
-            className="px-6 py-2 mx-2 rounded-lg bg-gray-800 hover:bg-gray-700"
-            activeClassName="bg-gray-700"
-          >
-            Mains
-          </NavLink>
-          <NavLink
-            to="/menu/salads"
-            className="px-6 py-2 mx-2 rounded-lg bg-gray-800 hover:bg-gray-700"
-            activeClassName="bg-gray-700"
-          >
-            Salads
-          </NavLink>
-          <NavLink
-            to="/menu/wine"
-            className="px-6 py-2 mx-2 rounded-lg bg-gray-800 hover:bg-gray-700"
-            activeClassName="bg-gray-700"
-          >
-            Wine
-          </NavLink>
+          {Object.keys(menuData).map((menu) => (
+            <div
+              key={menu}
+              className={`px-6 py-2 cursor-pointer mx-2 hover:bg-gray-700 ${
+                selectedMenu === menu
+                ? 'bg-white text-custom-blue border-custom-blue'
+                : 'bg-custom-blue text-white border-transparent'
+            }`}
+              onClick={() => setSelectedMenu(menu)}
+            >
+              {menu}
+            </div>
+          ))}
         </div>
-        <Switch>
-          <Route path="/menu/starters" component={Starters} />
-          <Route path="/menu/mains" component={Mains} />
-          <Route path="/menu/salads" component={Salads} />
-          <Route path="/menu/wine" component={Wine} />
-        </Switch>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {menuData[selectedMenu] ? (
+            menuData[selectedMenu].map((item, index) => (
+              <div key={index} className="rounded-lg bg-white p-6 hover:bg-gray-700">
+                <h2 className="text-xl mb-2 text-custom-blue font-bold">{item.name}</h2>
+                <p className="text-black ">{item.description}</p>
+                <p className="mt-4 text-black">${item.price}</p>
+              </div>
+            ))
+          ) : (
+            <p className="text-black text-center">No items found for this menu.</p>
+          )}
+        </div>
       </div>
     </div>
   );
+  
 }
 
 export default Menu;
