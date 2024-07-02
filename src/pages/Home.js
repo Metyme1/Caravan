@@ -191,13 +191,19 @@ const Home = () => {
       <NearbyServices />
 
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-times text-gray-900">Getting Here</h2>
-          <div className="mt-8 bg-white shadow-md rounded-lg overflow-hidden">
-            <GoogleMapComponent />
-          </div>
-        </div>
-      </section>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-2xl font-times text-gray-900">Getting Here</h2>
+    <div className="mt-8 bg-white shadow-md rounded-lg overflow-hidden" style={{ height: '500px' }}>
+      <iframe
+        className="w-full h-full rounded"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6812.753183884451!2d41.8515825!3d9.5969225!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x163101bb5da204fd%3A0x59b3f43b43a14f0e!2sCaravan%20Hotel!5e1!3m2!1sam!2set!4v1719844803749!5m2!1sam!2set"
+        allowFullScreen=""
+        loading="lazy"
+        title="Hotel Location"
+      ></iframe>
+    </div>
+  </div>
+</section>
     </main>
   );
 }
