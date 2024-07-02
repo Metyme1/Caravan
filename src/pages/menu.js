@@ -31,28 +31,29 @@ function Menu() {
   const [selectedMenu, setSelectedMenu] = useState('Starters');
 
   return (
-    <div className="bg-white text-black min-h-screen font-family: 'Roboto', sans-serif">
+    <div className="bg-white text-black min-h-screen">
       <div className="container mx-auto py-10">
-        <h1 className="text-4xl text-center mb-10">Restaurant Menu</h1>
+        <h1 className="text-5xl text-center text-custom-blue font-times mb-10">Restaurant Menu</h1>
         <div className="flex justify-center overflow-x-auto mb-10">
           {Object.keys(menuData).map((menu) => (
-            <div
-              key={menu}
-              className={`px-6 py-2 cursor-pointer mx-2 hover:bg-gray-700 ${
-                selectedMenu === menu
-                ? 'bg-white text-custom-blue border-custom-blue'
-                : 'bg-custom-blue text-white border-transparent'
-            }`}
-              onClick={() => setSelectedMenu(menu)}
-            >
-              {menu}
-            </div>
+    <div
+    key={menu}
+    className={`px-6 py-2 cursor-pointer mx-2 ${
+      selectedMenu === menu
+        ? 'bg-white text-custom-blue border-custom-blue border-2 border-solid'
+        : 'bg-custom-blue text-white border-transparent'
+    }`}
+    style={{ minWidth: '150px', borderRadius: '4px' }}
+    onClick={() => setSelectedMenu(menu)}
+  >
+    {menu}
+  </div>
           ))}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {menuData[selectedMenu] ? (
             menuData[selectedMenu].map((item, index) => (
-              <div key={index} className="rounded-lg bg-white p-6 hover:bg-gray-700">
+              <div key={index} className="rounded-lg bg-white p-6 ">
                 <h2 className="text-xl mb-2 text-custom-blue font-bold">{item.name}</h2>
                 <p className="text-black ">{item.description}</p>
                 <p className="mt-4 text-black">${item.price}</p>
