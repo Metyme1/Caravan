@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const menuData = {
-  "Break Fast": [
+  BreakFast: [
     { name: 'Scrembled - Egg', description: '', price: 200 },
     { name: 'Omlet', description: '', price: 200 },
     { name: 'Boiled-Egg', description: '', price: 150 },
@@ -41,9 +41,7 @@ const menuData = {
     { name: 'Chicken Cobb Salad', description: 'Iceberg lettuce, cherry tomatoes, blue cheese, avocado, bacon', price: 34 },
     { name: 'Salad Chicken', description: 'Caesar dressing, optional grilled chicken breast', price: 34 },
   ],
-  Breakfast: [
-    // Add items for Breakfast category
-  ],
+
   "Lunch and Dinner": [
     { name: 'Special Carnival Combo', description: '', price: 1500 },
 { name: ' Special Goat', description: '', price: 450 },
@@ -129,7 +127,7 @@ const menuData = {
     { name: 'Orange, With Honey', description: '', price: 200 },
     { name: 'Watermelon With Honey', description: '', price: 200 },
     { name: 'Banana With Milk Shake', description: '', price: 200 },
-    { name: 'Αυτον', description: '', price: 200 },
+    { name: 'Αyton', description: '', price: 200 },
     { name: 'Fruet Panch', description: '', price: 200 },
     { name: 'Strawberry Juice', description: '', price: 250 },
     ],
@@ -145,7 +143,16 @@ const menuData = {
       { name: 'Torte Cake', description: '', price: 600-1200 },
       ],
   "Hot Drinks": [
-    // Add items for Hot Drinks category
+    { name: 'Coffee', description: '', price: 25 },
+    { name: 'Tea', description: '', price: 20 },
+    { name: 'Cappuccino', description: '', price: 40 },
+    { name: 'Macchiato', description: '', price: 35 },
+    { name: 'Milk', description: '', price: 30 },
+    { name: 'T/W/Milk', description: '', price: 30 },
+    { name: 'Somali-Tea', description: '', price: 30 },
+    { name: 'Spanish - Tea', description: '', price: 50 },
+    { name: 'Fasting - Macchiato', description: '', price: 40 },
+    { name: 'C/W/Milk', description: '', price: 35 },
   ],
 };
 
