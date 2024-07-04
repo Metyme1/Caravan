@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
-import room1 from '../assets/room1.jpg';
+import room1 from '../assets/standard.JPG';
 import room2 from '../assets/twin1.JPG';
-import room3 from '../assets/r3.jpg';
-import room4 from '../assets/room1.jpg';
-import room7 from '../assets/room1.jpg';
+import room3 from '../assets/semi1.jpg';
+import room4 from '../assets/sweet5.JPG';
+
 
 import twin1 from '../assets/twin2.JPG';
 import twin2 from '../assets/twin3.JPG';
@@ -14,12 +14,30 @@ import twin3 from'../assets/twin4.JPG';
 import twin4 from '../assets/twin5.JPG';
 import twin5 from '../assets/twin6.JPG';
 
+import sweet1 from '../assets/sweet2.JPG';
+import sweet2 from '../assets/sweet3.JPG';
+import sweet3 from'../assets/sweet4.JPG';
+import sweet4 from '../assets/sweet5.JPG';
+import sweet5 from '../assets/sweet6.JPG';
+
+import standard1 from '../assets/standard1.JPG';
+import standard2 from '../assets/standard2.JPG';
+
+import semi1 from '../assets/semi3.JPG';
+import semi2 from '../assets/semi4.JPG';
+import semi3 from'../assets/semi5.JPG';
+import semi4 from '../assets/semi6.JPG';
+import semi5 from '../assets/semi7.JPG';
+import semi6 from'../assets/semi8.JPG';
+
+
+
 const roomDetails = [
   {
     id: 1,
     name: "Standard Room",
     image: room1,
-    gallery: [room7,room7,room7,room7,room7],
+    gallery: [standard1,standard2],
     price: "1500/Night",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nulla quam, ullamcorper in bibendum quis, volutpat ut lacus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus sagittis placerat velit ac euismod. Aliquam erat volutpat. Duis nec tincidunt maurisamenities.",
     characteristics: [
@@ -48,7 +66,7 @@ const roomDetails = [
     id: 3,
     name: "Semi-Sweet Room",
     image: room3,
-    gallery: [room7,room7,room7,room7,room7],
+    gallery: [semi1,semi2,semi3,semi4,semi5,semi6],
     price: "1600/Night",
     description: "An executive room with premium features.",
     characteristics: [
@@ -63,7 +81,7 @@ const roomDetails = [
     id: 4,
     name: "Sweet Room",
     image: room4,
-    gallery: [room7,room7,room7,room7,room7],
+    gallery: [sweet1,sweet2,sweet3,sweet4,sweet5],
     price: "3000/Night",
     description: "A luxurious suite with exclusive amenities.",
     characteristics: [
@@ -94,7 +112,7 @@ const RoomDetail = () => {
     <div className="bg-white min-h-screen py-4">
       <header className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-times">{room.name}</h1>
+          <h1 className="text-3xl font-times">{room.name}</h1>
         </div>
       </header>
       <section className="py-8">

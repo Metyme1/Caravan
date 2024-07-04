@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import room1 from '../assets/room1.jpg';
+import room1 from '../assets/standard.JPG';
 import room2 from '../assets/twin1.JPG';
-import room3 from '../assets/r3.jpg';
+import room3 from '../assets/semi1.jpg';
 import room4 from '../assets/sweet5.JPG';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
