@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import room1 from '../assets/room1.jpg';
@@ -16,30 +14,61 @@ const rooms = [
     id: 1,
     name: "Standard Room",
     image: room1,
-    price: "68$ / Night",
-    description: "Our Deluxe Rooms are spacious and perfect for families or groups of friends. These rooms come with two queen-size beds or one king-size bed and a sofa bed. The room is also equipped with a mini-fridge and a microwave.",
+    price: "1500 / Night",
+    description: "Our Standard Rooms are comfortable and well-equipped for a pleasant stay.",
+    characteristics: [
+      { icon: "👥", label: "2 Persons" },
+      { icon: "📶", label: "Free Wifi" },
+      { icon: "❄️", label: "Air Conditioning" },
+      { icon: "🍽️", label: "Breakfast Included" },
+    ],
   },
   {
     id: 2,
-    name: "Standard Room",
+    name: "Twin Bed",
     image: room2,
-    price: "68$ / Night",
-    description: "Our Deluxe Rooms are spacious and perfect for families or groups of friends. These rooms come with two queen-size beds or one king-size bed and a sofa bed. The room is also equipped with a mini-fridge and a microwave.",
+    price: "1800 / Night",
+    description: "Our Twin Bed Rooms are spacious and perfect for two guests.",
+    characteristics: [
+      { icon: "👥", label: "2-4 Persons" },
+      { icon: "🛏️", label: "Twin Beds" },
+      { icon: "📶", label: "Free Wifi" },
+      { icon: "🍽️", label: "Breakfast Included" },
+      { icon: "❄️", label: "Air Conditioning" },
+    ],
   },
   {
     id: 3,
-    name: "Standard Room",
+    name: "Semi-Suite Room",
     image: room3,
-    price: "68$ / Night",
-    description: "Our Deluxe Rooms are spacious and perfect for families or groups of friends. These rooms come with two queen-size beds or one king-size bed and a sofa bed. The room is also equipped with a mini-fridge and a microwave.",
-  },
-  {
-    id: 4,
-    name: "Sweet Room",
-    image: room4,
-    price: "68$ / Night",
-    description: "Our Deluxe Rooms are spacious and perfect for families or groups of friends. These rooms come with two queen-size beds or one king-size bed and a sofa bed. The room is also equipped with a mini-fridge and a microwave.",
-  },
+    price: "1600 / Night",
+    description: "Our Semi-Suite Rooms offer extra space and comfort for your stay. They include a cooking space for your convenience.",
+    characteristics: [
+    { icon: "👥", label: "1-2 Persons" },
+    { icon: "📶", label: "Free Wifi" },
+    { icon: "🍽️", label: "Breakfast Included" },
+    { icon: "❄️", label: "Air Conditioning" },
+    { icon: "🍳", label: "Cooking Space" },
+    ],
+    },
+    {
+      id: 4,
+      name: "Suite Room",
+      image: room4,
+      price: "3000 / Night",
+      description: "Our Suite Rooms provide luxury and comfort for a premium stay. They feature a separate salon, bedroom, two bathrooms, air conditioning, and a fully equipped kitchen.",
+      characteristics: [
+      { icon: "👥", label: "4 Persons" },
+      { icon: "📶", label: "Free Wifi" },
+      { icon: "🍽️", label: "Breakfast Included" },
+      { icon: "🛁", label: "Jacuzzi" },
+      { icon: "🛋️", label: "Separate Salon" },
+      { icon: "🛌", label: "Separate Bedroom" },
+      { icon: "🚽", label: "Two Bathrooms" },
+      { icon: "�temp", label: "Air Conditioning" },
+      { icon: "🍳", label: "Full Kitchen" },
+      ],
+      },
 ];
 
 const Rooms = () => {
@@ -47,7 +76,7 @@ const Rooms = () => {
     <div className="bg-gray-100">
       <header className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl font-bold">Rooms and Suites</h1>
+          <h1 className="text-3xl font-bold font-times">Rooms and Suites</h1>
         </div>
       </header>
       <section className="py-16">
@@ -61,10 +90,10 @@ const Rooms = () => {
               <img
                 src={room.image}
                 alt={room.name}
-                className={`h-112 object-cover  ${index % 2 === 0 ? 'w-3/5' : 'w-3/5'}`}
+                className={`h-112 object-cover ${index % 2 === 0 ? 'w-3/5' : 'w-3/5'}`}
               />
               <div
-                className="absolute bg-white p-12  shadow-md"
+                className="absolute bg-white p-12 shadow-md"
                 style={{
                   width: '35%',
                   top: '10%',
@@ -73,32 +102,22 @@ const Rooms = () => {
                   transform: 'translateY(0%)',
                 }}
               >
-                <p className="text-lg font-bold text-gray-700 mb-2">{room.price}</p>
-                <h3 className="text-3xl font-bold mb-2">{room.name}</h3>
-                <p className="text-gray-600 mb-4">{room.description}</p>
+                <p className="text-lg font-bold text-gray-700 mb-2 font-times">{room.price}</p>
+                <h3 className="text-3xl font-bold mb-2 font-times">{room.name}</h3>
+                <p className="text-gray-600 mb-4 font-times">{room.description}</p>
                 <div className="flex items-center space-x-4 mb-4">
-                  <div className="flex items-center space-x-2">
-                    <span role="img" aria-label="persons">👥</span>
-                    <span>2-3 Persons</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <span role="img" aria-label="bed">🛏️</span>
-                    <span>Twin Bed</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <span role="img" aria-label="wifi">📶</span>
-                    <span>Free Wifi</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <span role="img" aria-label="breakfast">🍽️</span>
-                    <span>Breakfast</span>
-                  </div>
+                  {room.characteristics.map((characteristic, idx) => (
+                    <div key={idx} className="flex items-center space-x-2">
+                      <span role="img" aria-label="characteristic-icon">{characteristic.icon}</span>
+                      <span>{characteristic.label}</span>
+                    </div>
+                  ))}
                 </div>
                 <Link
                   to={`/rooms/${room.id}`}
                   className="text-custom-blue hover:underline"
                 >
-                 View → Detail
+                  View → Detail
                 </Link>
               </div>
             </div>
