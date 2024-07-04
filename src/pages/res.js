@@ -1,14 +1,14 @@
 
 import React, { useEffect , useState} from 'react';
 import { Link } from 'react-router-dom';
-import restaurantImage from './assets/res.jpg'; 
-import diningImage1 from './assets/room1.jpg'; 
-import diningImage2 from './assets/room2.jpg'; 
-import diningImage3 from './assets/r3.jpg'; 
+import restaurantImage from '../assets/res.jpg'; 
+import diningImage1 from '../assets/room1.jpg'; 
+import diningImage2 from '../assets/room2.jpg'; 
+import diningImage3 from '../assets/r3.jpg'; 
 
-import guestImage1 from './assets/room1.jpg'; // Add guest images
-import guestImage2 from './assets/room2.jpg';
-import guestImage3 from './assets/r3.jpg';
+import guestImage1 from '../assets/room1.jpg'; // Add guest images
+import guestImage2 from '../assets/room2.jpg';
+import guestImage3 from '../assets/r3.jpg';
 
 
 

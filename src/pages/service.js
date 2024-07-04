@@ -80,7 +80,6 @@
 
 // export default Services;
 
-
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
@@ -95,31 +94,36 @@ const services = [
     id: 1,
     name: "Room Service",
     image: service1,
-    description: "Enjoy 24/7 room service with a wide range of options to satisfy your hunger at any time."
+    description: "Enjoy 24/7 room service with a wide range of options to satisfy your hunger at any time.",
+    link: "/rooms" // Add the link to the corresponding route
   },
   {
     id: 2,
     name: "Internet",
     image: service2,
-    description: "High-speed internet available throughout the hotel to keep you connected."
+    description: "High-speed internet available throughout the hotel to keep you connected.",
+    link: "/services/internet" // Add the link to the corresponding route
   },
   {
     id: 3,
     name: "Parking",
     image: service3,
-    description: "Secure parking available for all guests with easy access to the hotel."
+    description: "Secure parking available for all guests with easy access to the hotel.",
+    link: "/services/parking" // Add the link to the corresponding route
   },
   {
     id: 4,
     name: "Meeting Hall",
     image: service4,
-    description: "Spacious meeting hall with facilities for tea breaks and lunch buffets as needed."
+    description: "Spacious meeting hall with facilities for tea breaks and lunch buffets as needed.",
+    link: "/services/meeting-hall" // Add the link to the corresponding route
   },
   {
     id: 5,
     name: "Restaurant",
     image: service5,
-    description: "Experience our restaurant with a variety of delicious dishes and beverages."
+    description: "Experience our restaurant with a variety of delicious dishes and beverages.",
+    link: "/restaurant" // Add the link to the corresponding route
   }
 ];
 
@@ -152,7 +156,7 @@ const Services = () => {
                 </div>
                 <div className="text-right">
                   <Link 
-                    to={`/services/${service.id}`} 
+                    to={service.link} 
                     className="bg-custom-blue text-white py-2 px-6 font-times hover:bg-blue-700 transition duration-300 text-center rounded-full inline-block"
                   >
                     View More
