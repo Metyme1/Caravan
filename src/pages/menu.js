@@ -19,28 +19,6 @@ const menuData = {
     { name: 'Special Combo', description: '', price: 350 },
     { name: 'Dullet', description: '', price: 200},
   ],
-  Mains: [
-    { name: 'Rusty’s Burger', description: 'Smoked pulled beef ribs, bbq sauce, cheddar, crispy onion', price: 34 },
-    { name: 'Cajun Fish Steak', description: 'Cajun spiced seabass, deep fried baby potatoes, side salad', price: 22 },
-    { name: 'Southern Fried Chicken', description: 'Cajun coated chicken breast, fries and honey mustard', price: 23 },
-    { name: 'Crab Cake', description: 'Breaded crab cakes, tartar sauce, apple and fennel salad', price: 33 },
-    { name: 'Baby Back Ribs', description: 'Bbq glazed baby pork ribs, coleslaw, fries', price: 24 },
-    { name: 'Smokehouse Combo', description: 'Smoked beef brisket, rib and sausage, coleslaw, cornbread', price: 25 },
-    { name: 'Grilled Salmon Salad', description: 'Grilled salmon, mixed greens, capers, orange slices', price: 34 },
-    { name: 'Chicken Cobb Salad', description: 'Iceberg lettuce, cherry tomatoes, blue cheese, avocado, bacon', price: 34 },
-    { name: 'Salad Chicken', description: 'Caesar dressing, optional grilled chicken breast', price: 34 },
-  ],
-  Salads: [
-    { name: 'Grilled Salmon Salad', description: 'Grilled salmon, mixed greens, capers, orange slices', price: 34 },
-    { name: 'Chicken Cobb Salad', description: 'Iceberg lettuce, cherry tomatoes, blue cheese, avocado, bacon', price: 34 },
-    { name: 'Salad Chicken', description: 'Caesar dressing, optional grilled chicken breast', price: 34 },
-    { name: 'Grilled Salmon Salad', description: 'Grilled salmon, mixed greens, capers, orange slices', price: 34 },
-    { name: 'Chicken Cobb Salad', description: 'Iceberg lettuce, cherry tomatoes, blue cheese, avocado, bacon', price: 34 },
-    { name: 'Salad Chicken', description: 'Caesar dressing, optional grilled chicken breast', price: 34 },
-    { name: 'Grilled Salmon Salad', description: 'Grilled salmon, mixed greens, capers, orange slices', price: 34 },
-    { name: 'Chicken Cobb Salad', description: 'Iceberg lettuce, cherry tomatoes, blue cheese, avocado, bacon', price: 34 },
-    { name: 'Salad Chicken', description: 'Caesar dressing, optional grilled chicken breast', price: 34 },
-  ],
 
   "Lunch and Dinner": [
     { name: 'Special Carnival Combo', description: '', price: 1500 },
@@ -155,6 +133,17 @@ const menuData = {
     { name: 'C/W/Milk', description: '', price: 35 },
   ],
 };
+const categoryBackgrounds = {
+  BreakFast: '../assets/room1.jpg',
+  'Lunch and Dinner': '../assets/room1.jpg',
+  Burger: '../assets/room1.jpg',
+  Sandwich: '../assets/room1.jpg',
+  'Ethiopian Traditional Food': '../assets/room1.jpg',
+  Pizza: '../assets/room1.jpg',
+  Juice: '../assets/room1.jpg',
+};
+
+
 
 function Menu() {
   const [selectedMenu, setSelectedMenu] = useState('Starters');
@@ -230,3 +219,8 @@ function Menu() {
 }
 
 export default Menu;
+
+
+
+
+
