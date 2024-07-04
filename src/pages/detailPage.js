@@ -23,12 +23,11 @@ const roomDetails = [
     gallery: [room1, room2, room3, room10, room12],
     price: "1500/Night",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nulla quam, ullamcorper in bibendum quis, volutpat ut lacus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus sagittis placerat velit ac euismod. Aliquam erat volutpat. Duis nec tincidunt maurisamenities.",
-    additionalServices: "Internet Access, Breakfast, Inroom Dining",
     characteristics: [
       { icon: "👥", label: "2 Persons" },
-      { icon: "🛏️", label: "Queen Bed" },
       { icon: "📶", label: "Free Wifi" },
       { icon: "❄️", label: "Air Conditioning" },
+      { icon: "🍽️", label: "Breakfast Included" },
     ],
   },
   {
@@ -37,13 +36,13 @@ const roomDetails = [
     image: room2,
     gallery: [room4, room5, room6, room10, room11],
     price: "1800/Night",
-    description: "A deluxe room with superior amenities.",
     additionalServices: "Internet Access, Breakfast, Inroom Dining",
     characteristics: [
-      { icon: "👥", label: "2 Persons" },
+      { icon: "👥", label: "2-4 Persons" },
       { icon: "🛏️", label: "Twin Beds" },
       { icon: "📶", label: "Free Wifi" },
       { icon: "🍽️", label: "Breakfast Included" },
+      { icon: "❄️", label: "Air Conditioning" },
     ],
   },
   {
@@ -53,14 +52,13 @@ const roomDetails = [
     gallery: [room7, room8, room9],
     price: "1600/Night",
     description: "An executive room with premium features.",
-    additionalServices: "Internet Access, Breakfast, Inroom Dining",
     characteristics: [
-      { icon: "👥", label: "3 Persons" },
-      { icon: "🛏️", label: "King Bed" },
+      { icon: "👥", label: "1-2 Persons" },
       { icon: "📶", label: "Free Wifi" },
       { icon: "🍽️", label: "Breakfast Included" },
-      { icon: "🛁", label: "Private Bathroom" },
-    ],
+      { icon: "❄️", label: "Air Conditioning" },
+      { icon: "🍳", label: "Cooking Space" },
+      ],
   },
   {
     id: 4,
@@ -69,14 +67,16 @@ const roomDetails = [
     gallery: [room10, room11, room12],
     price: "3000/Night",
     description: "A luxurious suite with exclusive amenities.",
-    additionalServices: "Internet Access, Breakfast, Inroom Dining",
     characteristics: [
-      { icon: "👥", label: "4 Persons" },
-      { icon: "🛏️", label: "King Bed" },
+      { icon: "👥", label: "1-2 Persons" },
       { icon: "📶", label: "Free Wifi" },
       { icon: "🍽️", label: "Breakfast Included" },
-      { icon: "🛁", label: "Jacuzzi" },
-    ],
+      { icon: "🛋️", label: "Separate Salon" },
+      { icon: "🛌", label: "Separate Bedroom" },
+      { icon: "🚽", label: "Two Bathrooms" },
+      { icon: "❄️", label: "Air Conditioning" },
+      { icon: "🍳", label: "Full Kitchen" },
+      ],
   }
 ];
 
@@ -136,15 +136,10 @@ const RoomDetail = () => {
           <div className="bg-white overflow-hidden mb-8">
             <div className="p-8">
               <p className="text-gray-900 font-times mb-6 text-lg">{room.description}</p>
-              <div className="mb-4">
-                <h3 className="text-2xl font-times font-bold mb-2">Additional Services:</h3>
-                <p>{room.additionalServices.split(', ').map((service, index) => (
-                  <span key={index} className="block font-times text-gray-600">{service}</span>
-                ))}</p>
-              </div>
+            
               <div className="mb-4">
                 <h3 className="text-2xl font-times font-bold mb-2">Characteristics:</h3>
-                <div className="flex flex-wrap items-center space-x-4 mb-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {room.characteristics.map((characteristic, idx) => (
                     <div key={idx} className="flex items-center space-x-2 mb-2">
                       <span role="img" aria-label="characteristic-icon">{characteristic.icon}</span>
