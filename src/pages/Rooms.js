@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import room1 from '../assets/room1.jpg';
-import room2 from '../assets/room2.jpg';
+import room2 from '../assets/twin1.JPG';
 import room3 from '../assets/r3.jpg';
-import room4 from '../assets/r3.jpg';
+import room4 from '../assets/sweet5.JPG';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 
@@ -39,7 +39,7 @@ const rooms = [
   },
   {
     id: 3,
-    name: "Semi-Suite Room",
+    name: "Semi-Sweet Room",
     image: room3,
     price: "1600 / Night",
     description: "Our Semi-Suite Rooms offer extra space and comfort for your stay. They include a cooking space for your convenience.",
@@ -53,7 +53,7 @@ const rooms = [
     },
     {
       id: 4,
-      name: "Suite Room",
+      name: "Sweet Room",
       image: room4,
       price: "3000 / Night",
       description: "Our Suite Rooms provide luxury and comfort for a premium stay. They feature a separate salon, bedroom, two bathrooms, air conditioning, and a fully equipped kitchen.",

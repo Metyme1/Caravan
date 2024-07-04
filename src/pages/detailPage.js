@@ -3,24 +3,23 @@ import { useParams } from 'react-router-dom';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import room1 from '../assets/room1.jpg';
-import room2 from '../assets/room2.jpg';
+import room2 from '../assets/twin1.JPG';
 import room3 from '../assets/r3.jpg';
 import room4 from '../assets/room1.jpg';
-import room5 from '../assets/room2.jpg';
-import room6 from '../assets/r3.jpg';
 import room7 from '../assets/room1.jpg';
-import room8 from '../assets/room2.jpg';
-import room9 from '../assets/r3.jpg';
-import room10 from '../assets/room1.jpg';
-import room11 from '../assets/room2.jpg';
-import room12 from '../assets/r3.jpg';
+
+import twin1 from '../assets/twin2.JPG';
+import twin2 from '../assets/twin3.JPG';
+import twin3 from'../assets/twin4.JPG';
+import twin4 from '../assets/twin5.JPG';
+import twin5 from '../assets/twin6.JPG';
 
 const roomDetails = [
   {
     id: 1,
     name: "Standard Room",
     image: room1,
-    gallery: [room1, room2, room3, room10, room12],
+    gallery: [room7,room7,room7,room7,room7],
     price: "1500/Night",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nulla quam, ullamcorper in bibendum quis, volutpat ut lacus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus sagittis placerat velit ac euismod. Aliquam erat volutpat. Duis nec tincidunt maurisamenities.",
     characteristics: [
@@ -34,7 +33,7 @@ const roomDetails = [
     id: 2,
     name: "Twin Bed Room",
     image: room2,
-    gallery: [room4, room5, room6, room10, room11],
+    gallery: [twin1,twin2,twin3,twin4,twin5],
     price: "1800/Night",
     additionalServices: "Internet Access, Breakfast, Inroom Dining",
     characteristics: [
@@ -49,7 +48,7 @@ const roomDetails = [
     id: 3,
     name: "Semi-Sweet Room",
     image: room3,
-    gallery: [room7, room8, room9],
+    gallery: [room7,room7,room7,room7,room7],
     price: "1600/Night",
     description: "An executive room with premium features.",
     characteristics: [
@@ -64,7 +63,7 @@ const roomDetails = [
     id: 4,
     name: "Sweet Room",
     image: room4,
-    gallery: [room10, room11, room12],
+    gallery: [room7,room7,room7,room7,room7],
     price: "3000/Night",
     description: "A luxurious suite with exclusive amenities.",
     characteristics: [
