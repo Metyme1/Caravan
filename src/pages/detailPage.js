@@ -20,40 +20,66 @@ const roomDetails = [
     id: 1,
     name: "Standard Room",
     image: room1,
-    gallery: [room1, room2, room3,room10,room12],
-    price: "1500",
+    gallery: [room1, room2, room3, room10, room12],
+    price: "1500/Night",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nulla quam, ullamcorper in bibendum quis, volutpat ut lacus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus sagittis placerat velit ac euismod. Aliquam erat volutpat. Duis nec tincidunt maurisamenities.",
     additionalServices: "Internet Access, Breakfast, Inroom Dining",
-   
+    characteristics: [
+      { icon: "👥", label: "2 Persons" },
+      { icon: "🛏️", label: "Queen Bed" },
+      { icon: "📶", label: "Free Wifi" },
+      { icon: "❄️", label: "Air Conditioning" },
+    ],
   },
   {
     id: 2,
-    name: "DoubleBed",
-    image: room4,
-    gallery: [room4, room5, room6],
-    price: "2000",
+    name: "Twin Bed Room",
+    image: room2,
+    gallery: [room4, room5, room6, room10, room11],
+    price: "1800/Night",
     description: "A deluxe room with superior amenities.",
     additionalServices: "Internet Access, Breakfast, Inroom Dining",
+    characteristics: [
+      { icon: "👥", label: "2 Persons" },
+      { icon: "🛏️", label: "Twin Beds" },
+      { icon: "📶", label: "Free Wifi" },
+      { icon: "🍽️", label: "Breakfast Included" },
+    ],
   },
   {
     id: 3,
     name: "Semi-Sweet Room",
-    image: room7,
+    image: room3,
     gallery: [room7, room8, room9],
-    price: "2500",
+    price: "1600/Night",
     description: "An executive room with premium features.",
     additionalServices: "Internet Access, Breakfast, Inroom Dining",
+    characteristics: [
+      { icon: "👥", label: "3 Persons" },
+      { icon: "🛏️", label: "King Bed" },
+      { icon: "📶", label: "Free Wifi" },
+      { icon: "🍽️", label: "Breakfast Included" },
+      { icon: "🛁", label: "Private Bathroom" },
+    ],
   },
   {
     id: 4,
     name: "Sweet Room",
-    image: room10,
+    image: room4,
     gallery: [room10, room11, room12],
-    price: "3000",
+    price: "3000/Night",
     description: "A luxurious suite with exclusive amenities.",
     additionalServices: "Internet Access, Breakfast, Inroom Dining",
+    characteristics: [
+      { icon: "👥", label: "4 Persons" },
+      { icon: "🛏️", label: "King Bed" },
+      { icon: "📶", label: "Free Wifi" },
+      { icon: "🍽️", label: "Breakfast Included" },
+      { icon: "🛁", label: "Jacuzzi" },
+    ],
   }
 ];
+
 const RoomDetail = () => {
   const { id } = useParams();
   const room = roomDetails.find(room => room.id === parseInt(id));
@@ -65,68 +91,77 @@ const RoomDetail = () => {
     return <div>Room not found</div>;
   }
 
-return (
-  <div className="bg-white min-h-screen py-4">
-
-    <header className="bg-white ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-4xl  font-times">{room.name}</h1>
-      </div>
-    </header>
-    <section className="py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white shadow-md overflow-hidden mb-8">
-          <img src={room.image} alt={room.name} className="w-full h-96 object-cover"/>
+  return (
+    <div className="bg-white min-h-screen py-4">
+      <header className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl font-times">{room.name}</h1>
         </div>
-        <section className="">
-          <div className="flex overflow-x-auto space-x-4">
-            {room.gallery.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`Gallery ${index + 1}`}
-                className="w-64 h-64 object-cover shadow-md cursor-pointer"
-                onClick={() => {
-                  setPhotoIndex(index);
-                  setIsOpen(true);
-                }}
-              />
-            ))}
+      </header>
+      <section className="py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white shadow-md overflow-hidden mb-8">
+            <img src={room.image} alt={room.name} className="w-full h-96 object-cover" />
           </div>
-          {isOpen && (
-            <Lightbox
-              mainSrc={room.gallery[photoIndex]}
-              nextSrc={room.gallery[(photoIndex + 1) % room.gallery.length]}
-              prevSrc={room.gallery[(photoIndex + room.gallery.length - 1) % room.gallery.length]}
-              onCloseRequest={() => setIsOpen(false)}
-              onMovePrevRequest={() =>
-                setPhotoIndex((photoIndex + room.gallery.length - 1) % room.gallery.length)
-              }
-              onMoveNextRequest={() =>
-                setPhotoIndex((photoIndex + 1) % room.gallery.length)
-              }
-            />
-          )}
-        </section>
-        <div className="bg-white overflow-hidden mb-8">
-          <div className="p-8">
-          
-            <p className="text-gray-900 font-times mb-6 text-lg">{room.description}</p>
-            <div className="mb-4">
-              <h3 className="text-2xl font-times  font-bold mb-2">Additional Services:</h3>
-              <p>{room.additionalServices.split(', ').map((service, index) => (
-                <span key={index} className="block font-times text-gray-600">{service}</span>
-              ))}</p>
+          <section className="">
+            <div className="flex overflow-x-auto space-x-4">
+              {room.gallery.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Gallery ${index + 1}`}
+                  className="w-64 h-64 object-cover shadow-md cursor-pointer"
+                  onClick={() => {
+                    setPhotoIndex(index);
+                    setIsOpen(true);
+                  }}
+                />
+              ))}
             </div>
-            <div className="text-right">
+            {isOpen && (
+              <Lightbox
+                mainSrc={room.gallery[photoIndex]}
+                nextSrc={room.gallery[(photoIndex + 1) % room.gallery.length]}
+                prevSrc={room.gallery[(photoIndex + room.gallery.length - 1) % room.gallery.length]}
+                onCloseRequest={() => setIsOpen(false)}
+                onMovePrevRequest={() =>
+                  setPhotoIndex((photoIndex + room.gallery.length - 1) % room.gallery.length)
+                }
+                onMoveNextRequest={() =>
+                  setPhotoIndex((photoIndex + 1) % room.gallery.length)
+                }
+              />
+            )}
+          </section>
+          <div className="bg-white overflow-hidden mb-8">
+            <div className="p-8">
+              <p className="text-gray-900 font-times mb-6 text-lg">{room.description}</p>
+              <div className="mb-4">
+                <h3 className="text-2xl font-times font-bold mb-2">Additional Services:</h3>
+                <p>{room.additionalServices.split(', ').map((service, index) => (
+                  <span key={index} className="block font-times text-gray-600">{service}</span>
+                ))}</p>
+              </div>
+              <div className="mb-4">
+                <h3 className="text-2xl font-times font-bold mb-2">Characteristics:</h3>
+                <div className="flex flex-wrap items-center space-x-4 mb-4">
+                  {room.characteristics.map((characteristic, idx) => (
+                    <div key={idx} className="flex items-center space-x-2 mb-2">
+                      <span role="img" aria-label="characteristic-icon">{characteristic.icon}</span>
+                      <span>{characteristic.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="text-right">
                 <p className="text-2xl font-times text-custom-blue">Price: ${room.price}</p>
               </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </div>
-);
+      </section>
+    </div>
+  );
 }
 
 export default RoomDetail;

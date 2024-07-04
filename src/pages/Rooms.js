@@ -94,7 +94,7 @@ const Rooms = () => {
               <div
                 className="absolute bg-white p-12 shadow-md"
                 style={{
-                  width: '40%', // Increase the width of the card
+                  width: '40%',
                   top: '10%',
                   left: index % 2 === 0 ? 'auto' : '5%',
                   right: index % 2 === 0 ? '5%' : 'auto',
