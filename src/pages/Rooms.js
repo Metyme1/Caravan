@@ -58,14 +58,13 @@ const rooms = [
       price: "3000 / Night",
       description: "Our Suite Rooms provide luxury and comfort for a premium stay. They feature a separate salon, bedroom, two bathrooms, air conditioning, and a fully equipped kitchen.",
       characteristics: [
-      { icon: "👥", label: "4 Persons" },
+      { icon: "👥", label: "1-2 Persons" },
       { icon: "📶", label: "Free Wifi" },
       { icon: "🍽️", label: "Breakfast Included" },
-      { icon: "🛁", label: "Jacuzzi" },
       { icon: "🛋️", label: "Separate Salon" },
       { icon: "🛌", label: "Separate Bedroom" },
       { icon: "🚽", label: "Two Bathrooms" },
-      { icon: "�temp", label: "Air Conditioning" },
+      { icon: "❄️", label: "Air Conditioning" },
       { icon: "🍳", label: "Full Kitchen" },
       ],
       },
@@ -95,7 +94,7 @@ const Rooms = () => {
               <div
                 className="absolute bg-white p-12 shadow-md"
                 style={{
-                  width: '35%',
+                  width: '40%', // Increase the width of the card
                   top: '10%',
                   left: index % 2 === 0 ? 'auto' : '5%',
                   right: index % 2 === 0 ? '5%' : 'auto',
@@ -105,9 +104,9 @@ const Rooms = () => {
                 <p className="text-lg font-bold text-gray-700 mb-2 font-times">{room.price}</p>
                 <h3 className="text-3xl font-bold mb-2 font-times">{room.name}</h3>
                 <p className="text-gray-600 mb-4 font-times">{room.description}</p>
-                <div className="flex items-center space-x-4 mb-4">
+                <div className="flex flex-wrap items-center space-x-4 mb-4">
                   {room.characteristics.map((characteristic, idx) => (
-                    <div key={idx} className="flex items-center space-x-2">
+                    <div key={idx} className="flex items-center space-x-2 mb-2">
                       <span role="img" aria-label="characteristic-icon">{characteristic.icon}</span>
                       <span>{characteristic.label}</span>
                     </div>
