@@ -128,7 +128,7 @@ const Services = () => {
     <div className="bg-gray-100">
       <header className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-gray-800">Discover Our Services</h1>
+          <h1 className="text-4xl font-bold font-times text-gray-800">Discover Our Services</h1>
         </div>
       </header>
       <section className="py-16">
@@ -147,15 +147,17 @@ const Services = () => {
               />
               <div className="p-8 flex flex-col justify-between w-1/2">
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-2">{service.name}</h3>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <h3 className="text-2xl font-semibold font-times text-gray-800 mb-2">{service.name}</h3>
+                  <p className="text-gray-600 font-times mb-4">{service.description}</p>
                 </div>
-                <Link 
-                  to={`/services/${service.id}`} 
-                  className="bg-custom-blue text-white py-2 px-6 hover:bg-blue-700 transition duration-300 text-center rounded"
-                >
-                  View More
-                </Link>
+                <div className="text-right">
+                  <Link 
+                    to={`/services/${service.id}`} 
+                    className="bg-custom-blue text-white py-2 px-6 font-times hover:bg-blue-700 transition duration-300 text-center rounded-full inline-block"
+                  >
+                    View More
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
