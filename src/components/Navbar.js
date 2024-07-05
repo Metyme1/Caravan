@@ -54,6 +54,22 @@ const NavBar = () => {
             >
               Contact Us
             </NavLink>
+            <NavLink 
+              to="/reservation" 
+              className={({ isActive }) => 
+                `text-white px-3 py-2 rounded-md text-lg font-times ${isActive ? 'underline' : ''}`
+              }
+            >
+              Reservation
+            </NavLink>
+            <NavLink 
+              to="/admin" 
+              className={({ isActive }) => 
+                `text-white px-3 py-2 rounded-md text-lg font-times ${isActive ? 'underline' : ''}`
+              }
+            >
+              Admin
+            </NavLink>
           </div>
         </div>
       </div>
