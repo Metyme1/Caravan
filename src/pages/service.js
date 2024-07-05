@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import service1 from '../assets/twin1.JPG';
 import service2 from '../assets/wifi.jpeg';
 import service3 from '../assets/park.JPG';
-import service4 from '../assets/meeting.jpeg';
+import service4 from '../assets/m1.JPG';
 import service5 from '../assets/res.jpg';
 
 const services = [
@@ -53,7 +53,7 @@ const Services = () => {
     <div className="bg-gray-100">
       <header className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold font-times text-gray-800">Discover Our Services</h1>
+          <h1 className="text-3xl font-bold font-times text-gray-800">Discover Our Services</h1>
         </div>
       </header>
       <section className="py-16">

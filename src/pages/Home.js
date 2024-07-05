@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import room1 from '../assets/room1.jpg'; 
-import room2 from '../assets/room2.jpg';
-import room3 from '../assets/r3.jpg';
+import { Link } from 'react-router-dom';
+import room1 from '../assets/sweet5.JPG';
+import room2 from '../assets/semi1.jpg';
+import room3 from '../assets/twin1.JPG';
 import restaurant from '../assets/res.jpg';
 import food1 from '../assets/food1.jpg';
 import food2 from '../assets/food2.jpg';
-import meeting from '../assets/meeting.jpeg';
-import hotelImage from '../assets/Hotel.jpg'; 
+import meeting from '../assets/m1.JPG';
+import hotelImage from '../assets/main.jpg'; 
 import sauna from '../assets/sauna.jpg';
 import gym from '../assets/gym.jpg';
 import shopping from '../assets/shop.jpg';
@@ -101,19 +102,19 @@ const Home = () => {
             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
               <img src={room1} alt="Standard Room" className="w-full h-64 object-cover"/>
               <div className="p-6">
-                <h3 className="text-xl font-times">Standard Room</h3>
+                <h3 className="text-xl font-times">Sweet Room</h3>
               </div>
             </div>
             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
               <img src={room2} alt="Sweet Room" className="w-full h-64 object-cover"/>
               <div className="p-6">
-                <h3 className="text-xl font-times">Sweet Room</h3>
+                <h3 className="text-xl font-times">Semi-Sweet</h3>
               </div>
             </div>
             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
               <img src={room3} alt="Standard Room" className="w-full h-64 object-cover"/>
               <div className="p-6">
-                <h3 className="text-xl font-times">Standard Room</h3>
+                <h3 className="text-xl font-times">Twin Bed</h3>
               </div>
             </div>
           </div>
@@ -133,7 +134,9 @@ const Home = () => {
             <div className="w-1/2 p-6 flex flex-col justify-center">
               <h3 className="text-2xl font-times mb-4">Worldly Cuisine</h3>
               <p className="text-gray-600 text-lg font-times mb-4">Providing a bountiful array of flavors and aromas, the Sheraton Addis offers a choice of eleven restaurant and lounge options that will seduce the most discerning palate with culinary delights from all around the world—from Italy’s Stagioni and India’s Shaheen, to Asian and Middle Eastern nights at Summerfields.</p>
-              <button className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48">Learn More</button>
+              <Link to="/restaurant" className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48 text-center inline-block">
+        Learn More
+      </Link>
             </div>
           </div>
         </div>
@@ -180,9 +183,9 @@ const Home = () => {
       </div>
       <img src={meeting} alt="Meetings and Events" className="w-1/2 h-full object-cover"/>
     </div>
-    <div className="flex justify-center mt-10">
-            <button className="bg-custom-blue text-white text-lg px-4 py-2 font-times rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48">Learn More</button>
-          </div>
+    <Link to="/menu" className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48 text-center inline-block">
+        Learn More
+      </Link>
   </div>
 </section>
 
