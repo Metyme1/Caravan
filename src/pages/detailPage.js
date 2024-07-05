@@ -87,7 +87,7 @@ const roomDetails = [
     characteristics: [
       { icon: "👥", label: "1-2 Persons" },
       { icon: "📶", label: "Free Wifi" },
-      { icon: "🍽️", label: "Breakfast Included" },
+      { icon: "🍽️", label: "Breakfast" },
       { icon: "🛋️", label: "Separate Salon" },
       { icon: "🛌", label: "Separate Bedroom" },
       { icon: "🚽", label: "Two Bathrooms" },
@@ -155,7 +155,7 @@ const RoomDetail = () => {
               <p className="text-gray-900 font-times mb-6 text-lg">{room.description}</p>
             
               <div className="mb-4">
-                <h3 className="text-2xl font-times font-bold mb-2">Characteristics:</h3>
+                <h3 className="text-2xl font-times font-bold mb-2">Additional Services:</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {room.characteristics.map((characteristic, idx) => (
                     <div key={idx} className="flex items-center space-x-2 mb-2">
