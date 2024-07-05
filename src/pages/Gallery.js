@@ -3,15 +3,19 @@ import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
-import room1 from '../assets/room1.jpg';
-import room2 from '../assets/room2.jpg';
-import room3 from '../assets/r3.jpg';
-import room4 from '../assets/room1.jpg';
-import room5 from '../assets/room2.jpg';
-import room6 from '../assets/r3.jpg';
-import room7 from '../assets/room1.jpg';
-import room8 from '../assets/room2.jpg';
-import room9 from '../assets/r3.jpg';
+import room1 from '../assets/semi1.jpg';
+import room2 from '../assets/twin3.JPG';
+import room3 from'../assets/twin4.JPG';
+import room4 from '../assets/twin1.JPG';
+import room5 from '../assets/sweet3.JPG';
+import room6 from'../assets/sweet4.JPG';
+import room7 from '../assets/semi2.jpg';
+import room8 from '../assets/semi4.JPG';
+import room9 from'../assets/semi5.JPG';
+
+
+
+
 import hotelView1 from '../assets/v1.jpeg';
 import hotelView2 from '../assets/v2.jpeg';
 import hotelView3 from '../assets/v3.jpeg';
