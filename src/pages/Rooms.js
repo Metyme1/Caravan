@@ -1,4 +1,5 @@
-import React from 'react';
+// src/components/Rooms.js
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import room1 from '../assets/standard.JPG';
 import room2 from '../assets/twin1.JPG';
@@ -6,8 +7,8 @@ import room3 from '../assets/semi1.jpg';
 import room4 from '../assets/sweet5.JPG';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-
-AOS.init();
+import Modal from '../components/Modal';
+import ReservationForm from '../components/reservation';
 
 const rooms = [
   {
@@ -44,20 +45,20 @@ const rooms = [
     price: "1600 / Night",
     description: "Our Semi-Suite Rooms offer extra space and comfort for your stay. They include a cooking space for your convenience.",
     characteristics: [
-    { icon: "👥", label: "1-2 Persons" },
-    { icon: "📶", label: "Free Wifi" },
-    { icon: "🍽️", label: "Breakfast Included" },
-    { icon: "❄️", label: "Air Conditioning" },
-    { icon: "🍳", label: "Cooking Space" },
+      { icon: "👥", label: "1-2 Persons" },
+      { icon: "📶", label: "Free Wifi" },
+      { icon: "🍽️", label: "Breakfast Included" },
+      { icon: "❄️", label: "Air Conditioning" },
+      { icon: "🍳", label: "Cooking Space" },
     ],
-    },
-    {
-      id: 4,
-      name: "Sweet Room",
-      image: room4,
-      price: "3000 / Night",
-      description: "Our Suite Rooms provide luxury and comfort for a premium stay. They feature a separate salon, bedroom, two bathrooms, air conditioning, and a fully equipped kitchen.",
-      characteristics: [
+  },
+  {
+    id: 4,
+    name: "Sweet Room",
+    image: room4,
+    price: "3000 / Night",
+    description: "Our Suite Rooms provide luxury and comfort for a premium stay. They feature a separate salon, bedroom, two bathrooms, air conditioning, and a fully equipped kitchen.",
+    characteristics: [
       { icon: "👥", label: "1-2 Persons" },
       { icon: "📶", label: "Free Wifi" },
       { icon: "🍽️", label: "Breakfast Included" },
@@ -66,11 +67,28 @@ const rooms = [
       { icon: "🚽", label: "Two Bathrooms" },
       { icon: "❄️", label: "Air Conditioning" },
       { icon: "🍳", label: "Full Kitchen" },
-      ],
-      },
+    ],
+  },
 ];
 
 const Rooms = () => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedRoom, setSelectedRoom] = useState(null);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
+  const openModal = (room) => {
+    setSelectedRoom(room);
+    setIsModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setIsModalVisible(false);
+    setSelectedRoom(null);
+  };
+
   return (
     <div className="bg-gray-100">
       <header className="bg-white py-8">
@@ -89,7 +107,7 @@ const Rooms = () => {
               <img
                 src={room.image}
                 alt={room.name}
-                className={`h-112 object-cover ${index % 2 === 0 ? 'w-3/5' : 'w-3/5'}`}
+                className="h-112 object-cover w-3/5"
               />
               <div
                 className="absolute bg-white p-12 shadow-md"
@@ -112,17 +130,24 @@ const Rooms = () => {
                     </div>
                   ))}
                 </div>
-                <Link
-                  to={`/rooms/${room.id}`}
-                  className="text-custom-blue hover:underline"
-                >
+                <Link to={`/rooms/${room.id}`} className="text-custom-blue hover:underline">
                   View → Detail
                 </Link>
+                <button
+  className="ml-4 text-blue-500 underline hover:text-blue-600"
+  onClick={() => openModal(room)}
+>
+  Make Reservation
+</button>
+
               </div>
             </div>
           ))}
         </div>
       </section>
+      <Modal isVisible={isModalVisible} onClose={closeModal}>
+        <ReservationForm room={selectedRoom} />
+      </Modal>
     </div>
   );
 };
