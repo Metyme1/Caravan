@@ -74,6 +74,7 @@ const rooms = [
 const Rooms = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState(null);
+  const [isSuccessDialogVisible, setIsSuccessDialogVisible] = useState(false);
 
   useEffect(() => {
     AOS.init();
@@ -87,6 +88,15 @@ const Rooms = () => {
   const closeModal = () => {
     setIsModalVisible(false);
     setSelectedRoom(null);
+  };
+
+  const handleSuccess = () => {
+    closeModal();
+    setIsSuccessDialogVisible(true);
+  };
+
+  const closeSuccessDialog = () => {
+    setIsSuccessDialogVisible(false);
   };
 
   return (
@@ -134,22 +144,37 @@ const Rooms = () => {
                   View → Detail
                 </Link>
                 <button
-  className="ml-4 text-custom-blue underline hover:text-blue-600 font-times"
-  onClick={() => openModal(room)}
->
-  Make Reservation
-</button>
-
+                  className="ml-4 text-custom-blue underline hover:text-blue-600 font-times"
+                  onClick={() => openModal(room)}
+                >
+                  Make Reservation
+                </button>
               </div>
             </div>
           ))}
         </div>
       </section>
       <Modal isVisible={isModalVisible} onClose={closeModal}>
-        <ReservationForm room={selectedRoom} />
+        <ReservationForm room={selectedRoom} onSuccess={handleSuccess} />
       </Modal>
+      {isSuccessDialogVisible && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-8 rounded shadow-md text-center">
+            <h2 className="text-2xl mb-4 font-times text-gray-800">Reservation Successful!</h2>
+            <p className="mb-4 font-times">Your reservation has been made successfully.</p>
+            <button
+              className="w-full bg-custom-blue text-white py-2 font-times rounded-custom hover:bg-blue-600 transition duration-200"
+              
+              onClick={closeSuccessDialog}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
+
 
 export default Rooms;

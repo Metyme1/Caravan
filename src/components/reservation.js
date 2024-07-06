@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from './firebase';
 
-const ReservationForm = ({ room }) => {
+const ReservationForm = ({ room, onSuccess }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -26,6 +26,7 @@ const ReservationForm = ({ room }) => {
         children,
       });
       console.log('Reservation made with ID: ', docRef.id);
+      onSuccess(); // Call the success callback
     } catch (e) {
       console.error('Error adding document: ', e);
     }
@@ -111,13 +112,11 @@ const ReservationForm = ({ room }) => {
         />
       </div>
       <button
-  type="submit"
-  className="w-full bg-custom-blue text-white py-2 font-times rounded-custom  hover:bg-blue-600 transition duration-200"
->
-  Make Reservation
-</button>
-
-
+        type="submit"
+        className="w-full bg-custom-blue text-white py-2 font-times rounded-custom hover:bg-blue-600 transition duration-200"
+      >
+        Make Reservation
+      </button>
     </form>
   );
 };
