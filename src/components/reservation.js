@@ -33,20 +33,20 @@ const ReservationForm = ({ room }) => {
 
   return (
     <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-8 bg-white rounded shadow-md">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800">Reserve {room.name}</h2>
+      <h2 className="text-2xl  mb-6 font-times text-gray-800">Reserve {room.name}</h2>
       <div className="mb-4">
-        <label className="block text-gray-700 font-semibold mb-2" htmlFor="name">Name</label>
+        <label className="block text-gray-700 font-times  mb-2" htmlFor="name">Name</label>
         <input
           type="text"
           id="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border rounded-lg font-times focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 font-semibold mb-2" htmlFor="email">Email</label>
+        <label className="block text-gray-700 font-times  mb-2" htmlFor="email">Email</label>
         <input
           type="email"
           id="email"
@@ -57,65 +57,67 @@ const ReservationForm = ({ room }) => {
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 font-semibold mb-2" htmlFor="phone">Phone</label>
+        <label className="block text-gray-700 font-times  mb-2" htmlFor="phone">Phone</label>
         <input
           type="tel"
           id="phone"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-          className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border rounded-lg font-times focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 font-semibold mb-2" htmlFor="checkIn">Check-In</label>
+        <label className="block text-gray-700 font-times  mb-2" htmlFor="checkIn">Check-In</label>
         <input
           type="date"
           id="checkIn"
           value={checkIn}
           onChange={(e) => setCheckIn(e.target.value)}
-          className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border rounded-lg font-times focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 font-semibold mb-2" htmlFor="checkOut">Check-Out</label>
+        <label className="block text-gray-700 font-times  mb-2" htmlFor="checkOut">Check-Out</label>
         <input
           type="date"
           id="checkOut"
           value={checkOut}
           onChange={(e) => setCheckOut(e.target.value)}
-          className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border font-times rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 font-semibold mb-2" htmlFor="adults">Adults</label>
+        <label className="block text-gray-700 font-times  mb-2" htmlFor="adults">Adults</label>
         <input
           type="number"
           id="adults"
           value={adults}
           onChange={(e) => setAdults(e.target.value)}
-          className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border font-times rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 font-semibold mb-2" htmlFor="children">Children</label>
+        <label className="block text-gray-700 font-times  mb-2" htmlFor="children">Children</label>
         <input
           type="number"
           id="children"
           value={children}
           onChange={(e) => setChildren(e.target.value)}
-          className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border font-times rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
       <button
-        type="submit"
-        className="w-full bg-blue-500 text-white py-2 rounded-lg font-semibold hover:bg-blue-600 transition duration-200"
-      >
-        Make Reservation
-      </button>
+  type="submit"
+  className="w-full bg-custom-blue text-white py-2 font-times rounded-custom  hover:bg-blue-600 transition duration-200"
+>
+  Make Reservation
+</button>
+
+
     </form>
   );
 };

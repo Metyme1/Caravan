@@ -16,7 +16,10 @@ module.exports = {
       height: {
         '128': '32rem',
         '160': '40rem', // Example custom height
-      }
+      },
+      borderRadius: {
+        'custom': '50px', // Define your custom border radius here
+      },
     },
   },
   plugins: [],

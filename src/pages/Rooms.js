@@ -120,21 +120,21 @@ const Rooms = () => {
                 }}
               >
                 <p className="text-lg font-bold text-gray-700 mb-2 font-times">{room.price}</p>
-                <h3 className="text-3xl font-bold mb-2 font-times">{room.name}</h3>
+                <h3 className="text-3xl mb-2 font-times">{room.name}</h3>
                 <p className="text-gray-600 mb-4 font-times">{room.description}</p>
                 <div className="flex flex-wrap items-center space-x-4 mb-4">
                   {room.characteristics.map((characteristic, idx) => (
-                    <div key={idx} className="flex items-center space-x-2 mb-2">
+                    <div key={idx} className="flex font-times items-center space-x-2 mb-2">
                       <span role="img" aria-label="characteristic-icon">{characteristic.icon}</span>
                       <span>{characteristic.label}</span>
                     </div>
                   ))}
                 </div>
-                <Link to={`/rooms/${room.id}`} className="text-custom-blue hover:underline">
+                <Link to={`/rooms/${room.id}`} className="text-custom-blue font-times hover:underline">
                   View → Detail
                 </Link>
                 <button
-  className="ml-4 text-blue-500 underline hover:text-blue-600"
+  className="ml-4 text-custom-blue underline hover:text-blue-600 font-times"
   onClick={() => openModal(room)}
 >
   Make Reservation
