@@ -133,15 +133,6 @@ const menuData = {
     { name: 'C/W/Milk', description: '', price: 35 },
   ],
 };
-const categoryBackgrounds = {
-  BreakFast: '../assets/room1.jpg',
-  'Lunch and Dinner': '../assets/room1.jpg',
-  Burger: '../assets/room1.jpg',
-  Sandwich: '../assets/room1.jpg',
-  'Ethiopian Traditional Food': '../assets/room1.jpg',
-  Pizza: '../assets/room1.jpg',
-  Juice: '../assets/room1.jpg',
-};
 
 
 
