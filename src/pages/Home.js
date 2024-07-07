@@ -133,7 +133,7 @@ const Home = () => {
             </div>
             <div className="w-1/2 p-6 flex flex-col justify-center">
               <h3 className="text-2xl font-times mb-4">Worldly Cuisine</h3>
-              <p className="text-gray-600 text-lg font-times mb-4">Providing a bountiful array of flavors and aromas, the Sheraton Addis offers a choice of eleven restaurant and lounge options that will seduce the most discerning palate with culinary delights from all around the world—from Italy’s Stagioni and India’s Shaheen, to Asian and Middle Eastern nights at Summerfields.</p>
+              <p className="text-gray-600 text-lg font-times mb-4">Providing a bountiful array of flavors and aromas, the Caravan Dire offers a choice of eleven restaurant and lounge options that will seduce the most discerning palate with culinary delights from all around the world—from Italy’s Stagioni and India’s Shaheen, to Asian and Middle Eastern nights at Summerfields.</p>
               <Link to="/restaurant" className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48 text-center inline-block">
         Learn More
       </Link>
