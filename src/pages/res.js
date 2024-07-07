@@ -126,7 +126,7 @@ const Restaurant = () => {
 
 <div className="max-w-7xl mx-auto px-4">
       <div className="bg-white shadow-md rounded-lg overflow-hidden mb-8">
-        <h2 className="text-3xl font-times text-gray-900 py-4 px-6 bg-custom-blue text-white rounded-t-lg">Popular Menu Items</h2>
+        <h2 className="text-3xl font-times  py-4 px-6 bg-custom-blue text-white rounded-t-lg">Popular Menu Items</h2>
         <div className="flex space-x-6 overflow-x-auto p-4" id="scroll-container">
           <div className="bg-white p-4 flex-shrink-0 w-72 rounded-lg shadow-md hover:shadow-lg transition duration-300">
             <img src={restaurantImage1} alt="Menu Item" className="w-full h-40 object-cover mb-4 rounded-lg"/>
