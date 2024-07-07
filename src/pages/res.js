@@ -125,44 +125,44 @@ const Restaurant = () => {
 
 
 <div className="max-w-7xl mx-auto px-4">
-      <div className="bg-white overflow-hidden mb-8">
-        <h2 className="text-2xl font-times mb-4">Popular Menu Items</h2>
-        <div className="flex space-x-6 overflow-x-hidden cursor-grab" id="scroll-container">
-          <div className="bg-white p-4 flex-shrink-0 w-64">
-            <img src={restaurantImage1} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
-            <h3 className="text-xl font-times">Item 1</h3>
+      <div className="bg-white shadow-md rounded-lg overflow-hidden mb-8">
+        <h2 className="text-3xl font-times text-gray-900 py-4 px-6 bg-custom-blue text-white rounded-t-lg">Popular Menu Items</h2>
+        <div className="flex space-x-6 overflow-x-auto p-4" id="scroll-container">
+          <div className="bg-white p-4 flex-shrink-0 w-72 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <img src={restaurantImage1} alt="Menu Item" className="w-full h-40 object-cover mb-4 rounded-lg"/>
+            <h3 className="text-xl font-times text-gray-900 mb-2">Mandi</h3>
             <p className="text-gray-600 font-times">Description of the menu item.</p>
           </div>
-          <div className="bg-white p-4 flex-shrink-0 w-64">
-            <img src={restaurantImage1} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
-            <h3 className="text-xl font-times">Item 2</h3>
+          <div className="bg-white p-4 flex-shrink-0 w-72 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <img src={restaurantImage1} alt="Menu Item" className="w-full h-40 object-cover mb-4 rounded-lg"/>
+            <h3 className="text-xl font-times text-gray-900 mb-2">Fish</h3>
             <p className="text-gray-600 font-times">Description of the menu item.</p>
           </div>
-          <div className="bg-white p-4 flex-shrink-0 w-64">
-            <img src={restaurantImage1} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
-            <h3 className="text-xl font-times">Item 3</h3>
+          <div className="bg-white p-4 flex-shrink-0 w-72 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <img src={restaurantImage1} alt="Menu Item" className="w-full h-40 object-cover mb-4 rounded-lg"/>
+            <h3 className="text-xl font-times text-gray-900 mb-2">Special Combo</h3>
             <p className="text-gray-600 font-times">Description of the menu item.</p>
           </div>
-          <div className="bg-white p-4 flex-shrink-0 w-64">
-            <img src={restaurantImage1} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
-            <h3 className="text-xl font-times">Item 4</h3>
+          <div className="bg-white p-4 flex-shrink-0 w-72 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <img src={restaurantImage1} alt="Menu Item" className="w-full h-40 object-cover mb-4 rounded-lg"/>
+            <h3 className="text-xl font-times text-gray-900 mb-2">Item 4</h3>
             <p className="text-gray-600 font-times">Description of the menu item.</p>
           </div>
-          <div className="bg-white p-4 flex-shrink-0 w-64">
-            <img src={restaurantImage1} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
-            <h3 className="text-xl font-times">Item 5</h3>
+          <div className="bg-white p-4 flex-shrink-0 w-72 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <img src={restaurantImage1} alt="Menu Item" className="w-full h-40 object-cover mb-4 rounded-lg"/>
+            <h3 className="text-xl font-times text-gray-900 mb-2">Item 5</h3>
             <p className="text-gray-600 font-times">Description of the menu item.</p>
           </div>
         </div>
-        <div className="flex justify-center mt-6">
+        <div className="flex justify-center mt-6 mb-4">
           <Link to="/menu">
-          <button className="bg-custom-blue text-white text-lg px-4 py-2 font-times rounded-full shadow-lg hover:bg-blue-900 transition duration-300 w-48">View menu</button>
-
+            <button className="bg-custom-blue text-white text-lg px-6 py-2 font-times rounded-full shadow-lg hover:bg-blue-900 transition duration-300">
+              View Full Menu
+            </button>
           </Link>
         </div>
       </div>
     </div>
-
 <div className="w-screen mb-10 bg-custom-blue py-4">
   <div className="container mx-auto text-center text-white px-4">
     <h2 className="text-2xl text font-times mb-6">Testimonials</h2>
