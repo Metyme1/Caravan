@@ -19,12 +19,12 @@ const Footer = () => {
       <div className="font-times text-gray-200">
         <div className="flex items-center">
           <a href="https://www.linkedin.com/in/mety-million29/" target="_blank" rel="noopener noreferrer" className="hover:text-white flex items-center">
-            Mety Million <FaLinkedin className="ml-2" />
+          <FaLinkedin className="ml-2" />  Mety Million   0961736510
           </a>
         </div>
         <div className="flex items-center mt-2">
           <a href="https://www.linkedin.com/in/kidus-mikael-877b63235/" target="_blank" rel="noopener noreferrer" className="hover:text-white flex items-center">
-            Kidus Mikael <FaLinkedin className="ml-2" />
+          <FaLinkedin className="ml-2" />  Kidus Mikael   0939068485
           </a>
         </div>
       </div>
