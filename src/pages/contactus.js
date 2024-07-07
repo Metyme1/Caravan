@@ -82,7 +82,7 @@ const Contact = () => {
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow p-8 bg-gray-100">
         <div className="flex justify-center mb-4">
-          <h2 className="text-4xl font-times font-bold">Contact Us</h2>
+          <h2 className="text-4xl font-times ">Contact Us</h2>
         </div>
         <div className="flex flex-wrap bg-white shadow-md rounded-lg p-8 mb-4">
           <div className="w-full md:w-1/2 p-4">
@@ -91,7 +91,7 @@ const Contact = () => {
               <strong>Phone:</strong> (123) 456-7890
             </p>
             <p className="text-gray-700 mb-2 font-times">
-              <strong>Email:</strong> contact@hotelname.com
+              <strong>Email:</strong> contact@CaravanDire.com
             </p>
             <p className="text-gray-700 font-times mb-2">
               <strong>Address:</strong> Dire Dawa

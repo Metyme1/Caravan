@@ -141,10 +141,13 @@ const Home = () => {
             </div>
             <div className="w-1/2 p-6 flex flex-col justify-center">
               <h3 className="text-2xl font-times mb-4">Worldly Cuisine</h3>
-              <p className="text-gray-600 text-lg font-times mb-4">Providing a bountiful array of flavors and aromas, the Caravan Dire offers a choice of eleven restaurant and lounge options that will seduce the most discerning palate with culinary delights from all around the world—from Italy’s Stagioni and India’s Shaheen, to Asian and Middle Eastern nights at Summerfields.</p>
-              <Link to="/restaurant" className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48 text-center inline-block">
-        Learn More
-      </Link>
+              <p className="text-gray-600 text-lg font-times mb-4">
+  Providing a bountiful array of flavors and aromas, the Caravan Dire Hotel offers a choice of eleven restaurant and lounge options that will seduce the most discerning palate with culinary delights from all around the world—from Italy’s Stagioni and India’s Shaheen, to Asian and Middle Eastern nights at Summerfields.
+</p>
+<Link to="/restaurant" className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48 text-center inline-block">
+  Explore Restaurants
+</Link>
+
             </div>
           </div>
         </div>
@@ -177,8 +180,11 @@ const Home = () => {
             </div>
           </div>
           <div className="flex justify-center mt-10">
-            <button className="bg-custom-blue text-white text-lg px-4 py-2 font-times rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48">View menu</button>
-          </div>
+  <Link to="/menu" className="bg-custom-blue text-white text-lg px-4 py-2 font-times rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48 text-center">
+    View menu
+  </Link>
+</div>
+
         </div>
       </section>
 
@@ -187,15 +193,18 @@ const Home = () => {
     <h2 className="text-4xl font-times text-gray-900 text-center mb-8">Meetings and Events</h2>
     <div className="mt-8 bg-white shadow-md rounded-lg overflow-hidden flex items-center">
       <div className="p-4 w-1/2">
-        <p className="text-gray-600 font-times">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ornare sem, lacinia facilisis venenatis et, dictum vel ipsum. Proin sodales tortor eu lectus aliquet commodo.</p>
+        <p className="text-gray-600 font-times">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ornare sem, lacinia facilisis venenatis et, dictum vel ipsum. Proin sodales tortor eu lectus aliquet commodo.
+        </p>
+        <Link to="/menu" className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48 text-center inline-block mt-4">
+          Learn More
+        </Link>
       </div>
       <img src={meeting} alt="Meetings and Events" className="w-1/2 h-full object-cover"/>
     </div>
-    <Link to="/menu" className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48 text-center inline-block">
-        Learn More
-      </Link>
   </div>
 </section>
+
 
 
       <NearbyServices />
