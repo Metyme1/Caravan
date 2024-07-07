@@ -8,7 +8,7 @@ const NavBar = () => {
       <div className="flex items-center justify-between h-16 px-6">
         <div className="flex items-center">
           <div className="flex-shrink-0">
-            <h1 className="text-3xl font-times">Carivan Dire Hotel</h1>
+            <h1 className="text-3xl font-times">Caravan Dire Hotel</h1>
           </div>
         </div>
         <div className="hidden md:flex flex-1 justify-end">
