@@ -165,10 +165,10 @@ const RoomDetail = () => {
             <div className="p-8">
               <p className="text-gray-900 font-times mb-6 text-lg">{room.description}</p>
               <div className="mb-4">
-                <h3 className="text-2xl font-times font-bold mb-2">Additional Services:</h3>
+                <h3 className="text-2xl font-times  mb-2">Additional Services:</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {room.characteristics.map((characteristic, idx) => (
-                    <div key={idx} className="flex items-center space-x-2 mb-2">
+                    <div key={idx} className="flex items-center font-times space-x-2 mb-2">
                       <span role="img" aria-label="characteristic-icon">{characteristic.icon}</span>
                       <span>{characteristic.label}</span>
                     </div>
@@ -180,7 +180,7 @@ const RoomDetail = () => {
               </div>
               <div className="text-right mt-4">
                 <button
-                  className="text-custom-blue underline"
+                  className="text-custom-blue font-times underline"
                   onClick={() => setIsModalOpen(true)}
                 >
                   Make Reservation

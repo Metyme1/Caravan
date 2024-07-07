@@ -21,7 +21,7 @@ const Footer = () => {
             <h2 className="text-2xl font-times">Resources</h2>
             <ul className="mt-4 space-y-2 text-gray-200">
               <li><a href="#" className="hover:text-white font-times">Services</a></li>
-              <li><a href="#" className="hover:text-white font-times">Menu</a></li>
+              <li><a href="/menu" className="hover:text-white font-times">Menu</a></li>
              
             </ul>
           </div>

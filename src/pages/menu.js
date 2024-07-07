@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-
 const menuData = {
   BreakFast: [
     { name: 'Scrembled - Egg', description: '', price: 200 },
@@ -20,24 +19,22 @@ const menuData = {
     { name: 'Special Combo', description: '', price: 350 },
     { name: 'Dullet', description: '', price: 200},
   ],
-
   "Lunch and Dinner": [
     { name: 'Special Carnival Combo', description: '', price: 1500 },
-{ name: ' Special Goat', description: '', price: 450 },
-{ name: 'Goat - Tibs', description: '', price: 400 }, 
-{ name: 'Rice - Normal', description: '', price: 200 },
-{ name: 'Rice with Meat', description: '', price: 280 },
-{ name: 'Rice with Chicken', description: '', price: 300 },
-{ name: 'Rice with Bolanise Sauce', description: '', price: 350},
-{ name: 'Rice with Fish', description: '', price: 350 },
-{ name: 'Spaghetti with Bolognese Sauce', description: '', price: 350 },
-{ name: 'Spaghetti with Meat', description: '', price: 370 },
-{ name: 'Spaghetti with Cheese', description: '', price: 400 },
-{ name: 'Spaghetti with Vegetables', description: '', price: 250 },
-{ name: 'Chicken Xibsi', description: '', price: 300},
-{ name: 'Chicken Mondi', description: '', price: 600 },
-{ name: 'Carnival Hanid / Meat Mendi', description: '', price: 600}
-
+    { name: ' Special Goat', description: '', price: 450 },
+    { name: 'Goat - Tibs', description: '', price: 400 },
+    { name: 'Rice - Normal', description: '', price: 200 },
+    { name: 'Rice with Meat', description: '', price: 280 },
+    { name: 'Rice with Chicken', description: '', price: 300 },
+    { name: 'Rice with Bolanise Sauce', description: '', price: 350},
+    { name: 'Rice with Fish', description: '', price: 350 },
+    { name: 'Spaghetti with Bolognese Sauce', description: '', price: 350 },
+    { name: 'Spaghetti with Meat', description: '', price: 370 },
+    { name: 'Spaghetti with Cheese', description: '', price: 400 },
+    { name: 'Spaghetti with Vegetables', description: '', price: 250 },
+    { name: 'Chicken Xibsi', description: '', price: 300},
+    { name: 'Chicken Mondi', description: '', price: 600 },
+    { name: 'Carnival Hanid / Meat Mendi', description: '', price: 600}
   ],
   Burger: [
     { name: 'Caravan Special Burger', description: '', price: 450 },
@@ -48,7 +45,6 @@ const menuData = {
     { name: 'Tuna Burger', description: '', price: 300 },
     { name: 'Triple Burger', description: '', price: 400 },
     { name: 'Double Burger', description: '', price: 450 }
-    
   ],
   Sandwich: [
     { name: 'Egg Sandwich', description: '', price: 250 },
@@ -69,7 +65,7 @@ const menuData = {
     { name: 'ዶሮ ወጥ ', description: '', price: 400 },
     { name: 'ጎመን - በስጋ', description: '', price: 300 },
     { name: 'ቅቅል', description: '', price: 350 },
-    { name: 'ክትŒ', description: '', price: 500 },
+    { name: 'ክትፎ', description: '', price: 500 },
     { name: 'እስፓድል - ክትፎ', description: '', price: 600 },
     { name: 'ደረቅ ጥብስ - እስፓድል', description: '', price: 500 },
     { name: 'ሞሰራ በስጋ', description: '', price: 400 },
@@ -78,7 +74,6 @@ const menuData = {
     { name: 'ሱፍ - ፍትፍት', description: '', price: 250 },
     { name: 'በየአይነት', description: '', price: 250 },
     { name: 'ጎመን ክትፎ', description: '', price: 250 },
-  
   ],
   Pizza: [
     { name: 'Carnival', description: 'Souse, mozzarella cheese, tested meat, chicken, tuna egg and with others', price: 450 },
@@ -94,7 +89,6 @@ const menuData = {
     { name: 'Chicken Pizza', description: 'Botanies souce, mozzarella cheese chicken, black olive, mushroom, and others', price: 350 },
   ],
   Juice: [
-
     { name: 'Carnival - Special Juice', description: '', price: 200 },
     { name: 'Avocado Juice', description: '', price: 200 },
     { name: 'Avocado Milk Shake', description: '', price: 230 },
@@ -109,46 +103,42 @@ const menuData = {
     { name: 'Αyton', description: '', price: 200 },
     { name: 'Fruet Panch', description: '', price: 200 },
     { name: 'Strawberry Juice', description: '', price: 250 },
-    ],
-
-    Cake: [
-      { name: 'White Forest', description: '', price: 100 },
-      { name: 'Black Forest', description: '', price: 100 },
-      { name: 'Pound Cake', description: '', price: 100 },
-      { name: 'English Cake', description: '', price: 80 },
-      { name: 'Banana Cake', description: '', price: 70 },
-      { name: 'Pan-Cake', description: '', price: 40 },
-      { name: 'Cookies', description: '', price: 35 },
-      { name: 'Torte Cake', description: '', price: 600-1200 },
-      ],
+  ],
+  Cake: [
+    { name: 'White Forest', description: '', price: 100 },
+    { name: 'Black Forest', description: '', price: 100 },
+    { name: 'Pound Cake', description: '', price: 100 },
+    { name: 'Fruit Cake', description: '', price: 100 },
+    { name: 'Birthday Cake', description: '', price: 100 },
+    { name: 'Cream Cake', description: '', price: 100 },
+    { name: 'Sprice Cake', description: '', price: 100 },
+    { name: 'Cake Pop', description: '', price: 100 },
+  ],
   "Hot Drinks": [
-    { name: 'Coffee', description: '', price: 25 },
-    { name: 'Tea', description: '', price: 20 },
-    { name: 'Cappuccino', description: '', price: 40 },
-    { name: 'Macchiato', description: '', price: 35 },
-    { name: 'Milk', description: '', price: 30 },
-    { name: 'T/W/Milk', description: '', price: 30 },
-    { name: 'Somali-Tea', description: '', price: 30 },
-    { name: 'Spanish - Tea', description: '', price: 50 },
-    { name: 'Fasting - Macchiato', description: '', price: 40 },
-    { name: 'C/W/Milk', description: '', price: 35 },
+    { name: 'Macchiato', description: '', price: 70 },
+    { name: 'Tea', description: '', price: 50 },
+    { name: 'Black Tea', description: '', price: 50 },
+    { name: 'Cappuccino', description: '', price: 100 },
+    { name: 'Hot Milk', description: '', price: 70 },
+    { name: 'Coffee', description: '', price: 60 },
+    { name: 'Black Coffee', description: '', price: 60 },
+    { name: 'Black Tea With Lemon', description: '', price: 60 },
+    { name: 'Hot Water With Lemon', description: '', price: 50 },
+    { name: 'Traditional Coffee', description: '', price: 60 },
+    { name: 'Café Latte', description: '', price: 90 },
+    { name: 'Cafe Americano', description: '', price: 60 },
   ],
 };
 
-
-
 function Menu() {
-  const [selectedMenu, setSelectedMenu] = useState('Starters');
+  const [selectedMenu, setSelectedMenu] = useState('BreakFast');
   const [categoryIndex, setCategoryIndex] = useState(0);
 
-  // Get all category names
   const categories = Object.keys(menuData);
 
-  // Calculate start and end index for displayed categories
   const startIndex = categoryIndex * 3;
   const endIndex = Math.min(startIndex + 3, categories.length);
 
-  // Handle click for next and previous buttons
   const handleNext = () => {
     if (categoryIndex < Math.ceil(categories.length / 3) - 1) {
       setCategoryIndex(categoryIndex + 1);
@@ -193,12 +183,12 @@ function Menu() {
           {menuData[selectedMenu] ? (
             menuData[selectedMenu].map((item, index) => (
               <div key={index} className="rounded-lg bg-white p-6 flex flex-col justify-between shadow-md hover:shadow-lg">
-                <div>
+                <div className="flex justify-between items-center">
                   <h2 className="text-2xl mb-2 text-custom-blue font-times">{item.name}</h2>
-                  <div className="border-t border-dotted border-custom-blue my-2"></div> {/* Dotted line */}
-                  <p className="text-gray-600 font-times">{item.description || 'Description not available'}</p>
+                  <p className="text-gray-600 font-times">{item.price} Birr</p>
                 </div>
-            
+                <div className="border-t border-dotted border-custom-blue my-2"></div> {/* Dotted line */}
+                <p className="text-gray-600 font-times">{item.description || 'Description not available'}</p>
               </div>
             ))
           ) : (
@@ -207,12 +197,7 @@ function Menu() {
         </div>
       </div>
     </div>
-    );
-          }
+  );
+}
 
 export default Menu;
-
-
-
-
-
