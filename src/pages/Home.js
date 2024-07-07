@@ -11,7 +11,8 @@ import hotelImage from '../assets/main.jpg';
 import sauna from '../assets/sauna.jpg';
 import gym from '../assets/gym.jpg';
 import shopping from '../assets/shop.jpg';
-import barbershop from '../assets/barber.jpeg';
+import barbershop from '../assets/barber.jpg';
+
 
 const services = [
   {
@@ -89,8 +90,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl text-gray-900 font-times">Find luxury and serenity in Dire Dawa, Ethiopia</h2>
           <p className="mt-4 text-gray-600 font-times">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ornare sem, lacinia facilisis venenatis et, dictum vel ipsum. Proin sodales tortor eu lectus aliquet commodo.
-          </p>
+  Caravan Dire Hotel offers a unique blend of luxury and comfort in the heart of Dire Dawa. Nestled amidst scenic surroundings, our hotel provides a tranquil retreat with modern amenities and personalized service. Whether you're here for business or leisure, indulge in our spacious rooms, exquisite dining options, and warm hospitality. Explore the vibrant city of Dire Dawa or simply unwind in our serene ambiance. Discover a memorable stay at Caravan Dire Hotel.
+</p>
+<br></br><br></br>
+
           <button className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48">Learn More</button>
         </div>
       </section>
@@ -119,8 +122,13 @@ const Home = () => {
             </div>
           </div>
           <div className="flex justify-center mt-8">
-            <button className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48">Learn More</button>
-          </div>
+          {/* Link the button to the rooms page */}
+          <Link to="/rooms">
+            <button className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48">
+              Learn More
+            </button>
+          </Link>
+        </div>
         </div>
       </section>
 

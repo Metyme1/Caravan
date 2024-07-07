@@ -2,9 +2,10 @@
 import React, { useEffect , useState} from 'react';
 import { Link } from 'react-router-dom';
 import restaurantImage from '../assets/res.jpg'; 
-import diningImage1 from '../assets/room1.jpg'; 
-import diningImage2 from '../assets/room2.jpg'; 
-import diningImage3 from '../assets/r3.jpg'; 
+import restaurantImage1 from '../assets/Mandi.jpg'; 
+import openair from '../assets/openair.jpg'; 
+import diningImage2 from '../assets/res.jpg'; 
+import diningImage3 from '../assets/twin1.JPG'; 
 
 import guestImage1 from '../assets/room1.jpg'; // Add guest images
 import guestImage2 from '../assets/room2.jpg';
@@ -92,7 +93,7 @@ const Restaurant = () => {
 <div className="bg-white overflow-hidden max-w-7xl  px-4 mb-8 flex flex-wrap -mx-4 pt-8">
   <div className="w-full md:w-1/3 px-4 mb-8 transform transition-transform duration-300 hover:scale-105">
     <div className="relative">
-      <img src={diningImage1} alt="Open Air Dining" className="w-full h-64 object-cover border-b-4 border-custom-blue"/>
+      <img src={openair} alt="Open Air Dining" className="w-full h-64 object-cover border-b-4 border-custom-blue"/>
       <div className="p-8">
         <h3 className="text-2xl font-times mb-4">Open Air Dining</h3>
         <p className="text-gray-600 font-times mb-4">Experience the beauty of nature while enjoying your meal in our open-air dining area. Perfect for a romantic evening or a family gathering.</p>
@@ -128,27 +129,27 @@ const Restaurant = () => {
         <h2 className="text-2xl font-times mb-4">Popular Menu Items</h2>
         <div className="flex space-x-6 overflow-x-hidden cursor-grab" id="scroll-container">
           <div className="bg-white p-4 flex-shrink-0 w-64">
-            <img src={restaurantImage} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
+            <img src={restaurantImage1} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
             <h3 className="text-xl font-times">Item 1</h3>
             <p className="text-gray-600 font-times">Description of the menu item.</p>
           </div>
           <div className="bg-white p-4 flex-shrink-0 w-64">
-            <img src={restaurantImage} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
+            <img src={restaurantImage1} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
             <h3 className="text-xl font-times">Item 2</h3>
             <p className="text-gray-600 font-times">Description of the menu item.</p>
           </div>
           <div className="bg-white p-4 flex-shrink-0 w-64">
-            <img src={restaurantImage} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
+            <img src={restaurantImage1} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
             <h3 className="text-xl font-times">Item 3</h3>
             <p className="text-gray-600 font-times">Description of the menu item.</p>
           </div>
           <div className="bg-white p-4 flex-shrink-0 w-64">
-            <img src={restaurantImage} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
+            <img src={restaurantImage1} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
             <h3 className="text-xl font-times">Item 4</h3>
             <p className="text-gray-600 font-times">Description of the menu item.</p>
           </div>
           <div className="bg-white p-4 flex-shrink-0 w-64">
-            <img src={restaurantImage} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
+            <img src={restaurantImage1} alt="Menu Item" className="w-full h-32 object-cover mb-4"/>
             <h3 className="text-xl font-times">Item 5</h3>
             <p className="text-gray-600 font-times">Description of the menu item.</p>
           </div>

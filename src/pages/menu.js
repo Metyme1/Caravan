@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
+
 const menuData = {
   BreakFast: [
     { name: 'Scrembled - Egg', description: '', price: 200 },
@@ -174,7 +175,7 @@ function Menu() {
                 key={menu}
                 className={`px-6 py-2 cursor-pointer mx-2 ${
                   selectedMenu === menu
-                    ? 'bg-white text-custom-blue font-times border-custom-blue border-2 border-solid'
+                    ? 'bg-white text-custom-blue font-times border-custom-blue border-2 border-solid shadow-lg'
                     : 'bg-custom-blue font-times text-white border-transparent'
                 }`}
                 style={{ minWidth: '150px', borderRadius: '4px' }}
@@ -191,13 +192,13 @@ function Menu() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {menuData[selectedMenu] ? (
             menuData[selectedMenu].map((item, index) => (
-              <div key={index} className="rounded-lg bg-white p-6 flex items-center justify-between">
+              <div key={index} className="rounded-lg bg-white p-6 flex flex-col justify-between shadow-md hover:shadow-lg">
                 <div>
                   <h2 className="text-2xl mb-2 text-custom-blue font-times">{item.name}</h2>
                   <div className="border-t border-dotted border-custom-blue my-2"></div> {/* Dotted line */}
-                  <p className="text-black font-times">{item.description}</p>
+                  <p className="text-gray-600 font-times">{item.description || 'Description not available'}</p>
                 </div>
-                <p className="text-custom-blue font-times">{item.price}</p>
+            
               </div>
             ))
           ) : (
@@ -206,8 +207,8 @@ function Menu() {
         </div>
       </div>
     </div>
-  );
-}
+    );
+          }
 
 export default Menu;
 
