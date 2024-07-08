@@ -1,4 +1,3 @@
-// src/components/Rooms.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import room1 from '../assets/standard.JPG';
@@ -111,18 +110,17 @@ const Rooms = () => {
           {rooms.map((room, index) => (
             <div
               key={room.id}
-              className={`relative mb-16 flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center`}
+              className={`relative mb-16 flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center`}
               data-aos={`${index % 2 === 0 ? 'fade-right' : 'fade-left'}`}
             >
               <img
                 src={room.image}
                 alt={room.name}
-                className="h-112 object-cover w-3/5"
+                className="h-112 object-cover w-full md:w-3/5"
               />
               <div
-                className="absolute bg-white p-12 shadow-md"
+                className="bg-white p-6 md:p-12 shadow-md w-full md:w-2/5 md:relative"
                 style={{
-                  width: '40%',
                   top: '10%',
                   left: index % 2 === 0 ? 'auto' : '5%',
                   right: index % 2 === 0 ? '5%' : 'auto',
@@ -130,11 +128,11 @@ const Rooms = () => {
                 }}
               >
                 <p className="text-lg font-bold text-gray-700 mb-2 font-times">{room.price}</p>
-                <h3 className="text-3xl mb-2 font-times">{room.name}</h3>
+                <h3 className="text-2xl md:text-3xl mb-2 font-times">{room.name}</h3>
                 <p className="text-gray-600 mb-4 font-times">{room.description}</p>
                 <div className="flex flex-wrap items-center space-x-4 mb-4">
                   {room.characteristics.map((characteristic, idx) => (
-                    <div key={idx} className="flex font-times items-center space-x-2 mb-2">
+                    <div key={idx} className="flex items-center space-x-2 mb-2 font-times">
                       <span role="img" aria-label="characteristic-icon">{characteristic.icon}</span>
                       <span>{characteristic.label}</span>
                     </div>
@@ -155,16 +153,15 @@ const Rooms = () => {
         </div>
       </section>
       <Modal isVisible={isModalVisible} onClose={closeModal}>
-        <ReservationForm room={selectedRoom} onSuccess={handleSuccess} />
+        <ReservationForm room={selectedRoom} onSuccess={handleSuccess} onClose={closeModal} />
       </Modal>
       {isSuccessDialogVisible && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-8 rounded shadow-md text-center">
-            <h2 className="text-2xl mb-4 font-times text-gray-800">Reservation Successful!</h2>
+            <h2 className="text-2xl mb-4 font-times text-green-500">Reservation Successful!</h2>
             <p className="mb-4 font-times">Your reservation has been made successfully.</p>
             <button
               className="w-full bg-custom-blue text-white py-2 font-times rounded-custom hover:bg-blue-600 transition duration-200"
-              
               onClick={closeSuccessDialog}
             >
               OK
@@ -175,6 +172,5 @@ const Rooms = () => {
     </div>
   );
 };
-
 
 export default Rooms;

@@ -37,7 +37,7 @@ const roomDetails = [
     image: room1,
     gallery: [standard1, standard2],
     price: "1500/Night",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nulla quam, ullamcorper in bibendum quis, volutpat ut lacus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus sagittis placerat velit ac euismod. Aliquam erat volutpat. Duis nec tincidunt maurisamenities.",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nulla quam, ullamcorper in bibendum quis, volutpat ut lacus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus sagittis placerat velit ac euismod. Aliquam erat volutpat. Duis nec tincidunt mauris.",
     characteristics: [
       { icon: "👥", label: "2 Persons" },
       { icon: "📶", label: "Free Wifi" },
@@ -108,11 +108,6 @@ const RoomDetail = () => {
     return <div>Room not found</div>;
   }
 
-  const handleBackgroundClick = (e) => {
-    if (e.target === e.currentTarget) {
-      setIsModalOpen(false);
-    }
-  };
 
   const handleReservationSuccess = () => {
     setIsSuccessDialogOpen(true);
@@ -165,8 +160,8 @@ const RoomDetail = () => {
             <div className="p-8">
               <p className="text-gray-900 font-times mb-6 text-lg">{room.description}</p>
               <div className="mb-4">
-                <h3 className="text-2xl font-times  mb-2">Additional Services:</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <h3 className="text-xl md:text-2xl font-times mb-2">Additional Services:</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                   {room.characteristics.map((characteristic, idx) => (
                     <div key={idx} className="flex items-center font-times space-x-2 mb-2">
                       <span role="img" aria-label="characteristic-icon">{characteristic.icon}</span>
@@ -176,7 +171,7 @@ const RoomDetail = () => {
                 </div>
               </div>
               <div className="text-right">
-                <p className="text-2xl font-times text-custom-blue">Price: ${room.price}</p>
+                <p className="text-xl font-times text-custom-blue">Price: ${room.price}</p>
               </div>
               <div className="text-right mt-4">
                 <button
@@ -191,12 +186,16 @@ const RoomDetail = () => {
         </div>
       </section>
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50" onClick={handleBackgroundClick}>
-          <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg" onClick={(e) => e.stopPropagation()}>
-            <ReservationForm room={room} onSuccess={handleReservationSuccess} />
+       
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full h-full overflow-y-auto">
+            <div className="max-w-lg mx-auto" onClick={(e) => e.stopPropagation()}>
+              <ReservationForm room={room} onSuccess={handleReservationSuccess} onClose={() => setIsModalOpen(false)} />
+            </div>
           </div>
         </div>
       )}
+      
       {isSuccessDialogOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-center">

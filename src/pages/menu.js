@@ -55,7 +55,7 @@ const menuData = {
     { name: 'Tuna Sandwich', description: '', price: 230 },
     { name: 'Shewarma Special', description: '', price: 400 },
   ],
-  "Ethiopian Traditional Food": [
+  "Ethiopian Food": [
     { name: 'ሽሮ', description: '', price: 200 },
     { name: 'ሽሮ በቱና', description: '', price: 320 },
     { name: 'ቦዘና ሽሮ', description: '', price: 380 },
@@ -129,7 +129,6 @@ const menuData = {
     { name: 'Cafe Americano', description: '', price: 60 },
   ],
 };
-
 function Menu() {
   const [selectedMenu, setSelectedMenu] = useState('BreakFast');
   const [categoryIndex, setCategoryIndex] = useState(0);
@@ -154,29 +153,39 @@ function Menu() {
   return (
     <div className="bg-white text-black min-h-screen">
       <div className="container mx-auto py-10">
-        <h1 className="text-5xl text-center text-custom-blue font-times mb-10">Restaurant Menu</h1>
+        <h1 className="text-3xl md:text-5xl text-center text-custom-blue font-times mb-10">Restaurant Menu</h1>
         <div className="relative flex items-center justify-center mb-10">
-          <div className="absolute left-0 flex items-center justify-center bg-custom-blue text-white w-10 h-10 rounded-full cursor-pointer" onClick={handlePrevious}>
-            <FaChevronLeft className={`text-2xl ${categoryIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''}`} />
+          <div
+            className={`absolute left-0 flex items-center justify-center bg-custom-blue text-white w-8 h-8 md:w-10 md:h-10 rounded-full cursor-pointer ${
+              categoryIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''
+            }`}
+            onClick={handlePrevious}
+          >
+            <FaChevronLeft className="text-xl md:text-2xl" />
           </div>
-          <div className="flex overflow-x-auto mx-10">
+          <div className="flex overflow-x-auto mx-4 md:mx-10">
             {categories.slice(startIndex, endIndex).map((menu) => (
               <div
                 key={menu}
-                className={`px-6 py-2 cursor-pointer mx-2 ${
+                className={`px-4 py-1 md:px-6 md:py-2 cursor-pointer mx-1 md:mx-2 ${
                   selectedMenu === menu
                     ? 'bg-white text-custom-blue font-times border-custom-blue border-2 border-solid shadow-lg'
                     : 'bg-custom-blue font-times text-white border-transparent'
                 }`}
-                style={{ minWidth: '150px', borderRadius: '4px' }}
+                style={{ minWidth: '100px', md: { minWidth: '150px' }, borderRadius: '4px' }}
                 onClick={() => setSelectedMenu(menu)}
               >
                 {menu}
               </div>
             ))}
           </div>
-          <div className="absolute right-0 flex items-center justify-center bg-custom-blue text-white w-10 h-10 rounded-full cursor-pointer" onClick={handleNext}>
-            <FaChevronRight className={`text-2xl ${categoryIndex === Math.ceil(categories.length / 3) - 1 ? 'opacity-50 cursor-not-allowed' : ''}`} />
+          <div
+            className={`absolute right-0 flex items-center justify-center bg-custom-blue text-white w-8 h-8 md:w-10 md:h-10 rounded-full cursor-pointer ${
+              categoryIndex === Math.ceil(categories.length / 3) - 1 ? 'opacity-50 cursor-not-allowed' : ''
+            }`}
+            onClick={handleNext}
+          >
+            <FaChevronRight className="text-xl md:text-2xl" />
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -184,7 +193,7 @@ function Menu() {
             menuData[selectedMenu].map((item, index) => (
               <div key={index} className="rounded-lg bg-white p-6 flex flex-col justify-between shadow-md hover:shadow-lg">
                 <div className="flex justify-between items-center">
-                  <h2 className="text-2xl mb-2 text-custom-blue font-times">{item.name}</h2>
+                  <h2 className="text-lg md:text-xl lg:text-2xl mb-2 text-custom-blue font-times">{item.name}</h2>
                   <p className="text-gray-600 font-times">{item.price} Birr</p>
                 </div>
                 <div className="border-t border-dotted border-custom-blue my-2"></div> {/* Dotted line */}
@@ -199,6 +208,5 @@ function Menu() {
     </div>
   );
 }
-
 
 export default Menu;
