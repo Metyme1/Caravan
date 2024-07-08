@@ -25,15 +25,15 @@ import hotelView6 from '../assets/v1.jpeg';
 import hotelView7 from '../assets/v3.jpeg';
 import hotelView8 from '../assets/v2.jpeg';
 import hotelView9 from '../assets/v1.jpeg';
-import dining1 from '../assets/d1.jpeg';
-import dining2 from '../assets/d2.jpeg';
-import dining3 from '../assets/d3.jpeg';
-import dining4 from '../assets/d1.jpeg';
-import dining5 from '../assets/d2.jpeg';
-import dining6 from '../assets/d3.jpeg';
-import dining7 from '../assets/d1.jpeg';
-import dining8 from '../assets/d2.jpeg';
-import dining9 from '../assets/d3.jpeg';
+import dining1 from '../assets/food1.jpg';
+import dining2 from '../assets/food2.jpg';
+import dining3 from '../assets/food3.jpg';
+import dining4 from '../assets/food4.jpg';
+import dining5 from '../assets/food5.jpg';
+import dining6 from '../assets/food6.jpg';
+import dining7 from '../assets/food7.jpg';
+import dining8 from '../assets/food8.jpg';
+import dining9 from '../assets/food9.jpg';
 
 const Gallery = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -124,6 +124,23 @@ const Gallery = () => {
           </div>
         </div>
       </section>
+      <section id="dining" className="py-16 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-2xl font-times text-center  mb-8">Dining</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {sections.dining.map((image, index) => (
+        <img
+          key={index}
+          src={image}
+          alt={`Dining ${index + 1}`}
+          className="w-full object-cover cursor-pointer"
+          style={index === 3 ? { gridColumn: 'span 2', gridRow: 'span 2', height: '400px', width: '800px' } : { height: '200px' }}
+          onClick={() => openLightbox('dining', index)}
+        />
+      ))}
+    </div>
+  </div>
+</section>
       <section id="hotelView" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-times text-center mb-8">Hotel View</h2>
@@ -147,23 +164,7 @@ const Gallery = () => {
           <p className="text-gray-600">Details about the services provided by the hotel can be placed here.</p>
         </div>
       </section>
-      <section id="dining" className="py-16 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 className="text-2xl font-times text-center  mb-8">Dining</h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {sections.dining.map((image, index) => (
-        <img
-          key={index}
-          src={image}
-          alt={`Dining ${index + 1}`}
-          className="w-full object-cover cursor-pointer"
-          style={index === 3 ? { gridColumn: 'span 2', gridRow: 'span 2', height: '400px', width: '800px' } : { height: '200px' }}
-          onClick={() => openLightbox('dining', index)}
-        />
-      ))}
-    </div>
-  </div>
-</section>
+
 
       <section id="events" className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
