@@ -4,6 +4,7 @@ import { db } from './firebase'; // Ensure correct import path
 
 const Admin = () => {
   const [reservations, setReservations] = useState([]);
+  const [deleteConfirmation, setDeleteConfirmation] = useState(null);
 
   useEffect(() => {
     const fetchReservations = async () => {
@@ -17,9 +18,16 @@ const Admin = () => {
 
   const handleDelete = async (id) => {
     try {
+      if (!window.confirm('Are you sure you want to delete this reservation?')) {
+        return; // If cancel is clicked, do not proceed with deletion
+      }
+      
       await deleteDoc(doc(db, 'reservations', id));
       setReservations(prevReservations => prevReservations.filter(reservation => reservation.id !== id));
-      console.log('Reservation deleted successfully');
+      setDeleteConfirmation('Reservation deleted successfully');
+      setTimeout(() => {
+        setDeleteConfirmation(null);
+      }, 3000); // Clear confirmation after 3 seconds
     } catch (error) {
       console.error('Error deleting reservation: ', error);
     }
@@ -67,6 +75,9 @@ const Admin = () => {
                       >
                         Delete
                       </button>
+                      {deleteConfirmation && (
+                        <span className="text-green-600 ml-2">{deleteConfirmation}</span>
+                      )}
                     </td>
                   </tr>
                 ))}

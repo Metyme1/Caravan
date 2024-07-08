@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaLinkedin } from 'react-icons/fa';
+// import { FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
             <p className="mt-4 font-times text-gray-200">
               Welcome to Caravan Dire! We specialize in providing high-quality caravan products and services.
             </p>
-            <div className="mt-4">
+            {/* <div className="mt-4">
               <h2 className="font-times text-lg">Who built this website?</h2>
               <div className="font-times text-gray-200">
                 <div className="flex items-center mt-2">
@@ -38,7 +38,7 @@ const Footer = () => {
                   </a>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="mb-8 md:mb-0">
             <h2 className="text-2xl font-times">Resources</h2>
@@ -69,7 +69,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/faq" className="hover:text-white font-times">
+                <a href="/contact" className="hover:text-white font-times">
                   FAQ
                 </a>
               </li>

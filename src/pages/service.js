@@ -7,43 +7,41 @@ import service2 from '../assets/wifi.jpeg';
 import service3 from '../assets/park.JPG';
 import service4 from '../assets/m1.JPG';
 import service5 from '../assets/res.jpg';
-
 const services = [
   {
     id: 1,
     name: "Room Service",
     image: service1,
-    description: "Enjoy 24/7 room service with a wide range of options to satisfy your hunger at any time.",
+    description: "Enjoy 24/7 room service with a wide range of options to satisfy your hunger at any time. Whether it's a late-night snack or a full meal, our attentive staff ensures your dining needs are met with promptness and quality.",
     link: "/rooms" 
   },
   {
     id: 2,
     name: "Restaurant",
     image: service5,
-    description: "Experience our restaurant with a variety of delicious dishes and beverages.",
+    description: "Experience our restaurant with a variety of delicious dishes and beverages. From local specialties to international cuisines, our chefs craft each dish with care using fresh, seasonal ingredients to ensure a delightful dining experience for every guest.",
     link: "/restaurant" 
   },
   {
     id: 3,
     name: "Meeting Hall",
     image: service4,
-    description: "Spacious meeting hall with facilities for tea breaks and lunch buffets as needed.",
+    description: "Our spacious meeting hall is equipped with modern facilities to accommodate various events. Whether you're hosting a corporate meeting, seminar, or social gathering, we offer flexible setups, audiovisual equipment, and catering services. The hall can accommodate up to 361 people, with options for tea breaks and lunch buffets tailored to your event's needs.",
     link: "/services/meeting-hall"
   },
-
+  
   {
     id: 4,
     name: "Parking",
     image: service3,
-    description: "Secure parking available for all guests with easy access to the hotel.",
+    description: "Secure parking is available for all guests, ensuring peace of mind during your stay. Our well-lit and monitored parking area offers convenient access to the hotel, making it easy to unload your belongings and start your visit without hassle.",
     link: "/services/parking" 
   },
-
   {
     id: 5,
     name: "Internet",
     image: service2,
-    description: "High-speed internet available throughout the hotel to keep you connected.",
+    description: "Stay connected with high-speed internet available throughout the hotel. Whether you're catching up on work, streaming your favorite shows, or staying in touch with loved ones, our reliable internet service ensures seamless connectivity during your stay.",
     link: "/services/internet"
   },
 ];

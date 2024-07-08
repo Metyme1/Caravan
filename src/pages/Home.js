@@ -91,7 +91,7 @@ const Home = () => {
       )}
       <header className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl font-times">Welcome to Carivan Dire Hotel</h1>
+          <h1 className="text-3xl font-times">Welcome to Caravan Dire Hotel</h1>
           <p className="text-xl text-gray-600 font-times">A LUXURY COLLECTION HOTEL, Dire Dawa</p>
         </div>
       </header>
