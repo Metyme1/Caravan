@@ -1,13 +1,17 @@
 
 import React, { useEffect , useState} from 'react';
 import { Link } from 'react-router-dom';
-import restaurantImage from '../assets/res.jpg'; 
-import restaurantImage1 from '../assets/Mandi.jpg'; 
-import openair from '../assets/openair.jpg'; 
-import diningImage2 from '../assets/res.jpg'; 
-import diningImage3 from '../assets/twin1.JPG'; 
+import restaurantImage from '../assets/res.JPG'; 
+import special from '../assets/combo1.JPG'
+import pizza from'../assets/pizza.JPG'
+import burger from '../assets/burger.JPG'
+import chicken from '../assets/chicken.JPG'
+import club from '../assets/club.JPG'
+import openair from '../assets/outdoor.JPG'; 
+import diningImage2 from '../assets/res.JPG'; 
+import diningImage3 from '../assets/sweet.JPG'; 
 
-import guestImage1 from '../assets/room1.jpg'; // Add guest images
+import guestImage1 from '../assets/room1.jpg'; 
 import guestImage2 from '../assets/room2.jpg';
 import guestImage3 from '../assets/r3.jpg';
 
@@ -128,29 +132,30 @@ const Restaurant = () => {
       <div className="bg-white shadow-md rounded-lg overflow-hidden mb-8">
         <h2 className="text-3xl font-times  py-4 px-6 bg-custom-blue text-white rounded-t-lg">Popular Menu Items</h2>
         <div className="flex space-x-6 overflow-x-auto p-4" id="scroll-container">
-          <div className="bg-white p-4 flex-shrink-0 w-72 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-            <img src={restaurantImage1} alt="Menu Item" className="w-full h-40 object-cover mb-4 rounded-lg"/>
-            <h3 className="text-xl font-times text-gray-900 mb-2">Mandi</h3>
-            <p className="text-gray-600 font-times">Description of the menu item.</p>
-          </div>
-          <div className="bg-white p-4 flex-shrink-0 w-72 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-            <img src={restaurantImage1} alt="Menu Item" className="w-full h-40 object-cover mb-4 rounded-lg"/>
-            <h3 className="text-xl font-times text-gray-900 mb-2">Fish</h3>
-            <p className="text-gray-600 font-times">Description of the menu item.</p>
-          </div>
-          <div className="bg-white p-4 flex-shrink-0 w-72 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-            <img src={restaurantImage1} alt="Menu Item" className="w-full h-40 object-cover mb-4 rounded-lg"/>
+        <div className="bg-white p-4 flex-shrink-0 w-72 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <img src={special} alt="Menu Item" className="w-full h-40 object-cover mb-4 rounded-lg"/>
             <h3 className="text-xl font-times text-gray-900 mb-2">Special Combo</h3>
             <p className="text-gray-600 font-times">Description of the menu item.</p>
           </div>
           <div className="bg-white p-4 flex-shrink-0 w-72 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-            <img src={restaurantImage1} alt="Menu Item" className="w-full h-40 object-cover mb-4 rounded-lg"/>
-            <h3 className="text-xl font-times text-gray-900 mb-2">Item 4</h3>
+            <img src={chicken} alt="Menu Item" className="w-full h-40 object-cover mb-4 rounded-lg"/>
+            <h3 className="text-xl font-times text-gray-900 mb-2">Mandi</h3>
             <p className="text-gray-600 font-times">Description of the menu item.</p>
           </div>
           <div className="bg-white p-4 flex-shrink-0 w-72 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-            <img src={restaurantImage1} alt="Menu Item" className="w-full h-40 object-cover mb-4 rounded-lg"/>
-            <h3 className="text-xl font-times text-gray-900 mb-2">Item 5</h3>
+            <img src={pizza} alt="Menu Item" className="w-full h-40 object-cover mb-4 rounded-lg"/>
+            <h3 className="text-xl font-times text-gray-900 mb-2">Pizza</h3>
+            <p className="text-gray-600 font-times">Description of the menu item.</p>
+          </div>
+   
+          <div className="bg-white p-4 flex-shrink-0 w-72 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <img src={burger} alt="Menu Item" className="w-full h-40 object-cover mb-4 rounded-lg"/>
+            <h3 className="text-xl font-times text-gray-900 mb-2">Burger</h3>
+            <p className="text-gray-600 font-times">Description of the menu item.</p>
+          </div>
+          <div className="bg-white p-4 flex-shrink-0 w-72 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <img src={club} alt="Menu Item" className="w-full h-40 object-cover mb-4 rounded-lg"/>
+            <h3 className="text-xl font-times text-gray-900 mb-2">Club Sandwitch</h3>
             <p className="text-gray-600 font-times">Description of the menu item.</p>
           </div>
         </div>

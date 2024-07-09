@@ -2,11 +2,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
 
-import service1 from '../assets/twin1.JPG';
+import service1 from '../assets/sweet1.JPG';
 import service2 from '../assets/wifi.jpeg';
 import service3 from '../assets/park.JPG';
-import service4 from '../assets/m1.JPG';
-import service5 from '../assets/res.jpg';
+import service4 from '../assets/meeting.JPG';
+import service5 from '../assets/res.JPG';
 const services = [
   {
     id: 1,

@@ -87,7 +87,7 @@ const Contact = () => {
               <strong>Phone:</strong> (123) 456-7890
             </p>
             <p className="text-gray-700 mb-2 font-times">
-              <strong>Email:</strong> contact@CaravanDire.com
+              <strong>Email:</strong> contact@gmail.com
             </p>
             <p className="text-gray-700 font-times mb-2">
               <strong>Address:</strong> Dire Dawa

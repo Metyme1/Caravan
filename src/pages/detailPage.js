@@ -6,7 +6,7 @@ import ReservationForm from '../components/reservation'; // Assuming the form is
 import room1 from '../assets/standard.JPG';
 import room2 from '../assets/twin1.JPG';
 import room3 from '../assets/semi1.jpg';
-import room4 from '../assets/sweet5.JPG';
+import room4 from '../assets/sweet1.JPG';
 
 import twin1 from '../assets/twin2.JPG';
 import twin2 from '../assets/twin3.JPG';

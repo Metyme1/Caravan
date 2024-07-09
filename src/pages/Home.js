@@ -2,15 +2,19 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 
-import room1 from '../assets/sweet5.JPG';
+import room1 from '../assets/sweet1.JPG';
 import room2 from '../assets/semi1.jpg';
 import room3 from '../assets/twin1.JPG';
-import restaurant from '../assets/res.jpg';
-import hotelImage from '../assets/main.jpg'; 
+import restaurant from '../assets/res.JPG';
+import hotelImage from '../assets/Home.JPG'; 
 import sauna from '../assets/sauna.jpg';
 import gym from '../assets/gym.jpg';
 import shopping from '../assets/shop.jpg';
 import barbershop from '../assets/barber.jpg';
+import special from '../assets/combo1.JPG'
+import pizza from'../assets/pizza.JPG'
+import meeting from '../assets/meeting.JPG';
+import chicken from '../assets/chicken.JPG'
 
 const services = [
   {
@@ -106,7 +110,7 @@ const Home = () => {
           <button className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48">Learn More</button>
         </div>
       </section>
-
+     
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl text-gray-900 mb-8 text-center font-times">Rooms and Suites</h2>
@@ -133,7 +137,7 @@ const Home = () => {
           <div className="flex justify-center mt-8">
             <Link to="/rooms">
               <button className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48">
-                Learn More
+               View more
               </button>
             </Link>
           </div>
@@ -159,6 +163,57 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-times text-gray-900 text-center mb-8">Our Well-Known Foods</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
+              <img src={special} alt="Chicken Mandi" className="w-full h-64 object-cover"/>
+              <div className="p-6">
+                <h3 className="text-xl font-times">Chicken Mandi</h3>
+                <p className="text-gray-600 mt-2 font-times">Chicken Mandi - is a delicious middle-eastern chicken and rice dish with ...</p>
+              </div>
+            </div>
+            <div className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
+              <img src={chicken} alt="Chicken Mandi" className="w-full h-64 object-cover"/>
+              <div className="p-6">
+                <h3 className="text-xl font-times">Chicken Mandi</h3>
+                <p className="text-gray-600 mt-2 font-times">Chicken Mandi - is a delicious middle-eastern chicken and rice dish with ...</p>
+              </div>
+            </div>
+            <div className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
+              <img src={pizza} alt="Chicken Mandi" className="w-full h-64 object-cover"/>
+              <div className="p-6">
+                <h3 className="text-xl font-times">Chicken Mandi</h3>
+                <p className="text-gray-600 mt-2 font-times">Chicken Mandi - is a delicious middle-eastern chicken and rice dish with ...</p>
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center mt-10">
+  <Link to="/menu" className="bg-custom-blue text-white text-lg px-4 py-2 font-times rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48 text-center">
+    View menu
+  </Link>
+</div>
+
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-4xl font-times text-gray-900 text-center mb-8">Meetings and Events</h2>
+    <div className="mt-8 bg-white shadow-md rounded-lg overflow-hidden flex items-center">
+      <div className="p-4 w-1/2">
+        <p className="text-gray-600 font-times">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ornare sem, lacinia facilisis venenatis et, dictum vel ipsum. Proin sodales tortor eu lectus aliquet commodo.
+        </p>
+        <Link to="/menu" className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48 text-center inline-block mt-4">
+          See Detail
+        </Link>
+      </div>
+      <img src={meeting} alt="Meetings and Events" className="w-1/2 h-full object-cover"/>
+    </div>
+  </div>
+</section>
 
       <NearbyServices />
 
