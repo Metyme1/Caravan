@@ -14,8 +14,8 @@ import twin3 from '../assets/twin4.JPG';
 import twin4 from '../assets/twin5.JPG';
 import twin5 from '../assets/twin6.JPG';
 
-import sweet1 from '../assets/sweet2.JPG';
-import sweet2 from '../assets/sweet3.JPG';
+import sweet1 from '../assets/sweet.JPG';
+import sweet2 from '../assets/sweet2.JPG';
 import sweet3 from '../assets/sweet4.JPG';
 import sweet4 from '../assets/sweet5.JPG';
 import sweet5 from '../assets/sweet6.JPG';
