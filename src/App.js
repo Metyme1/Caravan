@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/Navbar';
 import Home from './pages/Home';
@@ -19,7 +19,9 @@ import AboutUs from './pages/aboutus';
 import MeetingHallDetail from './pages/meetinghall';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-import { useEffect } from 'react';
+import { AuthProvider } from './components/authcontext';
+import PrivateRoute from './components/privateroute';
+import Login from './pages/login';
 
 function App() {
   useEffect(() => {
@@ -27,31 +29,38 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen">
-        <NavBar />
-        <div className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/rooms" element={<Rooms />} />
-            <Route path="/rooms/:id" element={<RoomDetail />} />
-            <Route path="/restaurant" element={<Restaurant />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/services/internet" element={<InternetService />} /> 
-            <Route path="/services/parking" element={<ParkingService />} /> 
-            <Route path="/services/meeting-hall" element={<MeetingHallService />} /> 
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/reservation" element={<ReservationForm />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/about" element={<AboutUs />} />
-            <Route path="/meeting" element={<MeetingHallDetail />} />
-          </Routes>
+    <AuthProvider>
+      <Router>
+        <div className="flex flex-col min-h-screen">
+          <NavBar />
+          <div className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/rooms" element={<Rooms />} />
+              <Route path="/rooms/:id" element={<RoomDetail />} />
+              <Route path="/restaurant" element={<Restaurant />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/services/internet" element={<InternetService />} /> 
+              <Route path="/services/parking" element={<ParkingService />} /> 
+              <Route path="/services/meeting-hall" element={<MeetingHallService />} /> 
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/menu" element={<Menu />} />
+              <Route path="/reservation" element={<ReservationForm />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/about" element={<AboutUs />} />
+              <Route path="/meeting" element={<MeetingHallDetail />} />
+              <Route path="/admin" element={
+                <PrivateRoute>
+                  <Admin />
+                </PrivateRoute>
+              } />
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </Router>
+      </Router>
+    </AuthProvider>
   );
 }
 
