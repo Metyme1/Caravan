@@ -16,6 +16,7 @@ import pizza from'../assets/pizza.JPG'
 import meeting from '../assets/meeting.JPG';
 import chicken from '../assets/chicken.JPG'
 import promotion from '../assets/promo.MP4'
+import { FaStar } from 'react-icons/fa'; 
 const services = [
   {
     id: 1,
@@ -94,21 +95,34 @@ const Home = () => {
           <div className="absolute inset-0 bg-custom-blue bg-opacity-50"></div>
         </div>
       )}
-      <header className="bg-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl font-times">Welcome to Caravan Dire Hotel</h1>
-          <p className="text-xl text-gray-600 font-times">A LUXURY COLLECTION HOTEL, Dire Dawa</p>
-        </div>
-      </header>
+<header className="bg-white py-8">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 className="text-3xl font-times">Welcome to Caravan Dire Hotel</h1>
+    <div className="flex items-center justify-center mt-2">
+      <p className="text-xl text-gray-600 font-times flex">
+        <FaStar className="text-yellow-500 mr-1" />
+        <FaStar className="text-yellow-500 mr-1" />
+        <FaStar className="text-yellow-500 mr-1" />
+        <FaStar className="text-yellow-500" />
+      </p>
+    </div>
+  </div>
+</header>
 
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl text-gray-900 font-times">Find luxury and serenity in Dire Dawa, Ethiopia</h2>
           <p className="mt-4 text-gray-600 font-times">
-            Caravan Dire Hotel offers a unique blend of luxury and comfort in the heart of Dire Dawa. Nestled amidst scenic surroundings, our hotel provides a tranquil retreat with modern amenities and personalized service. Whether you're here for business or leisure, indulge in our spacious rooms, exquisite dining options, and warm hospitality. Explore the vibrant city of Dire Dawa or simply unwind in our serene ambiance. Discover a memorable stay at Caravan Dire Hotel.
+          Welcome to Caravan Dire Hotel, where luxury meets comfort in the heart of Dire Dawa, Ethiopia. Our hotel offers a range of exceptional services to ensure your stay is memorable and enjoyable. Indulge in a culinary journey at our diverse restaurant, featuring a variety of delicious food options and outdoor dining experiences. Savor delectable cakes and pastries prepared with care by our talented chefs.
+
+Relax and unwind in our well-appointed rooms, equipped with modern amenities including high-speed WiFi and 24/7 security for your peace of mind. Whether you're here for business or leisure, our attentive staff are dedicated to providing personalized service to exceed your expectations.
           </p>
           <br /><br />
-          <button className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48">Learn More</button>
+          <Link to="/about">
+          <button className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48">
+           More About-us
+          </button>
+        </Link>
         </div>
       </section>
      
