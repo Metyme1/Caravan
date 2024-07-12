@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
+import breakfastImage from '../assets/break.jpg';
+import lunchImage from '../assets/combo1.JPG';
+import burgerImage from '../assets/burger.JPG';
+import sandwichImage from '../assets/club.JPG';
+import ethiopianImage from '../assets/eth.jpg';
+import pizzaImage from '../assets/food6.jpg';
+import juiceImage from '../assets/juice.jpg';
+import cakeImage from '../assets/cake.jpg';
+import hotDrinksImage from '../assets/hot.jpg';
+
 const menuData = {
   BreakFast: [
     { name: 'Scrembled - Egg', description: '', price: 200 },
@@ -20,7 +30,7 @@ const menuData = {
     { name: 'Dullet', description: '', price: 200},
   ],
   "Lunch and Dinner": [
-    { name: 'Special Carnival Combo', description: '', price: 1500 },
+    { name: 'Special caravan Combo', description: '', price: 1500 },
     { name: ' Special Goat', description: '', price: 450 },
     { name: 'Goat - Tibs', description: '', price: 400 },
     { name: 'Rice - Normal', description: '', price: 200 },
@@ -76,7 +86,7 @@ const menuData = {
     { name: 'ጎመን ክትፎ', description: '', price: 250 },
   ],
   Pizza: [
-    { name: 'Carnival', description: 'Souse, mozzarella cheese, tested meat, chicken, tuna egg and with others', price: 450 },
+    { name: 'caravan special', description: 'Souse, mozzarella cheese, tested meat, chicken, tuna egg and with others', price: 450 },
     { name: 'Special Pizza', description: 'Botanies, Souse, mozzarella cheese, tested meat, Egg, organic, Bill, peper  and with others', price: 450 },
     { name:'Oriental Pizza', description : 'Botanies, Souse, Tested Meat, Mozzarella Cheese, Egg, Organic, Bill, Pepper and Other', price: 450 },
     { name: 'Margarita Pizza', description: 'Botanies, sauce, mozzarella cheese, organic, tomato, bill, paper and etc.', price: 300 },
@@ -129,9 +139,22 @@ const menuData = {
     { name: 'Cafe Americano', description: '', price: 60 },
   ],
 };
+const categoryImages = {
+  BreakFast: breakfastImage,
+  "Lunch and Dinner": lunchImage,
+  Burger: burgerImage,
+  Sandwich: sandwichImage,
+  "Ethiopian Food": ethiopianImage,
+  Pizza: pizzaImage,
+  Juice: juiceImage,
+  Cake: cakeImage,
+  "Hot Drinks": hotDrinksImage,
+};
+
 function Menu() {
   const [selectedMenu, setSelectedMenu] = useState('BreakFast');
   const [categoryIndex, setCategoryIndex] = useState(0);
+  const [selectedImage, setSelectedImage] = useState(breakfastImage); // Initial image
 
   const categories = Object.keys(menuData);
 
@@ -150,10 +173,16 @@ function Menu() {
     }
   };
 
+  // Function to handle category change and update selected image
+  const handleCategoryChange = (menu) => {
+    setSelectedMenu(menu);
+    setSelectedImage(categoryImages[menu]);
+  };
+
   return (
     <div className="bg-white text-black min-h-screen">
-      <div className="container mx-auto py-10">
-        <h1 className="text-3xl md:text-5xl text-center text-custom-blue font-times mb-10">Restaurant Menu</h1>
+      <div className="container mx-auto py-10 px-4">
+        <h1 className="text-3xl md:text-5xl text-center text-custom-blue font-serif mb-10">Restaurant Menu</h1>
         <div className="relative flex items-center justify-center mb-10">
           <div
             className={`absolute left-0 flex items-center justify-center bg-custom-blue text-white w-8 h-8 md:w-10 md:h-10 rounded-full cursor-pointer ${
@@ -163,17 +192,17 @@ function Menu() {
           >
             <FaChevronLeft className="text-xl md:text-2xl" />
           </div>
-          <div className="flex overflow-x-auto mx-4 md:mx-10">
+          <div className="flex overflow-x-auto mx-4 md:mx-10 space-x-2 md:space-x-6 px-2 md:px-4">
             {categories.slice(startIndex, endIndex).map((menu) => (
               <div
                 key={menu}
-                className={`px-4 py-1 md:px-6 md:py-2 cursor-pointer mx-1 md:mx-2 ${
+                className={`px-2 py-1 md:px-6 md:py-2 cursor-pointer text-sm md:text-base mx-1 md:mx-2 ${
                   selectedMenu === menu
-                    ? 'bg-white text-custom-blue font-times border-custom-blue border-2 border-solid shadow-lg'
-                    : 'bg-custom-blue font-times text-white border-transparent'
+                    ? 'bg-white text-custom-blue font-serif border-custom-blue border-2 border-solid shadow-lg'
+                    : 'bg-custom-blue text-white font-serif border-transparent'
                 }`}
-                style={{ minWidth: '100px', md: { minWidth: '150px' }, borderRadius: '4px' }}
-                onClick={() => setSelectedMenu(menu)}
+                style={{ minWidth: '75px' }}
+                onClick={() => handleCategoryChange(menu)}
               >
                 {menu}
               </div>
@@ -189,24 +218,31 @@ function Menu() {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {menuData[selectedMenu] ? (
-            menuData[selectedMenu].map((item, index) => (
-              <div key={index} className="rounded-lg bg-white p-6 flex flex-col justify-between shadow-md hover:shadow-lg">
-                <div className="flex justify-between items-center">
-                  <h2 className="text-lg md:text-xl lg:text-2xl mb-2 text-custom-blue font-times">{item.name}</h2>
-                  <p className="text-gray-600 font-times">{item.price} Birr</p>
+          <div className="col-span-full md:col-span-2 lg:col-span-3 sticky top-0 z-10 bg-white">
+            <img src={selectedImage} alt={selectedMenu} className="w-full md:max-w-md rounded-lg shadow-md mb-6 mx-auto" />
+          </div>
+          <div className="col-span-full md:col-span-2 lg:col-span-3 overflow-auto" style={{ maxHeight: 'calc(100vh - 300px)' }}>
+            {menuData[selectedMenu] ? (
+              menuData[selectedMenu].map((item, index) => (
+                <div key={index} className="rounded-lg bg-white p-6 flex flex-col justify-between shadow-md hover:shadow-lg transition-shadow duration-300 mb-4">
+                  <div className="flex justify-between items-center">
+                    <h2 className="text-lg md:text-xl lg:text-2xl mb-2 text-custom-blue font-serif">{item.name}</h2>
+                    <p className="text-gray-600 font-serif">{item.price} Birr</p>
+                  </div>
+                  <div className="border-t border-dotted border-custom-blue my-2"></div>
+                  <p className="text-gray-600 font-serif">{item.description || 'Description not available'}</p>
                 </div>
-                <div className="border-t border-dotted border-custom-blue my-2"></div> {/* Dotted line */}
-                <p className="text-gray-600 font-times">{item.description || 'Description not available'}</p>
-              </div>
-            ))
-          ) : (
-            <p className="text-black text-center">No items found for this menu.</p>
-          )}
+              ))
+            ) : (
+              <p className="text-black text-center">No items found for this menu.</p>
+            )}
+          </div>
         </div>
       </div>
     </div>
   );
+  
+  
 }
 
 export default Menu;
