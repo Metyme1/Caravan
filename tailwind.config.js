@@ -20,6 +20,7 @@ module.exports = {
       borderRadius: {
         'custom': '50px', // Define your custom border radius here
       },
+      
     },
   },
   plugins: [],

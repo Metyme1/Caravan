@@ -44,6 +44,11 @@ const roomDetails = [
       { icon: "❄️", label: "Air Conditioning" },
       { icon: "🍽️", label: "Breakfast Included" },
     ],
+    policies: {
+      checkIn: "Check-in from 3 AM onwards",
+      payment: "Payment must be made within 24 hours of reservation, otherwise, the reservation will be canceled.",
+      pets: "Pets are not allowed.",
+    },
   },
   {
     id: 2,
@@ -51,7 +56,7 @@ const roomDetails = [
     image: room2,
     gallery: [twin1, twin2, twin3, twin4, twin5],
     price: "1800/Night",
-    additionalServices: "Internet Access, Breakfast, Inroom Dining",
+    additionalServices: "Internet Access, Breakfast, In-room Dining",
     characteristics: [
       { icon: "👥", label: "2-4 Persons" },
       { icon: "🛏️", label: "Twin Beds" },
@@ -59,6 +64,11 @@ const roomDetails = [
       { icon: "🍽️", label: "Breakfast Included" },
       { icon: "❄️", label: "Air Conditioning" },
     ],
+    policies: {
+      checkIn: "Check-in from 3 AM onwards",
+      payment: "Payment must be made within 24 hours of reservation, otherwise, the reservation will be canceled.",
+      pets: "Pets are not allowed.",
+    },
   },
   {
     id: 3,
@@ -74,6 +84,11 @@ const roomDetails = [
       { icon: "❄️", label: "Air Conditioning" },
       { icon: "🍳", label: "Cooking Space" },
     ],
+    policies: {
+      checkIn: "Check-in from 3 AM onwards",
+      payment: "Payment must be made within 24 hours of reservation, otherwise, the reservation will be canceled.",
+      pets: "Pets are not allowed.",
+    },
   },
   {
     id: 4,
@@ -92,8 +107,14 @@ const roomDetails = [
       { icon: "❄️", label: "Air Conditioning" },
       { icon: "🍳", label: "Full Kitchen" },
     ],
+    policies: {
+      checkIn: "Check-in from 3 AM onwards",
+      payment: "Payment must be made within 24 hours of reservation, otherwise, the reservation will be canceled.",
+      pets: "Pets are not allowed.",
+    },
   }
 ];
+
 
 const RoomDetail = () => {
   const { id } = useParams();
@@ -173,6 +194,14 @@ const RoomDetail = () => {
               <div className="text-right">
                 <p className="text-xl font-times text-custom-blue">Price: ${room.price}</p>
               </div>
+              <div className="mt-6">
+                <h3 className="text-xl md:text-2xl font-times mb-2">Rules:</h3>
+                <ul className="list-disc list-inside text-gray-900 font-times text-lg">
+                  <li>{room.policies.checkIn}</li>
+                  <li>{room.policies.payment}</li>
+                  <li>{room.policies.pets}</li>
+                </ul>
+              </div>
               <div className="text-right mt-4">
                 <button
                   className="text-custom-blue font-times underline"
@@ -186,7 +215,6 @@ const RoomDetail = () => {
         </div>
       </section>
       {isModalOpen && (
-       
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full h-full overflow-y-auto">
             <div className="max-w-lg mx-auto" onClick={(e) => e.stopPropagation()}>
@@ -195,7 +223,6 @@ const RoomDetail = () => {
           </div>
         </div>
       )}
-      
       {isSuccessDialogOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-center">
@@ -212,6 +239,7 @@ const RoomDetail = () => {
       )}
     </div>
   );
+  
 }
 
 export default RoomDetail;

@@ -15,7 +15,7 @@ import special from '../assets/combo1.JPG'
 import pizza from'../assets/pizza.JPG'
 import meeting from '../assets/meeting.JPG';
 import chicken from '../assets/chicken.JPG'
-
+import promotion from '../assets/promo.MP4'
 const services = [
   {
     id: 1,
@@ -42,6 +42,7 @@ const services = [
     image: barbershop,
   },
 ];
+
 
 const NearbyServices = () => {
   const [current, setCurrent] = useState(0);
@@ -197,6 +198,23 @@ const Home = () => {
 
         </div>
       </section>
+      <section className="py-16 bg-gray-100">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ 
+    <div className="max-w-full max-h-96 overflow-hidden flex justify-center items-center">
+      <div className="relative w-full sm:w-120 md:w-144 lg:w-160 h-auto sm:h-96 md:h-120 lg:h-144">
+        <video className="w-full h-full" controls>
+          <source src={promotion} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
 
       <section className="py-16 bg-white">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

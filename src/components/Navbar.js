@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-
+import logo from'../assets/caravanlogo.png';
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -13,7 +13,7 @@ const NavBar = () => {
       <div className="flex items-center justify-between h-16 px-6">
         <div className="flex items-center">
           <div className="flex-shrink-0">
-            <h1 className="text-3xl font-times">Caravan Dire Hotel</h1>
+            <img src={logo} alt="Caravan Dire" className="h-16 w-auto" />
           </div>
         </div>
         <div className="hidden md:flex flex-1 justify-end">
@@ -154,18 +154,25 @@ const NavBar = () => {
         </div>
       </div>
       <div className="bg-custom-blue text-white py-4 border-t-2 border-white px-6 hidden md:block">
-        <div className="flex justify-end items-center space-x-6">
-          <NavLink
-            to="/gallery"
-            className={({ isActive }) =>
-              `text-white px-3 py-2 rounded-md text-lg font-times ${isActive ? 'underline' : ''}`
-            }
-          >
-            Gallery
-          </NavLink>
-          <div className="flex items-center space-x-2">
-            <span role="img" aria-label="phone">📞</span>
-            <span className="text-lg font-times">09090909090</span>
+        <div className="flex justify-between items-center">
+        <div className="flex items-center space-x-2">
+        <span className="text-lg font-times">⭐⭐⭐⭐</span>
+            <span className="text-lg font-times">Caravan Dire Hotel, DireDawa</span>
+            
+          </div>
+          <div className="flex space-x-6 items-center">
+            <NavLink
+              to="/gallery"
+              className={({ isActive }) =>
+                `text-white px-3 py-2 rounded-md text-lg font-times ${isActive ? 'underline' : ''}`
+              }
+            >
+              Gallery
+            </NavLink>
+            <div className="flex items-center space-x-2">
+              <span role="img" aria-label="phone">📞</span>
+              <span className="text-lg font-times">09090909090</span>
+            </div>
           </div>
         </div>
       </div>
