@@ -14,31 +14,7 @@ const Footer = () => {
             <p className="mt-4 font-times text-gray-200">
               Welcome to Caravan Dire! We specialize in providing high-quality caravan products and services.
             </p>
-            {/* <div className="mt-4">
-              <h2 className="font-times text-lg">Who built this website?</h2>
-              <div className="font-times text-gray-200">
-                <div className="flex items-center mt-2">
-                  <a
-                    href="https://www.linkedin.com/in/mety-million29/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white flex items-center"
-                  >
-                    <FaLinkedin className="ml-2" /> Mety Million 0961736510
-                  </a>
-                </div>
-                <div className="flex items-center mt-2">
-                  <a
-                    href="https://www.linkedin.com/in/kidus-mikael-877b63235/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white flex items-center"
-                  >
-                    <FaLinkedin className="ml-2" /> Kidus Mikael 0939068485
-                  </a>
-                </div>
-              </div>
-            </div> */}
+    
           </div>
           <div className="mb-8 md:mb-0">
             <h2 className="text-2xl font-times">Resources</h2>

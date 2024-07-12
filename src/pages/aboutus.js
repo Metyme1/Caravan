@@ -91,7 +91,7 @@ const AboutUs = () => {
             <div className="md:col-span-1">
               <h3 className="text-2xl font-times text-gray-900 mb-4">Meeting Hall for 361 People</h3>
               <p className="text-gray-600 font-times leading-relaxed">
-                Host your events and conferences in our spacious meeting hall that accommodates up to 361 people. Whether it's a corporate seminar, wedding reception, or special event, our versatile space and dedicated service ensure a successful and memorable occasion.
+                Host your events and conferences in our spacious meeting hall that accommodates up to 361 people. Whether it's a corporate seminar, meeting, or special event, our versatile space and dedicated service ensure a successful and memorable occasion.
               </p>
             </div>
           </div>

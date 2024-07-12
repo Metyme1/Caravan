@@ -26,7 +26,7 @@ const services = [
     id: 3,
     name: "Meeting Hall",
     image: service4,
-    description: "Our spacious meeting hall is equipped with modern facilities to accommodate various events. Whether you're hosting a corporate meeting, seminar, or social gathering, we offer flexible setups, audiovisual equipment, and catering services. The hall can accommodate up to 361 people, with options for tea breaks and lunch buffets tailored to your event's needs.",
+    description: "Our spacious meeting hall is equipped with modern facilities to accommodate various events. Whether you're hosting a corporate meeting, seminar, or social gathering, we offer flexible setups, audiovisual equipment,. The hall can accommodate up to 361 people, with options for tea breaks and lunch buffets tailored to your event's needs.",
     link: "/services/meeting-hall"
   },
   

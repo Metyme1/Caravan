@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 
@@ -13,10 +13,13 @@ import shopping from '../assets/shop.jpg';
 import barbershop from '../assets/barber.jpg';
 import special from '../assets/combo1.JPG'
 import pizza from'../assets/pizza.JPG'
-import meeting from '../assets/meeting.JPG';
+import meeting from '../assets/m1.JPG';
+import meeting2 from '../assets/m2.JPG';
+
 import chicken from '../assets/chicken.JPG'
 import promotion from '../assets/promo.MP4'
 import { FaStar } from 'react-icons/fa'; 
+
 const services = [
   {
     id: 1,
@@ -55,6 +58,7 @@ const NearbyServices = () => {
   const handleNext = () => {
     setCurrent(current === services.length - 1 ? 0 : current + 1);
   };
+ 
 
   return (
     <section className="py-16 bg-gray-100">
@@ -81,6 +85,18 @@ const Home = () => {
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 1224px)'
   });
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = [meeting, meeting2]; // Add your meeting and events images here
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 2000); // Change image every 5 seconds (5000ms)
+
+    return () => {
+      clearInterval(interval); // Cleanup the interval when component unmounts
+    };
+  }, [images.length])
 
   return (
     <main className="bg-gray-100">
@@ -167,9 +183,9 @@ Relax and unwind in our well-appointed rooms, equipped with modern amenities inc
               <img src={restaurant} alt="Restaurant" className="w-full h-full object-cover"/>
             </div>
             <div className="md:w-1/2 p-6 flex flex-col justify-center">
-              <h3 className="text-2xl font-times mb-4">Worldly Cuisine</h3>
+          
               <p className="text-gray-600 text-lg font-times mb-4">
-                Providing a bountiful array of flavors and aromas, the Caravan Dire Hotel offers a choice of eleven restaurant and lounge options that will seduce the most discerning palate with culinary delights from all around the world—from Italy’s Stagioni and India’s Shaheen, to Asian and Middle Eastern nights at Summerfields.
+              Experience our restaurant with a variety of delicious dishes and beverages. From local specialties to international cuisines, our chefs craft each dish with care using fresh, seasonal ingredients to ensure a delightful dining experience for every guest.
               </p>
               <Link to="/restaurant">
                 <button className="bg-custom-blue text-white font-times text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48">Discover More</button>
@@ -185,8 +201,8 @@ Relax and unwind in our well-appointed rooms, equipped with modern amenities inc
             <div className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
               <img src={special} alt="Chicken Mandi" className="w-full h-64 object-cover"/>
               <div className="p-6">
-                <h3 className="text-xl font-times">Chicken Mandi</h3>
-                <p className="text-gray-600 mt-2 font-times">Chicken Mandi - is a delicious middle-eastern chicken and rice dish with ...</p>
+                <h3 className="text-xl font-times">Special Combo</h3>
+                <p className="text-gray-600 mt-2 font-times">Special Combo- is a delicious middle-eastern chicken and rice dish with ...</p>
               </div>
             </div>
             <div className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
@@ -199,8 +215,8 @@ Relax and unwind in our well-appointed rooms, equipped with modern amenities inc
             <div className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
               <img src={pizza} alt="Chicken Mandi" className="w-full h-64 object-cover"/>
               <div className="p-6">
-                <h3 className="text-xl font-times">Chicken Mandi</h3>
-                <p className="text-gray-600 mt-2 font-times">Chicken Mandi - is a delicious middle-eastern chicken and rice dish with ...</p>
+                <h3 className="text-xl font-times">Pizza</h3>
+                <p className="text-gray-600 mt-2 font-times">Pizza - is a delicious middle-eastern chicken and rice dish with ...</p>
               </div>
             </div>
           </div>
@@ -226,26 +242,22 @@ Relax and unwind in our well-appointed rooms, equipped with modern amenities inc
   </div>
 </section>
 
-
-
-
-
-      <section className="py-16 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 className="text-4xl font-times text-gray-900 text-center mb-8">Meetings and Events</h2>
-    <div className="mt-8 bg-white shadow-md rounded-lg overflow-hidden flex items-center">
-      <div className="p-4 w-1/2">
-        <p className="text-gray-600 font-times">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ornare sem, lacinia facilisis venenatis et, dictum vel ipsum. Proin sodales tortor eu lectus aliquet commodo.
-        </p>
-        <Link to="/menu" className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48 text-center inline-block mt-4">
-          See Detail
-        </Link>
+<section className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-times text-gray-900 text-center mb-8">Meetings and Events</h2>
+        <div className="mt-8 bg-white shadow-md rounded-lg overflow-hidden flex items-center">
+          <div className="p-4 w-1/2">
+            <p className="text-gray-600 font-times">
+              Our spacious meeting hall is equipped with modern facilities to accommodate various events. Whether you're hosting a corporate meeting, seminar, or social gathering, we offer flexible setups, audiovisual equipment, and catering services. The hall can accommodate up to 361 people, with options for tea breaks and lunch buffets tailored to your event's needs.
+            </p>
+            <Link to="/meeting" className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48 text-center inline-block mt-4">
+              See Detail
+            </Link>
+          </div>
+          <img src={images[currentImageIndex]} alt="Meetings and Events" className="w-1/2 h-full object-cover" />
+        </div>
       </div>
-      <img src={meeting} alt="Meetings and Events" className="w-1/2 h-full object-cover"/>
-    </div>
-  </div>
-</section>
+    </section>
 
       <NearbyServices />
 

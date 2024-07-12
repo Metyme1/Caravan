@@ -16,6 +16,7 @@ import MeetingHallService from './pages/MeetingHallService';
 import ReservationForm from './components/reservation';
 import Admin from './components/Admin';
 import AboutUs from './pages/aboutus';
+import MeetingHallDetail from './pages/meetinghall';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import { useEffect } from 'react';
@@ -45,6 +46,7 @@ function App() {
             <Route path="/reservation" element={<ReservationForm />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/meeting" element={<MeetingHallDetail />} />
           </Routes>
         </div>
         <Footer />
