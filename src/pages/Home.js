@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect ,useRef} from 'react';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 
@@ -86,17 +86,28 @@ const Home = () => {
     query: '(min-width: 1224px)'
   });
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = [meeting, meeting2]; // Add your meeting and events images here
-
+  const images = [meeting, meeting2]; 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000); // Change image every 5 seconds (5000ms)
+    }, 2000);
 
     return () => {
-      clearInterval(interval); // Cleanup the interval when component unmounts
+      clearInterval(interval); 
     };
   }, [images.length])
+
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlayPause = () => {
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   return (
     <main className="bg-gray-100">
@@ -228,19 +239,25 @@ Relax and unwind in our well-appointed rooms, equipped with modern amenities inc
 
         </div>
       </section>
-      <section className="py-16 bg-gray-100">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
- 
-    <div className="max-w-full max-h-96 overflow-hidden flex justify-center items-center">
-      <div className="relative w-full sm:w-120 md:w-144 lg:w-160 h-auto sm:h-96 md:h-120 lg:h-144">
-        <video className="w-full h-full" controls>
-          <source src={promotion} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <section className="py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className=" max-h-96 overflow-hidden flex justify-center items-center">
+          <div className="relative sm:w-120 md:w-144 lg:w-160 h-auto sm:h-96 md:h-120 lg:h-144">
+            <video ref={videoRef} className="w-full h-full" controls={false}>
+              <source src={promotion} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <button
+              onClick={togglePlayPause}
+              className="absolute inset-0 flex items-center justify-center text-white text-4xl"
+              style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+            >
+              {isPlaying ? '❚❚' : '►'}
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

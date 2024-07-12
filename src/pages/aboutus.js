@@ -98,7 +98,7 @@ const AboutUs = () => {
         </section>
         <section>
           <div className="text-center">
-            <Link to="/" className="bg-custom-blue font-serif text-white text-lg px-6 py-3 font-times rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
+            <Link to="/" className="bg-custom-blue  text-white text-lg px-6 py-3 font-times rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
               Explore Our Hotel
             </Link>
           </div>

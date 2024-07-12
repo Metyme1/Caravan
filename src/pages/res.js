@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import restaurantImage from '../assets/res.JPG'; 
 import special from '../assets/combo1.JPG'
@@ -8,46 +8,18 @@ import chicken from '../assets/chicken.JPG'
 import club from '../assets/club.JPG'
 import openair from '../assets/outdoor.JPG'; 
 
-import diningImage2 from '../assets/sweet.JPG'; 
-import diningImage3 from '../assets/res.JPG';
-import diningImage4 from '../assets/indoor2.JPG';
+import diningImage2 from '../assets/res.JPG'; 
+import roomdining from'../assets/sweet.JPG'
+import cafeImage from'../assets/indoor2.JPG'
+
+
 
 import guestImage1 from '../assets/room1.jpg'; 
 import guestImage2 from '../assets/room2.jpg';
 import guestImage3 from '../assets/r3.jpg';
 
 const Restaurant = () => {
-  useEffect(() => {
-    const container = document.getElementById('scroll-container');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
 
-    container.addEventListener('mousedown', (e) => {
-      isDown = true;
-      container.classList.add('cursor-grabbing');
-      startX = e.pageX - container.offsetLeft;
-      scrollLeft = container.scrollLeft;
-    });
-
-    container.addEventListener('mouseleave', () => {
-      isDown = false;
-      container.classList.remove('cursor-grabbing');
-    });
-
-    container.addEventListener('mouseup', () => {
-      isDown = false;
-      container.classList.remove('cursor-grabbing');
-    });
-
-    container.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - container.offsetLeft;
-      const walk = (x - startX) * 2; 
-      container.scrollLeft = scrollLeft - walk;
-    });
-  }, []);
 
   const testimonials = [
     {
@@ -68,19 +40,13 @@ const Restaurant = () => {
   ];
 
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const [currentIndoorImage, setCurrentIndoorImage] = useState(0);
-  const indoorImages = [diningImage3, diningImage4];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndoorImage((prevIndex) => (prevIndex + 1) % indoorImages.length);
-    }, 3000); // Change image every 3 seconds
-    return () => clearInterval(interval);
-  }, []);
+
+
 
   return (
     <div className="bg-white min-h-screen">
-      {/* Full-width image section */}
+    
       <div className="relative bg-white shadow-md overflow-hidden mb-8 w-screen">
         <img src={restaurantImage} alt="Restaurant" className="w-full h-160 object-cover"/>
       </div>
@@ -89,7 +55,11 @@ const Restaurant = () => {
           <div>
             <h2 className="text-2xl font-times text-gray-800 ">Dining</h2>
             <p className="text-gray-600 font-times">
-              Let your senses be tantalized by a bounteous array of flavours and aromas...
+            Come and enjoy our restaurant, where you can taste a variety of delicious dishes and drinks. We offer everything from local favorites to international cuisines. Our chefs carefully prepare each dish using fresh, seasonal ingredients to ensure that every meal is a delightful experience for our guests.
+
+You can explore our menu and savor dishes crafted with care. Whether you're here for breakfast, lunch, or dinner, we aim to provide great food and a welcoming atmosphere. Our friendly staff is here to make sure you have a wonderful dining experience with us.
+
+Join us to see why dining at our restaurant is more than just eating—it's about enjoying good food and great times with family and friends.
             </p>
           </div>
         </div>
@@ -109,7 +79,7 @@ const Restaurant = () => {
             </div>
             <div className="w-full md:w-1/3 px-8 mb-8 transform transition-transform duration-300 hover:scale-105">
               <div className="relative">
-                <img src={indoorImages[currentIndoorImage]} alt="Indoor Dining" className="w-full h-64 object-cover border-b-4 border-custom-blue"/>
+                <img src={diningImage2} alt="Indoor Dining" className="w-full h-64 object-cover border-b-4 border-custom-blue"/>
                 <div className="p-8">
                   <h3 className="text-2xl font-times mb-4">Indoor Dining</h3>
                   <p className="text-gray-600 font-times mb-4">
@@ -119,18 +89,38 @@ const Restaurant = () => {
               </div>
             </div>
             <div className="w-full md:w-1/3 px-4 transform transition-transform duration-300 hover:scale-105">
-              <div className="relative">
-                <img src={diningImage2} alt="In-Room Dining" className="w-full h-64 object-cover border-b-4 border-custom-blue"/>
-                <div className="p-8">
-                  <h3 className="text-2xl font-times mb-4">In-Room Dining</h3>
-                  <p className="text-gray-600 font-times mb-4">
-                    Enjoy a variety of delicious meals served to your room at any time of the day or night...
-                  </p>
-                </div>
-              </div>
-            </div>
+  <div className="relative">
+    <img src={cafeImage} alt="Cafe" className="w-full h-64 object-cover border-b-4 border-custom-blue"/>
+    <div className="p-8">
+      <h3 className="text-2xl font-times mb-4">Cafe</h3>
+      <p className="text-gray-600 font-times mb-4">
+        Enjoy a variety of delicious coffee, tea, and cakes served any time of the day or night...
+      </p>
+    </div>
+  </div>
+</div>
+
           </div>
         </div>
+        <section className="py-16 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="mt-8 bg-white shadow-md rounded-lg overflow-hidden flex flex-col md:flex-row">
+      <div className="md:w-1/2">
+        <img src={roomdining} alt="Restaurant" className="w-full h-full object-cover" />
+      </div>
+      <div className="md:w-1/2 p-6 flex flex-col justify-center">
+        <h2 className="text-3xl font-times text-gray-900 text-center mb-8">In-Room Dining</h2>
+        <p className="text-gray-600 text-lg font-times mb-4">
+          Enjoy a variety of delicious dishes and beverages right in the comfort of your room. From local favorites to international flavors, our chefs meticulously prepare each dish using fresh, seasonal ingredients to ensure a delightful dining experience for every guest.
+        </p>
+        <Link to="/restaurant">
+          <button className="bg-custom-blue text-white font-times text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48">Discover More</button>
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
+
         <div className="max-w-7xl mx-auto px-4">
           <div className="bg-white shadow-md rounded-lg overflow-hidden mb-8">
             <h2 className="text-3xl font-times py-4 px-6 bg-custom-blue text-white rounded-t-lg">Popular Menu Items</h2>
