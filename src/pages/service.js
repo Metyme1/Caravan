@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom'; 
 
@@ -7,6 +6,7 @@ import service2 from '../assets/wifi.jpeg';
 import service3 from '../assets/park.JPG';
 import service4 from '../assets/meeting.JPG';
 import service5 from '../assets/res.JPG';
+
 const services = [
   {
     id: 1,
@@ -29,7 +29,6 @@ const services = [
     description: "Our spacious meeting hall is equipped with modern facilities to accommodate various events. Whether you're hosting a corporate meeting, seminar, or social gathering, we offer flexible setups, audiovisual equipment,. The hall can accommodate up to 361 people, with options for tea breaks and lunch buffets tailored to your event's needs.",
     link: "/meeting"
   },
-  
   {
     id: 4,
     name: "Parking",
@@ -59,21 +58,22 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={service.id} 
-              className={`bg-white shadow-md rounded-lg overflow-hidden mb-12 flex ${index % 2 === 0 ? '' : 'flex-row-reverse'}`} 
+              className={`bg-white shadow-md rounded-lg overflow-hidden mb-12 flex flex-col sm:flex-row ${index % 2 === 0 ? '' : 'sm:flex-row-reverse'}`} 
               data-aos={`${index % 2 === 0 ? 'fade-right' : 'fade-left'}`}
-              style={{ height: '400px' }} // Adjust the height here
             >
-              <img 
-                src={service.image} 
-                alt={service.name} 
-                className="w-1/2 h-full object-cover transition-transform duration-300 hover:scale-105"
-              />
-              <div className="p-8 flex flex-col justify-between w-1/2">
+              <div className="sm:w-1/2">
+                <img 
+                  src={service.image} 
+                  alt={service.name} 
+                  className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+              <div className="p-8 flex flex-col justify-between sm:w-1/2">
                 <div>
                   <h3 className="text-2xl font-semibold font-times text-gray-800 mb-2">{service.name}</h3>
                   <p className="text-gray-600 font-times mb-4">{service.description}</p>
                 </div>
-                <div className="text-right">
+                <div className="text-center sm:text-right">
                   <Link 
                     to={service.link} 
                     className="bg-custom-blue text-white py-2 px-6 font-times hover:bg-blue-700 transition duration-300 text-center rounded-full inline-block"

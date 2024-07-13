@@ -73,16 +73,7 @@ const EditRoom = () => {
       </header>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white shadow-md rounded my-4 sm:my-6 p-4">
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">Room Type</label>
-            <input
-              type="text"
-              value={editData.roomType || ''}
-              onChange={(e) => handleInputChange('roomType', e.target.value)}
-              className="w-full px-3 py-2 border rounded"
-              readOnly
-            />
-          </div>
+     
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">Available Rooms</label>
             <input
