@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { db } from './firebase'; // Ensure correct import path
+import { useAuth } from './authcontext';
+import { Navigate } from 'react-router-dom';
 
 const Admin = () => {
+  const { currentUser, logout } = useAuth(); // Get currentUser and logout function from AuthContext
   const [reservations, setReservations] = useState([]);
   const [deleteConfirmation, setDeleteConfirmation] = useState(null);
 
@@ -33,11 +36,16 @@ const Admin = () => {
     }
   };
 
+  if (!currentUser) {
+    return <Navigate to="/login" replace />; // Redirect to login if user is not authenticated
+  }
+
   return (
     <div className="bg-gray-100 min-h-screen p-4 sm:p-8">
       <header className="bg-white py-4 mb-4 sm:mb-8 shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-times text-gray-800">Reservations</h2>
+          <button onClick={() => logout()} className="ml-4 text-red-500 hover:text-red-700 font-bold font-times">Logout</button>
         </div>
       </header>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
