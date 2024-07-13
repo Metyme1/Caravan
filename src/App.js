@@ -22,6 +22,9 @@ import AOS from 'aos';
 import { AuthProvider } from './components/authcontext';
 import PrivateRoute from './components/privateroute';
 import Login from './pages/login';
+import EditRoom from './components/editroom';
+import EditRooms from './components/editrooms';
+
 
 function App() {
   useEffect(() => {
@@ -49,12 +52,15 @@ function App() {
               <Route path="/reservation" element={<ReservationForm />} />
               <Route path="/login" element={<Login />} />
               <Route path="/about" element={<AboutUs />} />
+              <Route path="/edit-rooms" element={<EditRooms />} />
+              <Route path="/edit-room/:id" element={<EditRoom />} />
               <Route path="/meeting" element={<MeetingHallDetail />} />
               <Route path="/admin/*" element={
                 <PrivateRoute>
                   <Admin />
                 </PrivateRoute>
               } />
+          
             </Routes>
           </div>
           <Footer />

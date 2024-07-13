@@ -60,12 +60,12 @@ const NavBar = () => {
               Contact Us
             </NavLink>
             <NavLink
-              to="/admin"
+              to="/gallery"
               className={({ isActive }) =>
                 `text-white px-3 py-2 rounded-md text-lg font-times ${isActive ? 'underline' : ''}`
               }
             >
-              Admin
+              Gallery
             </NavLink>
           </div>
         </div>
@@ -131,14 +131,7 @@ const NavBar = () => {
           >
             Contact Us
           </NavLink>
-          <NavLink
-            to="/admin"
-            className={({ isActive }) =>
-              `block text-white px-3 py-2 rounded-md text-base font-times ${isActive ? 'underline' : ''}`
-            }
-          >
-            Admin
-          </NavLink>
+  
           <NavLink
             to="/gallery"
             className={({ isActive }) =>
@@ -161,14 +154,14 @@ const NavBar = () => {
             
           </div>
           <div className="flex space-x-6 items-center">
-            <NavLink
+            {/* <NavLink
               to="/gallery"
               className={({ isActive }) =>
                 `text-white px-3 py-2 rounded-md text-lg font-times ${isActive ? 'underline' : ''}`
               }
             >
               Gallery
-            </NavLink>
+            </NavLink> */}
             <div className="flex items-center space-x-2">
               <span role="img" aria-label="phone">📞</span>
               <span className="text-lg font-times">09090909090</span>
