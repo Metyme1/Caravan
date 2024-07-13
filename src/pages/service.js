@@ -34,14 +34,14 @@ const services = [
     name: "Parking",
     image: service3,
     description: "Secure parking is available for all guests, ensuring peace of mind during your stay. Our well-lit and monitored parking area offers convenient access to the hotel, making it easy to unload your belongings and start your visit without hassle.",
-    link: "/services/parking" 
+    link: "/services" 
   },
   {
     id: 5,
     name: "Internet",
     image: service2,
     description: "Stay connected with high-speed internet available throughout the hotel. Whether you're catching up on work, streaming your favorite shows, or staying in touch with loved ones, our reliable internet service ensures seamless connectivity during your stay.",
-    link: "/services/internet"
+    link: "/services"
   },
 ];
 
