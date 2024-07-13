@@ -258,23 +258,23 @@ Relax and unwind in our well-appointed rooms, equipped with modern amenities inc
         </div>
       </div>
     </section>
-
-<section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-times text-gray-900 text-center mb-8">Meetings and Events</h2>
-        <div className="mt-8 bg-white shadow-md rounded-lg overflow-hidden flex items-center">
-          <div className="p-4 w-1/2">
-            <p className="text-gray-600 font-times">
-              Our spacious meeting hall is equipped with modern facilities to accommodate various events. Whether you're hosting a corporate meeting, seminar, or social gathering, we offer flexible setups, audiovisual equipment, and catering services. The hall can accommodate up to 361 people, with options for tea breaks and lunch buffets tailored to your event's needs.
-            </p>
-            <Link to="/meeting" className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 w-48 text-center inline-block mt-4">
-              See Detail
-            </Link>
-          </div>
-          <img src={images[currentImageIndex]} alt="Meetings and Events" className="w-1/2 h-full object-cover" />
-        </div>
+    <section className="py-16 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-4xl font-times text-gray-900 text-center mb-8">Meetings and Events</h2>
+    <div className="mt-8 bg-white shadow-md rounded-lg overflow-hidden flex flex-col-reverse md:flex-row items-center">
+      <div className="p-4 md:w-1/2 text-center md:text-left">
+        <p className="text-gray-600 font-times">
+          Our spacious meeting hall is equipped with modern facilities to accommodate various events. Whether you're hosting a corporate meeting, seminar, or social gathering, we offer flexible setups, audiovisual equipment, and catering services. The hall can accommodate up to 361 people, with options for tea breaks and lunch buffets tailored to your event's needs.
+        </p>
+        <Link to="/meeting" className="bg-custom-blue font-times text-white text-lg px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 mt-4 block max-w-xs mx-auto md:mx-0">
+          See Detail
+        </Link>
       </div>
-    </section>
+      <img src={images[currentImageIndex]} alt="Meetings and Events" className="w-full md:w-1/2 h-auto object-cover" />
+    </div>
+  </div>
+</section>
+
 
       <NearbyServices />
 
