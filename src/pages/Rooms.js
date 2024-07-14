@@ -1,181 +1,3 @@
-// import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
-// import room1 from '../assets/standard.JPG';
-// import room2 from '../assets/twin1.JPG';
-// import room3 from '../assets/semi1.jpg';
-// import room4 from '../assets/sweet1.JPG';
-// import 'aos/dist/aos.css';
-// import AOS from 'aos';
-// import Modal from '../components/Modal';
-// import ReservationForm from '../components/reservation';
-
-// const rooms = [
-//   {
-//     id: 1,
-//     name: "Standard Room",
-//     image: room1,
-//     price: "1500 / Night",
-//     description: "Our Standard Rooms are comfortable and well-equipped for a pleasant stay.",
-//     characteristics: [
-//       { icon: "👥", label: "2 Persons" },
-//       { icon: "📶", label: "Free Wifi" },
-//       { icon: "❄️", label: "Air Conditioning" },
-//       { icon: "🍽️", label: "Breakfast Included" },
-//     ],
-//   },
-//   {
-//     id: 2,
-//     name: "Twin Bed",
-//     image: room2,
-//     price: "1800 / Night",
-//     description: "Our Twin Bed Rooms are spacious and perfect for two guests.",
-//     characteristics: [
-//       { icon: "👥", label: "2-4 Persons" },
-//       { icon: "🛏️", label: "Twin Beds" },
-//       { icon: "📶", label: "Free Wifi" },
-//       { icon: "🍽️", label: "Breakfast Included" },
-//       { icon: "❄️", label: "Air Conditioning" },
-//     ],
-//   },
-//   {
-//     id: 3,
-//     name: "Semi-Sweet Room",
-//     image: room3,
-//     price: "1600 / Night",
-//     description: "Our Semi-Suite Rooms offer extra space and comfort for your stay. They include a cooking space for your convenience.",
-//     characteristics: [
-//       { icon: "👥", label: "1-2 Persons" },
-//       { icon: "📶", label: "Free Wifi" },
-//       { icon: "🍽️", label: "Breakfast Included" },
-//       { icon: "❄️", label: "Air Conditioning" },
-//       { icon: "🍳", label: "Cooking Space" },
-//     ],
-//   },
-//   {
-//     id: 4,
-//     name: "Sweet Room",
-//     image: room4,
-//     price: "3000 / Night",
-//     description: "Our Suite Rooms provide luxury and comfort for a premium stay. They feature a separate salon, bedroom, two bathrooms, air conditioning, and a fully equipped kitchen.",
-//     characteristics: [
-//       { icon: "👥", label: "1-2 Persons" },
-//       { icon: "📶", label: "Free Wifi" },
-//       { icon: "🍽️", label: "Breakfast Included" },
-//       { icon: "🛋️", label: "Separate Salon" },
-//       { icon: "🛌", label: "Separate Bedroom" },
-//       { icon: "🚽", label: "Two Bathrooms" },
-//       { icon: "❄️", label: "Air Conditioning" },
-//       { icon: "🍳", label: "Full Kitchen" },
-//     ],
-//   },
-// ];
-
-// const Rooms = () => {
-//   const [isModalVisible, setIsModalVisible] = useState(false);
-//   const [selectedRoom, setSelectedRoom] = useState(null);
-//   const [isSuccessDialogVisible, setIsSuccessDialogVisible] = useState(false);
-
-//   useEffect(() => {
-//     AOS.init();
-//   }, []);
-
-//   const openModal = (room) => {
-//     setSelectedRoom(room);
-//     setIsModalVisible(true);
-//   };
-
-//   const closeModal = () => {
-//     setIsModalVisible(false);
-//     setSelectedRoom(null);
-//   };
-
-//   const handleSuccess = () => {
-//     closeModal();
-//     setIsSuccessDialogVisible(true);
-//   };
-
-//   const closeSuccessDialog = () => {
-//     setIsSuccessDialogVisible(false);
-//   };
-
-//   return (
-//     <div className="bg-gray-100">
-//       <header className="bg-white py-8">
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-//           <h1 className="text-3xl font-times">Rooms and Suites</h1>
-//         </div>
-//       </header>
-//       <section className="py-16">
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//           {rooms.map((room, index) => (
-//             <div
-//               key={room.id}
-//               className={`relative mb-16 flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center`}
-//               data-aos={`${index % 2 === 0 ? 'fade-right' : 'fade-left'}`}
-//             >
-//               <img
-//                 src={room.image}
-//                 alt={room.name}
-//                 className="h-112 object-cover w-full md:w-3/5"
-//               />
-//               <div
-//                 className="bg-white p-6 md:p-12 shadow-md w-full md:w-2/5 md:relative"
-//                 style={{
-//                   top: '10%',
-//                   left: index % 2 === 0 ? 'auto' : '5%',
-//                   right: index % 2 === 0 ? '5%' : 'auto',
-//                   transform: 'translateY(0%)',
-//                 }}
-//               >
-//                 <p className="text-lg font-bold text-gray-700 mb-2 font-times">{room.price}</p>
-//                 <h3 className="text-2xl md:text-3xl mb-2 font-times">{room.name}</h3>
-//                 <p className="text-gray-600 mb-4 font-times">{room.description}</p>
-//                 <div className="flex flex-wrap items-center space-x-4 mb-4">
-//                   {room.characteristics.map((characteristic, idx) => (
-//                     <div key={idx} className="flex items-center space-x-2 mb-2 font-times">
-//                       <span role="img" aria-label="characteristic-icon">{characteristic.icon}</span>
-//                       <span>{characteristic.label}</span>
-//                     </div>
-//                   ))}
-//                 </div>
-//                 <Link to={`/rooms/${room.id}`} className="text-custom-blue font-times hover:underline">
-//                   View → Detail
-//                 </Link>
-//                 <button
-//                   className="ml-4 text-custom-blue underline hover:text-blue-600 font-times"
-//                   onClick={() => openModal(room)}
-//                 >
-//                   Make Reservation
-//                 </button>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </section>
-//       <Modal isVisible={isModalVisible} onClose={closeModal}>
-//         <ReservationForm room={selectedRoom} onSuccess={handleSuccess} onClose={closeModal} />
-//       </Modal>
-//       {isSuccessDialogVisible && (
-//         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-//           <div className="bg-white p-8 rounded shadow-md text-center">
-//             <h2 className="text-2xl mb-4 font-times text-green-500">Reservation Successful!</h2>
-//             <p className="mb-4 font-times">Your reservation has been made successfully.</p>
-//             <button
-//               className="w-full bg-custom-blue text-white py-2 font-times rounded-custom hover:bg-blue-600 transition duration-200"
-//               onClick={closeSuccessDialog}
-//             >
-//               OK
-//             </button>
-//           </div>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default Rooms;
-
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
@@ -278,7 +100,7 @@ const Rooms = () => {
             const roomData = docSnap.data();
             return { ...room, availableRooms: roomData.Avaliablerooms };
           } else {
-            console.log(`No such document for ${room.name}`);
+            console.log(`No such document for room ID ${room.firestoreId}!`);
             return room;
           }
         })
@@ -289,93 +111,96 @@ const Rooms = () => {
     fetchRoomData();
   }, []);
 
-  const openModal = (room) => {
+  const openReservationModal = (room) => {
     setSelectedRoom(room);
     setIsModalVisible(true);
   };
 
-  const closeModal = () => {
+  const closeReservationModal = () => {
     setIsModalVisible(false);
     setSelectedRoom(null);
   };
 
-  const handleSuccess = () => {
-    closeModal();
-    setIsSuccessDialogVisible(true);
-  };
-
-  const closeSuccessDialog = () => {
+  const handleSuccessDialogClose = () => {
     setIsSuccessDialogVisible(false);
   };
 
+  const handleReservationSuccess = () => {
+    setIsModalVisible(false);
+    setIsSuccessDialogVisible(true);
+  };
+
   return (
-    <div className="bg-gray-100">
-      <header className="bg-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl font-times">Rooms and Suites</h1>
-        </div>
-      </header>
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {rooms.map((room, index) => (
-            <div
-              key={room.id}
-              className={`relative mb-16 flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center`}
-              data-aos={`${index % 2 === 0 ? 'fade-right' : 'fade-left'}`}
-            >
-              <img
-                src={room.image}
-                alt={room.name}
-                className="h-112 object-cover w-full md:w-3/5"
-              />
-              <div
-                className="bg-white p-6 md:p-12 shadow-md w-full md:w-2/5 md:relative"
-                style={{
-                  top: '10%',
-                  left: index % 2 === 0 ? 'auto' : '5%',
-                  right: index % 2 === 0 ? '5%' : 'auto',
-                  transform: 'translateY(0%)',
-                }}
-              >
-                <p className="text-lg font-bold text-gray-700 mb-2 font-times">{room.price}</p>
-                <h3 className="text-2xl md:text-3xl mb-2 font-times">{room.name}</h3>
-                <p className="text-gray-600 mb-4 font-times">{room.description}</p>
-                <p className="text-gray-600 mb-4 font-times">Available Rooms: {room.availableRooms}</p>
-                <div className="flex flex-wrap items-center space-x-4 mb-4">
-                  {room.characteristics.map((characteristic, idx) => (
-                    <div key={idx} className="flex items-center space-x-2 mb-2 font-times">
-                      <span role="img" aria-label="characteristic-icon">{characteristic.icon}</span>
-                      <span>{characteristic.label}</span>
-                    </div>
+    <div className="w-full mx-auto max-w-7xl px-4 py-8">
+      <div className="text-center pb-8">
+        <h1 className="text-3xl md:text-5xl font-bold mb-4 font-times">Rooms</h1>
+        <p className="text-lg md:text-xl font-times">Choose from our variety of rooms for a comfortable stay.</p>
+      </div>
+      <div className="flex flex-wrap justify-center gap-8">
+        {rooms.map((room) => (
+          <div
+            key={room.id}
+            className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg p-4 max-w-md md:max-w-3xl w-full"
+            data-aos="fade-up"
+          >
+            <img
+              src={room.image}
+              alt={room.name}
+              className="object-cover w-full h-48 md:w-1/3 md:h-auto rounded-lg mb-4 md:mb-0"
+            />
+            <div className="flex flex-col justify-between p-4 w-full">
+              <div>
+                <h2 className="text-2xl font-bold mb-2 font-times">{room.name}</h2>
+                <p className="text-lg mb-4 font-times">{room.price}</p>
+                <p className="text-gray-700 mb-4 font-times">{room.description}</p>
+                <ul className="space-y-2 mb-4">
+                  {room.characteristics.map((char, index) => (
+                    <li key={index} className="flex items-center">
+                      <span className="mr-2">{char.icon}</span>
+                      <span className="font-times">{char.label}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
+                <p className="text-gray-700 font-times">
+                  Available Rooms: {room.availableRooms}
+                </p>
                 <Link to={`/rooms/${room.id}`} className="text-custom-blue font-times hover:underline">
                   View → Detail
                 </Link>
-                <button
+              </div>
+              <button
                   className="ml-4 text-custom-blue underline hover:text-blue-600 font-times"
-                  onClick={() => openModal(room)}
+                  onClick={() => openReservationModal(room)}
                 >
                   Make Reservation
                 </button>
-              </div>
             </div>
-          ))}
-        </div>
-      </section>
-      <Modal isVisible={isModalVisible} onClose={closeModal}>
-        <ReservationForm room={selectedRoom} onSuccess={handleSuccess} onClose={closeModal} />
+          </div>
+        ))}
+      </div>
+
+      <Modal isVisible={isModalVisible} onClose={closeReservationModal}>
+        {selectedRoom && (
+          <ReservationForm
+            room={selectedRoom}
+            onSuccess={handleReservationSuccess}
+            onClose={closeReservationModal}
+          />
+        )}
       </Modal>
+
       {isSuccessDialogVisible && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-8 rounded shadow-md text-center">
-            <h2 className="text-2xl mb-4 font-times text-green-500">Reservation Successful!</h2>
-            <p className="mb-4 font-times">Your reservation has been made successfully.</p>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-8 rounded-lg shadow-md max-w-xs w-full">
+            <h2 className="text-2xl font-bold mb-4 font-times">Reservation Successful!</h2>
+            <p className="mb-4 font-times">
+              Your reservation has been successfully placed.
+            </p>
             <button
-              className="w-full bg-custom-blue text-white py-2 font-times rounded-custom hover:bg-blue-600 transition duration-200"
-              onClick={closeSuccessDialog}
+              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700 font-times"
+              onClick={handleSuccessDialogClose}
             >
-              OK
+              Close
             </button>
           </div>
         </div>

@@ -4,14 +4,14 @@ const Modal = ({ isVisible, onClose, children }) => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white p-8 rounded shadow-lg relative">
-        <button
-          className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
+    <div className="fixed inset-0 z-50 overflow-auto bg-smoke-light flex">
+      <div className="relative p-8 bg-white w-full max-w-md m-auto flex-col flex rounded-lg shadow-md sm:max-w-lg md:max-w-xl">
+        <span
+          className="absolute top-0 right-0 p-4 cursor-pointer"
           onClick={onClose}
         >
           &times;
-        </button>
+        </span>
         {children}
       </div>
     </div>

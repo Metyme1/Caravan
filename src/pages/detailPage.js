@@ -45,7 +45,7 @@ const roomDetails = [
       { icon: "🍽️", label: "Breakfast Included" },
     ],
     policies: {
-      checkIn: "Check-in from 3 AM onwards",
+      checkIn: "Check-out from 4 AM onwards",
       payment: "Payment must be made within 24 hours of reservation, otherwise, the reservation will be canceled.",
       pets: "Pets are not allowed.",
     },
@@ -65,7 +65,7 @@ const roomDetails = [
       { icon: "❄️", label: "Air Conditioning" },
     ],
     policies: {
-      checkIn: "Check-in from 3 AM onwards",
+      checkIn: "Check-out from 4 AM onwards",
       payment: "Payment must be made within 24 hours of reservation, otherwise, the reservation will be canceled.",
       pets: "Pets are not allowed.",
     },
@@ -85,7 +85,7 @@ const roomDetails = [
       { icon: "🍳", label: "Cooking Space" },
     ],
     policies: {
-      checkIn: "Check-in from 3 AM onwards",
+      checkIn: "Check-out from 4 AM onwards",
       payment: "Payment must be made within 24 hours of reservation, otherwise, the reservation will be canceled.",
       pets: "Pets are not allowed.",
     },
@@ -108,7 +108,7 @@ const roomDetails = [
       { icon: "🍳", label: "Full Kitchen" },
     ],
     policies: {
-      checkIn: "Check-in from 3 AM onwards",
+      checkIn: "Check-out from 4 AM onwards",
       payment: "Payment must be made within 24 hours of reservation, otherwise, the reservation will be canceled.",
       pets: "Pets are not allowed.",
     },
