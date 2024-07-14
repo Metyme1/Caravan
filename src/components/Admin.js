@@ -107,17 +107,14 @@
 
 // export default Admin;
 
-
-
-
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { db } from './firebase'; // Ensure correct import path
-import { useAuth } from './authcontext';
-import { Link } from 'react-router-dom';
+import { useAuth } from './authcontext'; // Import useAuth from your authcontext
+import { Link, Navigate } from 'react-router-dom';
 
 const Admin = () => {
-  const { logout } = useAuth(); // Get currentUser and logout function from AuthContext
+  const { currentUser, logout } = useAuth(); // Get currentUser and logout function from AuthContext
   const [reservations, setReservations] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -190,6 +187,19 @@ const Admin = () => {
     }
   };
 
+  const handleLogout = async () => {
+    try {
+      await logout(); // Call logout function
+    } catch (error) {
+      console.error('Logout failed:', error);
+      // Handle logout failure if necessary
+    }
+  };
+
+  if (!currentUser) {
+    return <Navigate to="/login" replace />; // Redirect to login if user is not authenticated
+  }
+
   return (
     <div className="bg-gray-100 min-h-screen p-4 sm:p-8">
       <header className="bg-white py-4 mb-4 sm:mb-8 shadow">
@@ -198,7 +208,7 @@ const Admin = () => {
             Edit Rooms and Prices
           </Link>
           <h2 className="text-3xl font-times text-gray-800">Reservations</h2>
-          <button onClick={() => logout()} className="ml-4 text-red-500 hover:text-red-700 font-bold font-times">Logout</button>
+          <button onClick={handleLogout} className="ml-4 text-red-500 hover:text-red-700 font-bold font-times">Logout</button>
         </div>
       </header>
       <section className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
