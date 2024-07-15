@@ -21,6 +21,7 @@ module.exports = {
         'custom': '50px', // Define your custom border radius here
       },
       
+      
     },
   },
   plugins: [],

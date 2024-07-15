@@ -23,22 +23,22 @@ const Restaurant = () => {
 
   const testimonials = [
     {
-      quote: "I had an amazing stay at New Level Hotel. The staff was incredibly friendly and attentive, and the rooms were spacious and luxurious. The location was perfect, with easy access to nearby attractions. I would highly recommend this hotel to anyone visiting Diradawa.",
-      name: "Emily Brown",
+      quote: "Dining at Caravan Dire Hotel's restaurant was an incredible experience. The food was delicious, and the variety of dishes was impressive. The rooms were spacious, clean, and very comfortable. I highly recommend this hotel to anyone visiting Diradawa.",
+      name: "Mr X",
       image: guestImage1,
     },
     {
-      quote: "The experience at the hotel was excellent. The rooms were clean, and the staff was very helpful. The amenities were top-notch. I will definitely stay here again.",
-      name: "John Doe",
+      quote: "The restaurant at Caravan Dire Hotel served some of the best meals I've ever had. The ingredients were fresh, and the flavors were amazing. The rooms were spotless and well-maintained, ensuring a very comfortable stay. I will definitely return here in the future.",
+      name: "Mr y",
       image: guestImage2,
     },
     {
-      quote: "Fantastic service and great location. The staff went above and beyond to make sure we had everything we needed. Highly recommended!",
-      name: "Jane Smith",
+      quote: "Caravan Dire Hotel's restaurant offers fantastic food with great service. The staff went above and beyond to make sure we had everything we needed. The rooms were clean, spacious, and very relaxing. Highly recommended!",
+      name: "Mr Z",
       image: guestImage3,
     },
   ];
-
+  
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
 
@@ -166,7 +166,8 @@ Join us to see why dining at our restaurant is more than just eating—it's abou
             <h1 className="text-2xl font-times mb-6">What our clients Say?</h1>
             <div className="flex flex-col items-center mb-4 bg-custom-blue bg-opacity-50 p-6 rounded-lg max-w-4xl mx-auto">
               <div className="text-left mb-4">
-                <div className="text-xl font-times mb-4">{testimonials[currentTestimonial].quote}</div>
+              <div className="text-md font-times mb-4">{testimonials[currentTestimonial].quote}</div>
+
               </div>
               <div className="flex items-center">
                 <img src={testimonials[currentTestimonial].image} alt={testimonials[currentTestimonial].name} className="w-16 h-16 rounded-full mb-4 mr-4"/>
