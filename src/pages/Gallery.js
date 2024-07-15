@@ -12,24 +12,18 @@ import room7 from '../assets/semi2.jpg';
 import room8 from '../assets/semi4.JPG';
 import room9 from '../assets/semi5.JPG';
 
-import hotelView1 from '../assets/v1.jpeg';
-import hotelView2 from '../assets/v2.jpeg';
-import hotelView3 from '../assets/v3.jpeg';
-import hotelView4 from '../assets/v3.jpeg';
-import hotelView5 from '../assets/v2.jpeg';
-import hotelView6 from '../assets/v1.jpeg';
-import hotelView7 from '../assets/v3.jpeg';
-import hotelView8 from '../assets/v2.jpeg';
-import hotelView9 from '../assets/v1.jpeg';
+import hotelView1 from '../assets/Home.JPG';
+import hotelView2 from '../assets/outdoor.JPG';
+
 import dining1 from '../assets/food1.jpg';
-import dining2 from '../assets/food2.jpg';
+import dining2 from '../assets/burger.JPG';
 import dining3 from '../assets/food3.jpg';
-import dining4 from '../assets/food4.jpg';
+import dining4 from '../assets/food10.jpg';
 import dining5 from '../assets/food5.jpg';
 import dining6 from '../assets/food6.jpg';
 import dining7 from '../assets/food7.jpg';
 import dining8 from '../assets/food8.jpg';
-import dining9 from '../assets/food9.jpg';
+import dining9 from '../assets/food11.jpg';
 
 const Gallery = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +33,7 @@ const Gallery = () => {
 
   const sections = {
     rooms: [room1, room2, room3, room4, room5, room6, room7, room8, room9],
-    hotelViews: [hotelView1, hotelView2, hotelView3, hotelView4, hotelView5, hotelView6, hotelView7, hotelView8, hotelView9],
+    hotelViews: [hotelView1, hotelView2],
     dining: [dining1, dining2, dining3, dining4, dining5, dining6, dining7, dining8, dining9],
   };
 
@@ -79,13 +73,7 @@ const Gallery = () => {
           >
             Hotel View
           </a>
-          <a
-            href="#services"
-            className={`text-custom-blue font-medium hover:underline font-times ${activeSection === 'services' ? 'underline' : ''}`}
-            onClick={() => setActiveSection('services')}
-          >
-            Services
-          </a>
+    
           <a
             href="#dining"
             className={`text-custom-blue font-medium hover:underline font-times ${activeSection === 'dining' ? 'underline' : ''}`}
@@ -93,13 +81,7 @@ const Gallery = () => {
           >
             Dining
           </a>
-          <a
-            href="#events"
-            className={`text-custom-blue font-medium hover:underline font-times ${activeSection === 'events' ? 'underline' : ''}`}
-            onClick={() => setActiveSection('events')}
-          >
-            Event and Meeting
-          </a>
+ 
         </div>
       </nav>
 
@@ -154,19 +136,7 @@ const Gallery = () => {
         </div>
       </section>
 
-      <section id="services" className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-times text-center mb-8">Services</h2>
-          <p className="text-gray-600">Details about the services provided by the hotel can be placed here.</p>
-        </div>
-      </section>
 
-      <section id="events" className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-times text-center mb-8">Event and Meeting</h2>
-          <p className="text-gray-600 font-times">Details about events and meetings held at the hotel can be placed here.</p>
-        </div>
-      </section>
 
       {isOpen && (
         <Lightbox

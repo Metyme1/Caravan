@@ -22,6 +22,7 @@ import sweet5 from '../assets/sweet6.JPG';
 
 import standard1 from '../assets/standard1.JPG';
 import standard2 from '../assets/standard2.JPG';
+import tabel from '../assets/semi2.jpg'
 
 import semi1 from '../assets/semi3.JPG';
 import semi2 from '../assets/semi4.JPG';
@@ -35,14 +36,18 @@ const roomDetails = [
     id: 1,
     name: "Standard Room",
     image: room1,
-    gallery: [standard1, standard2],
+    gallery: [standard1, standard2,tabel],
     price: "1500/Night",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nulla quam, ullamcorper in bibendum quis, volutpat ut lacus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus sagittis placerat velit ac euismod. Aliquam erat volutpat. Duis nec tincidunt mauris.",
+    description: "Our Standard Rooms are comfortable and well-equipped for a pleasant stay. They feature a cozy bed, modern amenities, and a serene ambiance.",
     characteristics: [
       { icon: "👥", label: "2 Persons" },
       { icon: "📶", label: "Free Wifi" },
       { icon: "❄️", label: "Air Conditioning" },
       { icon: "🍽️", label: "Breakfast Included" },
+      { icon: "🛁", label: "Towels" },
+      { icon: "📺", label: "TV" },
+      { icon: "🪑", label: "Table and Chair" },
+      { icon: "🏞️", label: "Patio" },
     ],
     policies: {
       checkIn: "Check-out from 4 AM onwards",
@@ -54,8 +59,9 @@ const roomDetails = [
     id: 2,
     name: "Twin Bed Room",
     image: room2,
-    gallery: [twin1, twin2, twin3, twin4, twin5],
+    gallery: [twin1, twin2, twin3, twin4, twin5,tabel],
     price: "1800/Night",
+    description: "Our Twin Bed Rooms are spacious and perfect for two guests. They offer twin beds, a comfortable seating area, and beautiful views.",
     additionalServices: "Internet Access, Breakfast, In-room Dining",
     characteristics: [
       { icon: "👥", label: "2-4 Persons" },
@@ -63,6 +69,10 @@ const roomDetails = [
       { icon: "📶", label: "Free Wifi" },
       { icon: "🍽️", label: "Breakfast Included" },
       { icon: "❄️", label: "Air Conditioning" },
+      { icon: "🛁", label: "Towels" },
+      { icon: "📺", label: "TV" },
+      { icon: "🪑", label: "Table and Chair" },
+      { icon: "🏞️", label: "Patio" },
     ],
     policies: {
       checkIn: "Check-out from 4 AM onwards",
@@ -74,15 +84,19 @@ const roomDetails = [
     id: 3,
     name: "Semi-Sweet Room",
     image: room3,
-    gallery: [semi1, semi2, semi3, semi4, semi5, semi6],
+    gallery: [semi1, semi2, semi3, semi4, semi5, semi6,tabel],
     price: "1600/Night",
-    description: "An executive room with premium features.",
+    description: "Our Semi-Suite Rooms offer extra space and comfort for your stay. They include a cooking space for your convenience, along with all essential amenities.",
     characteristics: [
       { icon: "👥", label: "1-2 Persons" },
       { icon: "📶", label: "Free Wifi" },
       { icon: "🍽️", label: "Breakfast Included" },
       { icon: "❄️", label: "Air Conditioning" },
       { icon: "🍳", label: "Cooking Space" },
+      { icon: "🛁", label: "Towels" },
+      { icon: "📺", label: "TV" },
+      { icon: "🪑", label: "Table and Chair" },
+      { icon: "🏞️", label: "Patio" },
     ],
     policies: {
       checkIn: "Check-out from 4 AM onwards",
@@ -94,18 +108,22 @@ const roomDetails = [
     id: 4,
     name: "Sweet Room",
     image: room4,
-    gallery: [sweet1, sweet2, sweet3, sweet4, sweet5],
+    gallery: [sweet1, sweet2, sweet3, sweet4, sweet5,tabel],
     price: "3000/Night",
-    description: "A luxurious suite with exclusive amenities.",
+    description: "Our Suite Rooms provide luxury and comfort for a premium stay. They feature a separate salon, bedroom, two bathrooms, air conditioning, and a fully equipped kitchen.",
     characteristics: [
       { icon: "👥", label: "1-2 Persons" },
       { icon: "📶", label: "Free Wifi" },
-      { icon: "🍽️", label: "Breakfast" },
+      { icon: "🍽️", label: "Breakfast Included" },
       { icon: "🛋️", label: "Separate Salon" },
       { icon: "🛌", label: "Separate Bedroom" },
       { icon: "🚽", label: "Two Bathrooms" },
       { icon: "❄️", label: "Air Conditioning" },
       { icon: "🍳", label: "Full Kitchen" },
+      { icon: "🛁", label: "Towels" },
+      { icon: "📺", label: "TV" },
+      { icon: "🪑", label: "Table and Chair" },
+      { icon: "🏞️", label: "Patio" },
     ],
     policies: {
       checkIn: "Check-out from 4 AM onwards",

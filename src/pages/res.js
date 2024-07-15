@@ -14,9 +14,9 @@ import cafeImage from'../assets/indoor2.JPG'
 
 
 
-import guestImage1 from '../assets/room1.jpg'; 
-import guestImage2 from '../assets/room2.jpg';
-import guestImage3 from '../assets/r3.jpg';
+import guestImage1 from '../assets/guest.jpg'; 
+import guestImage2 from '../assets/guest.jpg';
+import guestImage3 from '../assets/guest.jpg';
 
 const Restaurant = () => {
 
