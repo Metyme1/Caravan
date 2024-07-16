@@ -50,7 +50,7 @@ const Services = () => {
     <div className="bg-gray-100">
       <header className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl font-bold font-times text-gray-800">Discover Our Services</h1>
+          <h1 className="text-3xl font-times text-gray-800">Discover Our Services</h1>
         </div>
       </header>
       <section className="py-16">

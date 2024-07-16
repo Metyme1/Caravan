@@ -130,7 +130,9 @@ const ReservationForm = ({ room, onSuccess, onClose }) => {
           />
         </div>
       </div>
+     
       <p className="text-red-600 font-times text-sm mb-4">Note: Reservation will be canceled after 24 hours if payment is not completed.</p>
+      <p className="text-custom-blue font-bold  font-times mb-4">Pay at the property!!</p>
       <p className="text-gray-700 font-times mb-4">Contact our team for more information: <a href="tel:+1234567890" className="text-blue-600 hover:underline">0254114312</a></p>
       <div className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-4 justify-end">
         <button
@@ -144,7 +146,7 @@ const ReservationForm = ({ room, onSuccess, onClose }) => {
           type="submit"
           className="w-full md:w-auto bg-custom-blue text-white py-2 font-times rounded-custom hover:bg-blue-600 transition duration-200"
         >
-          Make Reservation
+          Reserve
         </button>
       </div>
     </form>

@@ -138,7 +138,7 @@ const Home = () => {
 
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl text-gray-900 font-times">Find luxury and serenity in Dire Dawa, Ethiopia</h2>
+          <h2 className="text-2xl text-gray-900 font-times">Experience Comfort and Elegance in Dire Dawa, Ethiopia</h2>
           <p className="mt-4 text-gray-600 font-times">
           Welcome to Caravan Dire Hotel, where luxury meets comfort in the heart of Dire Dawa, Ethiopia. Our hotel offers a range of exceptional services to ensure your stay is memorable and enjoyable. Indulge in a culinary journey at our diverse restaurant, featuring a variety of delicious food options and outdoor dining experiences. Savor delectable cakes and pastries prepared with care by our talented chefs.
 

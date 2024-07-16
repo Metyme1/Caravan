@@ -36,7 +36,7 @@ const roomDetails = [
     id: 1,
     name: "Standard Room",
     image: room1,
-    gallery: [standard1, standard2,tabel],
+    gallery: [standard1, standard2, tabel],
     price: "1500/Night",
     description: "Our Standard Rooms are comfortable and well-equipped for a pleasant stay. They feature a cozy bed, modern amenities, and a serene ambiance.",
     characteristics: [
@@ -50,8 +50,9 @@ const roomDetails = [
       { icon: "🏞️", label: "Patio" },
     ],
     policies: {
-      checkIn: "Check-out from 4 AM onwards",
-      payment: "Payment must be made within 24 hours of reservation, otherwise, the reservation will be canceled.",
+      checkIn: "Check-in anytime",
+      checkOut: "Check-out until 11 AM",
+    
       pets: "Pets are not allowed.",
     },
   },
@@ -59,7 +60,7 @@ const roomDetails = [
     id: 2,
     name: "Twin Bed Room",
     image: room2,
-    gallery: [twin1, twin2, twin3, twin4, twin5,tabel],
+    gallery: [twin1, twin2, twin3, twin4, twin5, tabel],
     price: "1800/Night",
     description: "Our Twin Bed Rooms are spacious and perfect for two guests. They offer twin beds, a comfortable seating area, and beautiful views.",
     additionalServices: "Internet Access, Breakfast, In-room Dining",
@@ -75,8 +76,9 @@ const roomDetails = [
       { icon: "🏞️", label: "Patio" },
     ],
     policies: {
-      checkIn: "Check-out from 4 AM onwards",
-      payment: "Payment must be made within 24 hours of reservation, otherwise, the reservation will be canceled.",
+      checkIn: "Check-in anytime",
+      checkOut: "Check-out until 11 AM",
+    
       pets: "Pets are not allowed.",
     },
   },
@@ -84,9 +86,9 @@ const roomDetails = [
     id: 3,
     name: "Semi-Sweet Room",
     image: room3,
-    gallery: [semi1, semi2, semi3, semi4, semi5, semi6,tabel],
+    gallery: [semi1, semi2, semi3, semi4, semi5, semi6, tabel],
     price: "1600/Night",
-    description: "Our Semi-Suite Rooms offer extra space and comfort for your stay. They include a cooking space for your convenience, along with all essential amenities.",
+    description: "Our Semi-sweet Rooms offer extra space and comfort for your stay. They include a cooking space for your convenience, along with all essential amenities.",
     characteristics: [
       { icon: "👥", label: "1-2 Persons" },
       { icon: "📶", label: "Free Wifi" },
@@ -99,8 +101,9 @@ const roomDetails = [
       { icon: "🏞️", label: "Patio" },
     ],
     policies: {
-      checkIn: "Check-out from 4 AM onwards",
-      payment: "Payment must be made within 24 hours of reservation, otherwise, the reservation will be canceled.",
+      checkIn: "Check-in anytime",
+      checkOut: "Check-out until 11 AM",
+    
       pets: "Pets are not allowed.",
     },
   },
@@ -108,9 +111,9 @@ const roomDetails = [
     id: 4,
     name: "Sweet Room",
     image: room4,
-    gallery: [sweet1, sweet2, sweet3, sweet4, sweet5,tabel],
+    gallery: [sweet1, sweet2, sweet3, sweet4, sweet5, tabel],
     price: "3000/Night",
-    description: "Our Suite Rooms provide luxury and comfort for a premium stay. They feature a separate salon, bedroom, two bathrooms, air conditioning, and a fully equipped kitchen.",
+    description: "Our Sweet Rooms provide luxury and comfort for a premium stay. They feature a separate salon, bedroom, two bathrooms, air conditioning, and a fully equipped kitchen.",
     characteristics: [
       { icon: "👥", label: "1-2 Persons" },
       { icon: "📶", label: "Free Wifi" },
@@ -126,12 +129,14 @@ const roomDetails = [
       { icon: "🏞️", label: "Patio" },
     ],
     policies: {
-      checkIn: "Check-out from 4 AM onwards",
-      payment: "Payment must be made within 24 hours of reservation, otherwise, the reservation will be canceled.",
+      checkIn: "Check-in anytime",
+      checkOut: "Check-out until 11 AM",
+      
       pets: "Pets are not allowed.",
     },
   }
 ];
+
 
 
 const RoomDetail = () => {
@@ -199,7 +204,7 @@ const RoomDetail = () => {
             <div className="p-8">
               <p className="text-gray-900 font-times mb-6 text-lg">{room.description}</p>
               <div className="mb-4">
-                <h3 className="text-xl md:text-2xl font-times mb-2">Additional Services:</h3>
+                <h3 className="text-xl md:text-2xl font-times mb-2"> Amenities:</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                   {room.characteristics.map((characteristic, idx) => (
                     <div key={idx} className="flex items-center font-times space-x-2 mb-2">
@@ -212,22 +217,42 @@ const RoomDetail = () => {
               <div className="text-right">
                 <p className="text-xl font-times text-custom-blue">Price: ${room.price}</p>
               </div>
-              <div className="mt-6">
-                <h3 className="text-xl md:text-2xl font-times mb-2">Rules:</h3>
-                <ul className="list-disc list-inside text-gray-900 font-times text-lg">
-                  <li>{room.policies.checkIn}</li>
-                  <li>{room.policies.payment}</li>
-                  <li>{room.policies.pets}</li>
-                </ul>
-              </div>
-              <div className="text-right mt-4">
-                <button
-                  className="text-custom-blue font-times underline"
-                  onClick={() => setIsModalOpen(true)}
-                >
-                  Make Reservation
-                </button>
-              </div>
+              <div className="mt-6 p-4 bg-gray-100 rounded-lg shadow-md">
+  <h3 className="text-2xl md:text-2xl font-times mb-4 text-gray-800">Rules</h3>
+  <ul className="list-none space-y-3 text-gray-900 font-times text-lg">
+    <li className="flex items-center">
+      <span className="mr-2 text-blue-500">🕓</span>
+      <span>{room.policies.checkIn}</span>
+    </li>
+    <li className="flex items-center">
+      <span className="mr-2 text-blue-500">🚪</span>
+      <span>{room.policies.checkOut}</span>
+    </li>
+    <li className="flex items-center">
+      <span className="mr-2 text-blue-500">💵</span>
+      <span>
+        Pay at the property -{" "}
+        <span className="text-sm text-red-600">
+          Payment should be made within 24 hours after reservation, otherwise the reservation will be canceled.
+        </span>
+      </span>
+    </li>
+    <li className="flex items-center">
+      <span className="mr-2 text-blue-500">🐾</span>
+      <span>{room.policies.pets}</span>
+    </li>
+  </ul>
+</div>
+
+<div className="text-right mt-4">
+  <button
+    className="bg-custom-blue text-white font-times py-2 px-4 rounded-full text-lg  hover:bg-blue-600 focus:outline-none"
+    onClick={() => setIsModalOpen(true)}
+  >
+    Make Reservation
+  </button>
+</div>
+
             </div>
           </div>
         </div>
