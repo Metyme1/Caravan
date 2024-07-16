@@ -13,21 +13,21 @@ import hotDrinksImage from '../assets/hot.jpg';
 
 const menuData = {
   BreakFast: [
-    { name: 'Scrembled - Egg', description: '', price: 200 },
-    { name: 'Omlet', description: '', price: 200 },
-    { name: 'Boiled-Egg', description: '', price: 150 },
-    { name: 'Melewaa', description: '', price: 170 },
-    { name: 'Fetria', description: '', price: 250 },
-    { name: 'Cecebssa - with oil ', description: '', price: 200 },
-    { name: 'Cecebssa - with Butter ', description: '', price: 250 },
-    { name: 'fasting Firfir', description: '', price: 210 },
-    { name: 'Qincee', description: '', price: 150},
-    { name: 'Bullaa  - with Better', description: '', price: 180 },
-    { name: 'Bulla - with oil ', description: '', price: 170 },
-    { name: 'Foul', description: '', price: 150 },
-    { name: 'Special Foul ', description: '', price: 180 },
-    { name: 'Special Combo', description: '', price: 350 },
-    { name: 'Dullet', description: '', price: 200},
+    { name: 'Scrambled Eggs', description: 'Fluffy scrambled eggs cooked to perfection.', price: 200 },
+    { name: 'Omelet', description: 'Classic omelet made with fresh ingredients.', price: 200 },
+    { name: 'Boiled Eggs', description: 'Soft-boiled eggs served with seasoning.', price: 150 },
+    { name: 'Melewaa', description: 'Traditional Ethiopian dish with spices.', price: 170 },
+    { name: 'Fetira', description: 'Traditional Ethiopian pancake-like bread.', price: 250 },
+    { name: 'Chechebsa with Oil', description: 'Ethiopian dish with  and oil.', price: 200 },
+    { name: 'Chechebsa with Butter', description: 'Ethiopian dish with  and butter.', price: 250 },
+    { name: 'Fasting Firfir', description: 'Ethiopian fasting dish with injera bread.', price: 210 },
+    { name: 'Kinche', description: 'Ethiopian cracked wheat porridge.', price: 150 },
+    { name: 'Bulla with Butter', description: 'Ethiopian traditional bread with butter.', price: 180 },
+    { name: 'Bulla with Oil', description: 'Ethiopian traditional bread with oil.', price: 170 },
+    { name: 'Foul', description: 'Fava beans cooked with onions and tomatoes.', price: 150 },
+    { name: 'Special Foul', description: 'Fava beans with extra toppings.', price: 180 },
+    { name: 'Special Combo', description: 'Special combination of various dishes.', price: 350 },
+    { name: 'Dulet', description: 'Ethiopian traditional spicy dish.', price: 200 },
   ],
   "Lunch and Dinner": [
     { name: 'Special caravan Combo', description: '', price: 1500 },
@@ -173,7 +173,7 @@ function Menu() {
     }
   };
 
-  // Function to handle category change and update selected image
+
   const handleCategoryChange = (menu) => {
     setSelectedMenu(menu);
     setSelectedImage(categoryImages[menu]);
@@ -184,6 +184,7 @@ function Menu() {
       <div className="container mx-auto py-10 px-4">
         <h1 className="text-3xl md:text-5xl text-center text-custom-blue font-serif mb-10">Restaurant Menu</h1>
         <div className="relative flex items-center justify-center mb-10">
+          {/* Navigation buttons */}
           <div
             className={`absolute left-0 flex items-center justify-center bg-custom-blue text-white w-8 h-8 md:w-10 md:h-10 rounded-full cursor-pointer ${
               categoryIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''
@@ -193,6 +194,7 @@ function Menu() {
             <FaChevronLeft className="text-xl md:text-2xl" />
           </div>
           <div className="flex overflow-x-auto mx-4 md:mx-10 space-x-2 md:space-x-6 px-2 md:px-4">
+            {/* Menu categories */}
             {categories.slice(startIndex, endIndex).map((menu) => (
               <div
                 key={menu}
@@ -217,11 +219,14 @@ function Menu() {
             <FaChevronRight className="text-xl md:text-2xl" />
           </div>
         </div>
+        {/* Menu items grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Selected item image */}
           <div className="col-span-full md:col-span-2 lg:col-span-3 sticky top-0 z-10 bg-white">
             <img src={selectedImage} alt={selectedMenu} className="w-full md:max-w-md rounded-lg shadow-md mb-6 mx-auto" />
           </div>
-          <div className="col-span-full md:col-span-2 lg:col-span-3 overflow-auto" style={{ maxHeight: 'calc(100vh - 300px)' }}>
+          {/* Scrollable menu items */}
+          <div className="col-span-full md:col-span-2 lg:col-span-3 overflow-x-auto overflow-y-auto" style={{ maxHeight: 'calc(100vh - 300px)' }}>
             {menuData[selectedMenu] ? (
               menuData[selectedMenu].map((item, index) => (
                 <div key={index} className="rounded-lg bg-white p-6 flex flex-col justify-between shadow-md hover:shadow-lg transition-shadow duration-300 mb-4">
@@ -241,6 +246,7 @@ function Menu() {
       </div>
     </div>
   );
+  
   
   
 }

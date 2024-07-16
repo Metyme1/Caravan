@@ -42,7 +42,7 @@ const Contact = () => {
     });
 
     emailjs
-      .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_USER_ID')
+      .sendForm('service_gek7y3t', 'template_hvkxd9d', form.current, 'zUPIBXfEHx6UroLsO')
       .then(
         (result) => {
           toast.update(loadingToastId, {
@@ -87,7 +87,7 @@ const Contact = () => {
               <strong>Phone:</strong> 0254114312
             </p>
             <p className="text-gray-700 mb-2 font-times">
-              <strong>Email:</strong> contact@gmail.com
+              <strong>Email:</strong> caravandire@gmail.com
             </p>
             <p className="text-gray-700 font-times mb-2">
               <strong>Address:</strong> Dire Dawa
