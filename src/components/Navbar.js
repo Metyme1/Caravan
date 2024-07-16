@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from'../assets/caravanlogo.png';
+import logo from '../assets/caravanlogo.png';
+
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
   };
 
   return (
@@ -96,6 +101,7 @@ const NavBar = () => {
             className={({ isActive }) =>
               `block text-white px-3 py-2 rounded-md text-base font-times ${isActive ? 'underline' : ''}`
             }
+            onClick={closeMenu}
           >
             Home
           </NavLink>
@@ -104,6 +110,7 @@ const NavBar = () => {
             className={({ isActive }) =>
               `block text-white px-3 py-2 rounded-md text-base font-times ${isActive ? 'underline' : ''}`
             }
+            onClick={closeMenu}
           >
             Rooms
           </NavLink>
@@ -112,6 +119,7 @@ const NavBar = () => {
             className={({ isActive }) =>
               `block text-white px-3 py-2 rounded-md text-base font-times ${isActive ? 'underline' : ''}`
             }
+            onClick={closeMenu}
           >
             Restaurant
           </NavLink>
@@ -120,6 +128,7 @@ const NavBar = () => {
             className={({ isActive }) =>
               `block text-white px-3 py-2 rounded-md text-base font-times ${isActive ? 'underline' : ''}`
             }
+            onClick={closeMenu}
           >
             Services
           </NavLink>
@@ -128,6 +137,7 @@ const NavBar = () => {
             className={({ isActive }) =>
               `block text-white px-3 py-2 rounded-md text-base font-times ${isActive ? 'underline' : ''}`
             }
+            onClick={closeMenu}
           >
             Contact Us
           </NavLink>
@@ -137,6 +147,7 @@ const NavBar = () => {
             className={({ isActive }) =>
               `block text-white px-3 py-2 rounded-md text-base font-times ${isActive ? 'underline' : ''}`
             }
+            onClick={closeMenu}
           >
             Gallery
           </NavLink>
@@ -148,20 +159,11 @@ const NavBar = () => {
       </div>
       <div className="bg-custom-blue text-white py-4 border-t-2 border-white px-6 hidden md:block">
         <div className="flex justify-between items-center">
-        <div className="flex items-center space-x-2">
-        <span className="text-lg font-times">⭐⭐⭐⭐</span>
+          <div className="flex items-center space-x-2">
+            <span className="text-lg font-times">⭐⭐⭐⭐</span>
             <span className="text-lg font-times">Caravan Dire Hotel, DireDawa</span>
-            
           </div>
           <div className="flex space-x-6 items-center">
-            {/* <NavLink
-              to="/gallery"
-              className={({ isActive }) =>
-                `text-white px-3 py-2 rounded-md text-lg font-times ${isActive ? 'underline' : ''}`
-              }
-            >
-              Gallery
-            </NavLink> */}
             <div className="flex items-center space-x-2">
               <span role="img" aria-label="phone">📞</span>
               <span className="text-lg font-times">09090909090</span>
